@@ -1,5 +1,7 @@
-cmake_minimum_required(VERSION 2.8)
-project(musl C)
+if (NOT DEFINED MUSL_WITHOUT_CMAKE_PROJECT_HEAD OR NOT MUSL_WITHOUT_CMAKE_PROJECT_HEAD)
+    cmake_minimum_required(VERSION 2.8)
+    project(musl C)
+endif()
 
 set(MUSL_ARCH x86_64 CACHE STRING "musl platform architecture")
 set(MUSL_NON_LINUX ON CACHE STRING "musl non-linux architecture")
