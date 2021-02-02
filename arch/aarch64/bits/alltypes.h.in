@@ -11,7 +11,10 @@
 #define __LONG_MAX 0x7fffffffffffffffL
 
 #ifndef __cplusplus
-TYPEDEF unsigned wchar_t;
+#ifndef __WCHAR_TYPE__
+#define __WCHAR_TYPE__ unsigned
+#endif
+TYPEDEF __WCHAR_TYPE__ wchar_t;
 #endif
 TYPEDEF unsigned wint_t;
 

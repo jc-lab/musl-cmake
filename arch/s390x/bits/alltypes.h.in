@@ -6,7 +6,10 @@
 #define __LONG_MAX 0x7fffffffffffffffL
 
 #ifndef __cplusplus
-TYPEDEF int wchar_t;
+#ifndef __WCHAR_TYPE__
+#define __WCHAR_TYPE__ int
+#endif
+TYPEDEF __WCHAR_TYPE__ wchar_t;
 #endif
 
 #if defined(__FLT_EVAL_METHOD__) && __FLT_EVAL_METHOD__ == 1
