@@ -11,8 +11,8 @@ extern "C" {
 #define	SWAP_FLAG_PRIO_SHIFT    0
 #define SWAP_FLAG_DISCARD       0x10000
 
-int swapon (const char *, int);
-int swapoff (const char *);
+MUSL_EXPORT int swapon (const char *, int);
+MUSL_EXPORT int swapoff (const char *);
 
 #ifdef __cplusplus
 }

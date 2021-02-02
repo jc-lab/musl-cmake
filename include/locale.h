@@ -50,8 +50,8 @@ struct lconv {
 };
 
 
-char *setlocale (int, const char *);
-struct lconv *localeconv(void);
+MUSL_EXPORT char *setlocale (int, const char *);
+MUSL_EXPORT struct lconv *localeconv(void);
 
 
 #if defined(_POSIX_SOURCE) || defined(_POSIX_C_SOURCE) \
@@ -71,10 +71,10 @@ struct lconv *localeconv(void);
 #define LC_MESSAGES_MASK (1<<LC_MESSAGES)
 #define LC_ALL_MASK      0x7fffffff
 
-locale_t duplocale(locale_t);
-void freelocale(locale_t);
-locale_t newlocale(int, const char *, locale_t);
-locale_t uselocale(locale_t);
+MUSL_EXPORT locale_t duplocale(locale_t);
+MUSL_EXPORT void freelocale(locale_t);
+MUSL_EXPORT locale_t newlocale(int, const char *, locale_t);
+MUSL_EXPORT locale_t uselocale(locale_t);
 
 #endif
 

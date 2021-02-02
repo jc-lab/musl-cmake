@@ -14,9 +14,9 @@ typedef uint64_t eventfd_t;
 #define EFD_CLOEXEC O_CLOEXEC
 #define EFD_NONBLOCK O_NONBLOCK
 
-int eventfd(unsigned int, int);
-int eventfd_read(int, eventfd_t *);
-int eventfd_write(int, eventfd_t);
+MUSL_EXPORT int eventfd(unsigned int, int);
+MUSL_EXPORT int eventfd_read(int, eventfd_t *);
+MUSL_EXPORT int eventfd_write(int, eventfd_t);
 
 
 #ifdef __cplusplus

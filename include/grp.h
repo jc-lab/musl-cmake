@@ -23,27 +23,27 @@ struct group {
 	char **gr_mem;
 };
 
-struct group  *getgrgid(gid_t);
-struct group  *getgrnam(const char *);
+MUSL_EXPORT struct group  *getgrgid(gid_t);
+MUSL_EXPORT struct group  *getgrnam(const char *);
 
-int getgrgid_r(gid_t, struct group *, char *, size_t, struct group **);
-int getgrnam_r(const char *, struct group *, char *, size_t, struct group **);
+MUSL_EXPORT int getgrgid_r(gid_t, struct group *, char *, size_t, struct group **);
+MUSL_EXPORT int getgrnam_r(const char *, struct group *, char *, size_t, struct group **);
 
 #if defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
-struct group  *getgrent(void);
-void           endgrent(void);
-void           setgrent(void);
+MUSL_EXPORT struct group  *getgrent(void);
+MUSL_EXPORT void           endgrent(void);
+MUSL_EXPORT void           setgrent(void);
 #endif
 
 #ifdef _GNU_SOURCE
-struct group  *fgetgrent(FILE *);
-int putgrent(const struct group *, FILE *);
+MUSL_EXPORT struct group  *fgetgrent(FILE *);
+MUSL_EXPORT int putgrent(const struct group *, FILE *);
 #endif
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
-int getgrouplist(const char *, gid_t, gid_t *, int *);
-int setgroups(size_t, const gid_t *);
-int initgroups(const char *, gid_t);
+MUSL_EXPORT int getgrouplist(const char *, gid_t, gid_t *, int *);
+MUSL_EXPORT int setgroups(size_t, const gid_t *);
+MUSL_EXPORT int initgroups(const char *, gid_t);
 #endif
 
 #ifdef __cplusplus

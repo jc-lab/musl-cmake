@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+#include <features.h>
+
 #define __SID		('S' << 8)
 
 #define I_NREAD		(__SID | 1)
@@ -129,8 +131,8 @@ struct str_list {
 	struct str_mlist *sl_modlist;
 };
 
-int isastream(int);
-int ioctl(int, int, ...);
+MUSL_EXPORT int isastream(int);
+MUSL_EXPORT int ioctl(int, int, ...);
 
 #ifdef __cplusplus
 }

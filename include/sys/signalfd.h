@@ -15,7 +15,7 @@ extern "C" {
 #define SFD_CLOEXEC O_CLOEXEC
 #define SFD_NONBLOCK O_NONBLOCK
 
-int signalfd(int, const sigset_t *, int);
+MUSL_EXPORT int signalfd(int, const sigset_t *, int);
 
 struct signalfd_siginfo {
 	uint32_t  ssi_signo;

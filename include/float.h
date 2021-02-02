@@ -5,7 +5,9 @@
 extern "C" {
 #endif
 
-int __flt_rounds(void);
+#include <features.h>
+
+MUSL_EXPORT int __flt_rounds(void);
 #define FLT_ROUNDS (__flt_rounds())
 
 #define FLT_RADIX 2

@@ -308,15 +308,15 @@ typedef enum __ns_cert_types {
 #define NS_PUT16(s, cp) ns_put16((s), ((cp)+=2)-2)
 #define NS_PUT32(l, cp) ns_put32((l), ((cp)+=4)-4)
 
-unsigned ns_get16(const unsigned char *);
-unsigned long ns_get32(const unsigned char *);
-void ns_put16(unsigned, unsigned char *);
-void ns_put32(unsigned long, unsigned char *);
+MUSL_EXPORT unsigned ns_get16(const unsigned char *);
+MUSL_EXPORT unsigned long ns_get32(const unsigned char *);
+MUSL_EXPORT void ns_put16(unsigned, unsigned char *);
+MUSL_EXPORT void ns_put32(unsigned long, unsigned char *);
 
-int ns_initparse(const unsigned char *, int, ns_msg *);
-int ns_parserr(ns_msg *, ns_sect, int, ns_rr *);
-int ns_skiprr(const unsigned char *, const unsigned char *, ns_sect, int);
-int ns_name_uncompress(const unsigned char *, const unsigned char *, const unsigned char *, char *, size_t);
+MUSL_EXPORT int ns_initparse(const unsigned char *, int, ns_msg *);
+MUSL_EXPORT int ns_parserr(ns_msg *, ns_sect, int, ns_rr *);
+MUSL_EXPORT int ns_skiprr(const unsigned char *, const unsigned char *, ns_sect, int);
+MUSL_EXPORT int ns_name_uncompress(const unsigned char *, const unsigned char *, const unsigned char *, char *, size_t);
 
 
 #define	__BIND		19950621

@@ -51,10 +51,10 @@ struct addrinfo {
 #define EAI_SYSTEM     -11
 #define EAI_OVERFLOW   -12
 
-int getaddrinfo (const char *__restrict, const char *__restrict, const struct addrinfo *__restrict, struct addrinfo **__restrict);
-void freeaddrinfo (struct addrinfo *);
-int getnameinfo (const struct sockaddr *__restrict, socklen_t, char *__restrict, socklen_t, char *__restrict, socklen_t, int);
-const char *gai_strerror(int);
+MUSL_EXPORT int getaddrinfo (const char *__restrict, const char *__restrict, const struct addrinfo *__restrict, struct addrinfo **__restrict);
+MUSL_EXPORT void freeaddrinfo (struct addrinfo *);
+MUSL_EXPORT int getnameinfo (const struct sockaddr *__restrict, socklen_t, char *__restrict, socklen_t, char *__restrict, socklen_t, int);
+MUSL_EXPORT const char *gai_strerror(int);
 
 
 /* Legacy functions follow (marked OBsolete in SUS) */
@@ -88,37 +88,37 @@ struct protoent {
 	int p_proto;
 };
 
-void sethostent (int);
-void endhostent (void);
-struct hostent *gethostent (void);
+MUSL_EXPORT void sethostent (int);
+MUSL_EXPORT void endhostent (void);
+MUSL_EXPORT struct hostent *gethostent (void);
 
-void setnetent (int);
-void endnetent (void);
-struct netent *getnetent (void);
-struct netent *getnetbyaddr (uint32_t, int);
-struct netent *getnetbyname (const char *);
+MUSL_EXPORT void setnetent (int);
+MUSL_EXPORT void endnetent (void);
+MUSL_EXPORT struct netent *getnetent (void);
+MUSL_EXPORT struct netent *getnetbyaddr (uint32_t, int);
+MUSL_EXPORT struct netent *getnetbyname (const char *);
 
-void setservent (int);
-void endservent (void);
-struct servent *getservent (void);
-struct servent *getservbyname (const char *, const char *);
-struct servent *getservbyport (int, const char *);
+MUSL_EXPORT void setservent (int);
+MUSL_EXPORT void endservent (void);
+MUSL_EXPORT struct servent *getservent (void);
+MUSL_EXPORT struct servent *getservbyname (const char *, const char *);
+MUSL_EXPORT struct servent *getservbyport (int, const char *);
 
-void setprotoent (int);
-void endprotoent (void);
-struct protoent *getprotoent (void);
-struct protoent *getprotobyname (const char *);
-struct protoent *getprotobynumber (int);
+MUSL_EXPORT void setprotoent (int);
+MUSL_EXPORT void endprotoent (void);
+MUSL_EXPORT struct protoent *getprotoent (void);
+MUSL_EXPORT struct protoent *getprotobyname (const char *);
+MUSL_EXPORT struct protoent *getprotobynumber (int);
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE) || defined(_POSIX_SOURCE) \
  || (defined(_POSIX_C_SOURCE) && _POSIX_C_SOURCE+0 < 200809L) \
  || (defined(_XOPEN_SOURCE) && _XOPEN_SOURCE+0 < 700)
-struct hostent *gethostbyname (const char *);
-struct hostent *gethostbyaddr (const void *, socklen_t, int);
+MUSL_EXPORT struct hostent *gethostbyname (const char *);
+MUSL_EXPORT struct hostent *gethostbyaddr (const void *, socklen_t, int);
 #ifdef __GNUC__
 __attribute__((const))
 #endif
-int *__h_errno_location(void);
+MUSL_EXPORT int *__h_errno_location(void);
 #define h_errno (*__h_errno_location())
 #define HOST_NOT_FOUND 1
 #define TRY_AGAIN      2
@@ -128,14 +128,14 @@ int *__h_errno_location(void);
 #endif
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
-void herror(const char *);
-const char *hstrerror(int);
-int gethostbyname_r(const char *, struct hostent *, char *, size_t, struct hostent **, int *);
-int gethostbyname2_r(const char *, int, struct hostent *, char *, size_t, struct hostent **, int *);
-struct hostent *gethostbyname2(const char *, int);
-int gethostbyaddr_r(const void *, socklen_t, int, struct hostent *, char *, size_t, struct hostent **, int *);
-int getservbyport_r(int, const char *, struct servent *, char *, size_t, struct servent **);
-int getservbyname_r(const char *, const char *, struct servent *, char *, size_t, struct servent **);
+MUSL_EXPORT void herror(const char *);
+MUSL_EXPORT const char *hstrerror(int);
+MUSL_EXPORT int gethostbyname_r(const char *, struct hostent *, char *, size_t, struct hostent **, int *);
+MUSL_EXPORT int gethostbyname2_r(const char *, int, struct hostent *, char *, size_t, struct hostent **, int *);
+MUSL_EXPORT struct hostent *gethostbyname2(const char *, int);
+MUSL_EXPORT int gethostbyaddr_r(const void *, socklen_t, int, struct hostent *, char *, size_t, struct hostent **, int *);
+MUSL_EXPORT int getservbyport_r(int, const char *, struct servent *, char *, size_t, struct servent **);
+MUSL_EXPORT int getservbyname_r(const char *, const char *, struct servent *, char *, size_t, struct servent **);
 #define EAI_NODATA     -5
 #define EAI_ADDRFAMILY -9
 #define EAI_INPROGRESS -100

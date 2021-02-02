@@ -63,10 +63,10 @@ extern const struct in6_addr in6addr_any, in6addr_loopback;
 #define INET_ADDRSTRLEN  16
 #define INET6_ADDRSTRLEN 46
 
-uint32_t htonl(uint32_t);
-uint16_t htons(uint16_t);
-uint32_t ntohl(uint32_t);
-uint16_t ntohs(uint16_t);
+MUSL_EXPORT uint32_t htonl(uint32_t);
+MUSL_EXPORT uint16_t htons(uint16_t);
+MUSL_EXPORT uint32_t ntohl(uint32_t);
+MUSL_EXPORT uint16_t ntohs(uint16_t);
 
 #define IPPORT_RESERVED 1024
 

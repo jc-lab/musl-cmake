@@ -29,12 +29,12 @@ struct flock {
 	pid_t l_pid;
 };
 
-int creat(const char *, mode_t);
-int fcntl(int, int, ...);
-int open(const char *, int, ...);
-int openat(int, const char *, int, ...);
-int posix_fadvise(int, off_t, off_t, int);
-int posix_fallocate(int, off_t, off_t);
+MUSL_EXPORT int creat(const char *, mode_t);
+MUSL_EXPORT int fcntl(int, int, ...);
+MUSL_EXPORT int open(const char *, int, ...);
+MUSL_EXPORT int openat(int, const char *, int, ...);
+MUSL_EXPORT int posix_fadvise(int, off_t, off_t, int);
+MUSL_EXPORT int posix_fallocate(int, off_t, off_t);
 
 #define O_SEARCH   O_PATH
 #define O_EXEC     O_PATH
@@ -156,7 +156,7 @@ int posix_fallocate(int, off_t, off_t);
 #define DN_ATTRIB	0x00000020
 #define DN_MULTISHOT	0x80000000
 
-int lockf(int, int, off_t);
+MUSL_EXPORT int lockf(int, int, off_t);
 #endif
 
 #if defined(_GNU_SOURCE)
@@ -183,15 +183,15 @@ struct f_owner_ex {
 #define SPLICE_F_NONBLOCK 2
 #define SPLICE_F_MORE 4
 #define SPLICE_F_GIFT 8
-int fallocate(int, int, off_t, off_t);
+MUSL_EXPORT int fallocate(int, int, off_t, off_t);
 #define fallocate64 fallocate
-int name_to_handle_at(int, const char *, struct file_handle *, int *, int);
-int open_by_handle_at(int, struct file_handle *, int);
-ssize_t readahead(int, off_t, size_t);
-int sync_file_range(int, off_t, off_t, unsigned);
-ssize_t vmsplice(int, const struct iovec *, size_t, unsigned);
-ssize_t splice(int, off_t *, int, off_t *, size_t, unsigned);
-ssize_t tee(int, int, size_t, unsigned);
+MUSL_EXPORT int name_to_handle_at(int, const char *, struct file_handle *, int *, int);
+MUSL_EXPORT int open_by_handle_at(int, struct file_handle *, int);
+MUSL_EXPORT ssize_t readahead(int, off_t, size_t);
+MUSL_EXPORT int sync_file_range(int, off_t, off_t, unsigned);
+MUSL_EXPORT ssize_t vmsplice(int, const struct iovec *, size_t, unsigned);
+MUSL_EXPORT ssize_t splice(int, off_t *, int, off_t *, size_t, unsigned);
+MUSL_EXPORT ssize_t tee(int, int, size_t, unsigned);
 #define loff_t off_t
 #endif
 

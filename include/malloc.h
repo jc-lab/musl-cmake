@@ -9,14 +9,14 @@ extern "C" {
 
 #include <bits/alltypes.h>
 
-void *malloc (size_t);
-void *calloc (size_t, size_t);
-void *realloc (void *, size_t);
-void free (void *);
-void *valloc (size_t);
-void *memalign(size_t, size_t);
+MUSL_EXPORT void *malloc (size_t);
+MUSL_EXPORT void *calloc (size_t, size_t);
+MUSL_EXPORT void *realloc (void *, size_t);
+MUSL_EXPORT void free (void *);
+MUSL_EXPORT void *valloc (size_t);
+MUSL_EXPORT void *memalign(size_t, size_t);
 
-size_t malloc_usable_size(void *);
+MUSL_EXPORT size_t malloc_usable_size(void *);
 
 #ifdef __cplusplus
 }

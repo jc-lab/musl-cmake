@@ -11,21 +11,21 @@ extern "C" {
 #define FSETLOCKING_INTERNAL 1
 #define FSETLOCKING_BYCALLER 2
 
-void _flushlbf(void);
-int __fsetlocking(FILE *, int);
-int __fwriting(FILE *);
-int __freading(FILE *);
-int __freadable(FILE *);
-int __fwritable(FILE *);
-int __flbf(FILE *);
-size_t __fbufsize(FILE *);
-size_t __fpending(FILE *);
-int __fpurge(FILE *);
+MUSL_EXPORT void _flushlbf(void);
+MUSL_EXPORT int __fsetlocking(FILE *, int);
+MUSL_EXPORT int __fwriting(FILE *);
+MUSL_EXPORT int __freading(FILE *);
+MUSL_EXPORT int __freadable(FILE *);
+MUSL_EXPORT int __fwritable(FILE *);
+MUSL_EXPORT int __flbf(FILE *);
+MUSL_EXPORT size_t __fbufsize(FILE *);
+MUSL_EXPORT size_t __fpending(FILE *);
+MUSL_EXPORT int __fpurge(FILE *);
 
-size_t __freadahead(FILE *);
-const char *__freadptr(FILE *, size_t *);
-void __freadptrinc(FILE *, size_t);
-void __fseterr(FILE *);
+MUSL_EXPORT size_t __freadahead(FILE *);
+MUSL_EXPORT const char *__freadptr(FILE *, size_t *);
+MUSL_EXPORT void __freadptrinc(FILE *, size_t);
+MUSL_EXPORT void __fseterr(FILE *);
 
 #ifdef __cplusplus
 }

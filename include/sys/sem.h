@@ -52,12 +52,12 @@ struct sembuf {
 	short sem_flg;
 };
 
-int semctl(int, int, int, ...);
-int semget(key_t, int, int);
-int semop(int, struct sembuf *, size_t);
+MUSL_EXPORT int semctl(int, int, int, ...);
+MUSL_EXPORT int semget(key_t, int, int);
+MUSL_EXPORT int semop(int, struct sembuf *, size_t);
 
 #ifdef _GNU_SOURCE
-int semtimedop(int, struct sembuf *, size_t, const struct timespec *);
+MUSL_EXPORT int semtimedop(int, struct sembuf *, size_t, const struct timespec *);
 #endif
 
 #if _REDIR_TIME64

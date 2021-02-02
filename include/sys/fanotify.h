@@ -102,8 +102,8 @@ struct fanotify_response {
 #define FAN_EVENT_NEXT(meta, len) ((len) -= (meta)->event_len, (struct fanotify_event_metadata*)(((char *)(meta)) + (meta)->event_len))
 #define FAN_EVENT_OK(meta, len) ((long)(len) >= (long)FAN_EVENT_METADATA_LEN && (long)(meta)->event_len >= (long)FAN_EVENT_METADATA_LEN && (long)(meta)->event_len <= (long)(len))
 
-int fanotify_init(unsigned, unsigned);
-int fanotify_mark(int, unsigned, unsigned long long, int, const char *);
+MUSL_EXPORT int fanotify_init(unsigned, unsigned);
+MUSL_EXPORT int fanotify_mark(int, unsigned, unsigned long long, int, const char *);
 
 #ifdef __cplusplus
 }

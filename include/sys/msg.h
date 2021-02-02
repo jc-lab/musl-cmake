@@ -34,10 +34,10 @@ struct msginfo {
 	unsigned short msgseg;
 };
 
-int msgctl (int, int, struct msqid_ds *);
-int msgget (key_t, int);
-ssize_t msgrcv (int, void *, size_t, long, int);
-int msgsnd (int, const void *, size_t, int);
+MUSL_EXPORT int msgctl (int, int, struct msqid_ds *);
+MUSL_EXPORT int msgget (key_t, int);
+MUSL_EXPORT ssize_t msgrcv (int, void *, size_t, long, int);
+MUSL_EXPORT int msgsnd (int, const void *, size_t, int);
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
 struct msgbuf {

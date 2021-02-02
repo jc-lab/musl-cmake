@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+#include <features.h>
+
 #define __NEED_clock_t
 #include <bits/alltypes.h>
 
@@ -15,7 +17,7 @@ struct tms {
 	clock_t tms_cstime;
 };
 
-clock_t times (struct tms *);
+MUSL_EXPORT clock_t times (struct tms *);
 
 #ifdef __cplusplus
 }

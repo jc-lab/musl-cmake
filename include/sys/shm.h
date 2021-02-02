@@ -58,10 +58,10 @@ extern "C" {
 
 typedef unsigned long shmatt_t;
 
-void *shmat(int, const void *, int);
-int shmctl(int, int, struct shmid_ds *);
-int shmdt(const void *);
-int shmget(key_t, size_t, int);
+MUSL_EXPORT void *shmat(int, const void *, int);
+MUSL_EXPORT int shmctl(int, int, struct shmid_ds *);
+MUSL_EXPORT int shmdt(const void *);
+MUSL_EXPORT int shmget(key_t, size_t, int);
 
 #ifdef __cplusplus
 }

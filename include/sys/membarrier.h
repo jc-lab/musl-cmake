@@ -12,6 +12,6 @@
 
 #define MEMBARRIER_CMD_SHARED MEMBARRIER_CMD_GLOBAL
 
-int membarrier(int, int);
+MUSL_EXPORT int membarrier(int, int);
 
 #endif

@@ -63,9 +63,9 @@ extern "C" {
 #define MNT_EXPIRE      4
 #define UMOUNT_NOFOLLOW 8
 
-int mount(const char *, const char *, const char *, unsigned long, const void *);
-int umount(const char *);
-int umount2(const char *, int);
+MUSL_EXPORT int mount(const char *, const char *, const char *, unsigned long, const void *);
+MUSL_EXPORT int umount(const char *);
+MUSL_EXPORT int umount2(const char *, int);
 
 #ifdef __cplusplus
 }

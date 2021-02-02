@@ -20,7 +20,7 @@ struct utsname {
 #endif
 };
 
-int uname (struct utsname *);
+MUSL_EXPORT int uname (struct utsname *);
 
 #ifdef __cplusplus
 }

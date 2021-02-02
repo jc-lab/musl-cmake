@@ -19,17 +19,17 @@ typedef struct __jmp_buf_tag {
  || defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) \
  || defined(_BSD_SOURCE)
 typedef jmp_buf sigjmp_buf;
-int sigsetjmp (sigjmp_buf, int);
+MUSL_EXPORT int sigsetjmp (sigjmp_buf, int);
 _Noreturn void siglongjmp (sigjmp_buf, int);
 #endif
 
 #if defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) \
  || defined(_BSD_SOURCE)
-int _setjmp (jmp_buf);
+MUSL_EXPORT int _setjmp (jmp_buf);
 _Noreturn void _longjmp (jmp_buf, int);
 #endif
 
-int setjmp (jmp_buf);
+MUSL_EXPORT int setjmp (jmp_buf);
 _Noreturn void longjmp (jmp_buf, int);
 
 #define setjmp setjmp

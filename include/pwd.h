@@ -28,19 +28,19 @@ struct passwd {
 };
 
 #if defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
-void setpwent (void);
-void endpwent (void);
-struct passwd *getpwent (void);
+MUSL_EXPORT void setpwent (void);
+MUSL_EXPORT void endpwent (void);
+MUSL_EXPORT struct passwd *getpwent (void);
 #endif
 
-struct passwd *getpwuid (uid_t);
-struct passwd *getpwnam (const char *);
-int getpwuid_r (uid_t, struct passwd *, char *, size_t, struct passwd **);
-int getpwnam_r (const char *, struct passwd *, char *, size_t, struct passwd **);
+MUSL_EXPORT struct passwd *getpwuid (uid_t);
+MUSL_EXPORT struct passwd *getpwnam (const char *);
+MUSL_EXPORT int getpwuid_r (uid_t, struct passwd *, char *, size_t, struct passwd **);
+MUSL_EXPORT int getpwnam_r (const char *, struct passwd *, char *, size_t, struct passwd **);
 
 #ifdef _GNU_SOURCE
-struct passwd *fgetpwent(FILE *);
-int putpwent(const struct passwd *, FILE *);
+MUSL_EXPORT struct passwd *fgetpwent(FILE *);
+MUSL_EXPORT int putpwent(const struct passwd *, FILE *);
 #endif
 
 #ifdef __cplusplus

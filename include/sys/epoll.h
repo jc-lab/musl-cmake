@@ -55,11 +55,11 @@ __attribute__ ((__packed__))
 ;
 
 
-int epoll_create(int);
-int epoll_create1(int);
-int epoll_ctl(int, int, int, struct epoll_event *);
-int epoll_wait(int, struct epoll_event *, int, int);
-int epoll_pwait(int, struct epoll_event *, int, int, const sigset_t *);
+MUSL_EXPORT int epoll_create(int);
+MUSL_EXPORT int epoll_create1(int);
+MUSL_EXPORT int epoll_ctl(int, int, int, struct epoll_event *);
+MUSL_EXPORT int epoll_wait(int, struct epoll_event *, int, int);
+MUSL_EXPORT int epoll_pwait(int, struct epoll_event *, int, int, const sigset_t *);
 
 
 #ifdef __cplusplus

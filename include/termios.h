@@ -20,27 +20,27 @@ typedef unsigned int tcflag_t;
 
 #include <bits/termios.h>
 
-speed_t cfgetospeed (const struct termios *);
-speed_t cfgetispeed (const struct termios *);
-int cfsetospeed (struct termios *, speed_t);
-int cfsetispeed (struct termios *, speed_t);
+MUSL_EXPORT speed_t cfgetospeed (const struct termios *);
+MUSL_EXPORT speed_t cfgetispeed (const struct termios *);
+MUSL_EXPORT int cfsetospeed (struct termios *, speed_t);
+MUSL_EXPORT int cfsetispeed (struct termios *, speed_t);
 
-int tcgetattr (int, struct termios *);
-int tcsetattr (int, int, const struct termios *);
+MUSL_EXPORT int tcgetattr (int, struct termios *);
+MUSL_EXPORT int tcsetattr (int, int, const struct termios *);
 
-int tcgetwinsize (int, struct winsize *);
-int tcsetwinsize (int, const struct winsize *);
+MUSL_EXPORT int tcgetwinsize (int, struct winsize *);
+MUSL_EXPORT int tcsetwinsize (int, const struct winsize *);
 
-int tcsendbreak (int, int);
-int tcdrain (int);
-int tcflush (int, int);
-int tcflow (int, int);
+MUSL_EXPORT int tcsendbreak (int, int);
+MUSL_EXPORT int tcdrain (int);
+MUSL_EXPORT int tcflush (int, int);
+MUSL_EXPORT int tcflow (int, int);
 
-pid_t tcgetsid (int);
+MUSL_EXPORT pid_t tcgetsid (int);
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
-void cfmakeraw(struct termios *);
-int cfsetspeed(struct termios *, speed_t);
+MUSL_EXPORT void cfmakeraw(struct termios *);
+MUSL_EXPORT int cfsetspeed(struct termios *, speed_t);
 #endif
 
 #ifdef __cplusplus

@@ -12,7 +12,7 @@ extern "C" {
 #define RB_SW_SUSPEND   0xd000fce2
 #define RB_KEXEC        0x45584543
 
-int reboot(int);
+MUSL_EXPORT int reboot(int);
 
 #ifdef __cplusplus
 }

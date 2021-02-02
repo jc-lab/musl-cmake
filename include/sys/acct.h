@@ -63,7 +63,7 @@ struct acct_v3 {
 #define ACCT_BYTEORDER (128*(__BYTE_ORDER==__BIG_ENDIAN))
 #define AHZ 100
 
-int acct(const char *);
+MUSL_EXPORT int acct(const char *);
 
 #ifdef __cplusplus
 }

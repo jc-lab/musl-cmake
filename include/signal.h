@@ -199,46 +199,46 @@ struct sigevent {
 #define SIGEV_THREAD 2
 #define SIGEV_THREAD_ID 4
 
-int __libc_current_sigrtmin(void);
-int __libc_current_sigrtmax(void);
+MUSL_EXPORT int __libc_current_sigrtmin(void);
+MUSL_EXPORT int __libc_current_sigrtmax(void);
 
 #define SIGRTMIN  (__libc_current_sigrtmin())
 #define SIGRTMAX  (__libc_current_sigrtmax())
 
-int kill(pid_t, int);
+MUSL_EXPORT int kill(pid_t, int);
 
-int sigemptyset(sigset_t *);
-int sigfillset(sigset_t *);
-int sigaddset(sigset_t *, int);
-int sigdelset(sigset_t *, int);
-int sigismember(const sigset_t *, int);
+MUSL_EXPORT int sigemptyset(sigset_t *);
+MUSL_EXPORT int sigfillset(sigset_t *);
+MUSL_EXPORT int sigaddset(sigset_t *, int);
+MUSL_EXPORT int sigdelset(sigset_t *, int);
+MUSL_EXPORT int sigismember(const sigset_t *, int);
 
-int sigprocmask(int, const sigset_t *__restrict, sigset_t *__restrict);
-int sigsuspend(const sigset_t *);
-int sigaction(int, const struct sigaction *__restrict, struct sigaction *__restrict);
-int sigpending(sigset_t *);
-int sigwait(const sigset_t *__restrict, int *__restrict);
-int sigwaitinfo(const sigset_t *__restrict, siginfo_t *__restrict);
-int sigtimedwait(const sigset_t *__restrict, siginfo_t *__restrict, const struct timespec *__restrict);
-int sigqueue(pid_t, int, union sigval);
+MUSL_EXPORT int sigprocmask(int, const sigset_t *__restrict, sigset_t *__restrict);
+MUSL_EXPORT int sigsuspend(const sigset_t *);
+MUSL_EXPORT int sigaction(int, const struct sigaction *__restrict, struct sigaction *__restrict);
+MUSL_EXPORT int sigpending(sigset_t *);
+MUSL_EXPORT int sigwait(const sigset_t *__restrict, int *__restrict);
+MUSL_EXPORT int sigwaitinfo(const sigset_t *__restrict, siginfo_t *__restrict);
+MUSL_EXPORT int sigtimedwait(const sigset_t *__restrict, siginfo_t *__restrict, const struct timespec *__restrict);
+MUSL_EXPORT int sigqueue(pid_t, int, union sigval);
 
-int pthread_sigmask(int, const sigset_t *__restrict, sigset_t *__restrict);
-int pthread_kill(pthread_t, int);
+MUSL_EXPORT int pthread_sigmask(int, const sigset_t *__restrict, sigset_t *__restrict);
+MUSL_EXPORT int pthread_kill(pthread_t, int);
 
-void psiginfo(const siginfo_t *, const char *);
-void psignal(int, const char *);
+MUSL_EXPORT void psiginfo(const siginfo_t *, const char *);
+MUSL_EXPORT void psignal(int, const char *);
 
 #endif
 
 #if defined(_XOPEN_SOURCE) || defined(_BSD_SOURCE) || defined(_GNU_SOURCE)
-int killpg(pid_t, int);
-int sigaltstack(const stack_t *__restrict, stack_t *__restrict);
-int sighold(int);
-int sigignore(int);
-int siginterrupt(int, int);
-int sigpause(int);
-int sigrelse(int);
-void (*sigset(int, void (*)(int)))(int);
+MUSL_EXPORT int killpg(pid_t, int);
+MUSL_EXPORT int sigaltstack(const stack_t *__restrict, stack_t *__restrict);
+MUSL_EXPORT int sighold(int);
+MUSL_EXPORT int sigignore(int);
+MUSL_EXPORT int siginterrupt(int, int);
+MUSL_EXPORT int sigpause(int);
+MUSL_EXPORT int sigrelse(int);
+MUSL_EXPORT void (*sigset(int, void (*)(int)))(int);
 #define TRAP_BRKPT 1
 #define TRAP_TRACE 2
 #define TRAP_BRANCH 3
@@ -258,15 +258,15 @@ void (*sigset(int, void (*)(int)))(int);
 
 #if defined(_BSD_SOURCE) || defined(_GNU_SOURCE)
 #define NSIG _NSIG
-typedef void (*sig_t)(int);
+MUSL_EXPORT typedef void (*sig_t)(int);
 #endif
 
 #ifdef _GNU_SOURCE
-typedef void (*sighandler_t)(int);
-void (*bsd_signal(int, void (*)(int)))(int);
-int sigisemptyset(const sigset_t *);
-int sigorset (sigset_t *, const sigset_t *, const sigset_t *);
-int sigandset(sigset_t *, const sigset_t *, const sigset_t *);
+MUSL_EXPORT typedef void (*sighandler_t)(int);
+MUSL_EXPORT void (*bsd_signal(int, void (*)(int)))(int);
+MUSL_EXPORT int sigisemptyset(const sigset_t *);
+MUSL_EXPORT int sigorset (sigset_t *, const sigset_t *, const sigset_t *);
+MUSL_EXPORT int sigandset(sigset_t *, const sigset_t *, const sigset_t *);
 
 #define SA_NOMASK SA_NODEFER
 #define SA_ONESHOT SA_RESETHAND
@@ -278,8 +278,8 @@ int sigandset(sigset_t *, const sigset_t *, const sigset_t *);
 
 typedef int sig_atomic_t;
 
-void (*signal(int, void (*)(int)))(int);
-int raise(int);
+MUSL_EXPORT void (*signal(int, void (*)(int)))(int);
+MUSL_EXPORT int raise(int);
 
 #if _REDIR_TIME64
 #if defined(_POSIX_SOURCE) || defined(_POSIX_C_SOURCE) \

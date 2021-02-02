@@ -19,8 +19,8 @@ typedef struct {
 	void *__dummy2[5];
 } glob_t;
 
-int  glob(const char *__restrict, int, int (*)(const char *, int), glob_t *__restrict);
-void globfree(glob_t *);
+MUSL_EXPORT int  glob(const char *__restrict, int, int (*)(const char *, int), glob_t *__restrict);
+MUSL_EXPORT void globfree(glob_t *);
 
 #define GLOB_ERR      0x01
 #define GLOB_MARK     0x02

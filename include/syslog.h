@@ -56,16 +56,16 @@ extern "C" {
 #define LOG_NOWAIT 0x10
 #define LOG_PERROR 0x20
 
-void closelog (void);
-void openlog (const char *, int, int);
-int setlogmask (int);
-void syslog (int, const char *, ...);
+MUSL_EXPORT void closelog (void);
+MUSL_EXPORT void openlog (const char *, int, int);
+MUSL_EXPORT int setlogmask (int);
+MUSL_EXPORT void syslog (int, const char *, ...);
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
 #define _PATH_LOG "/dev/log"
 #define __NEED_va_list
 #include <bits/alltypes.h>
-void vsyslog (int, const char *, va_list);
+MUSL_EXPORT void vsyslog (int, const char *, va_list);
 #if defined(SYSLOG_NAMES)
 #define	INTERNAL_NOPRI 0x10
 #define	INTERNAL_MARK (LOG_NFACILITIES<<3)

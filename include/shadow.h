@@ -24,18 +24,18 @@ struct spwd {
 	unsigned long sp_flag;
 };
 
-void setspent(void);
-void endspent(void);
-struct spwd *getspent(void);
-struct spwd *fgetspent(FILE *);
-struct spwd *sgetspent(const char *);
-int putspent(const struct spwd *, FILE *);
+MUSL_EXPORT void setspent(void);
+MUSL_EXPORT void endspent(void);
+MUSL_EXPORT struct spwd *getspent(void);
+MUSL_EXPORT struct spwd *fgetspent(FILE *);
+MUSL_EXPORT struct spwd *sgetspent(const char *);
+MUSL_EXPORT int putspent(const struct spwd *, FILE *);
 
-struct spwd *getspnam(const char *);
-int getspnam_r(const char *, struct spwd *, char *, size_t, struct spwd **);
+MUSL_EXPORT struct spwd *getspnam(const char *);
+MUSL_EXPORT int getspnam_r(const char *, struct spwd *, char *, size_t, struct spwd **);
 
-int lckpwdf(void);
-int ulckpwdf(void);
+MUSL_EXPORT int lckpwdf(void);
+MUSL_EXPORT int ulckpwdf(void);
 
 #ifdef __cplusplus
 }

@@ -67,8 +67,8 @@ struct mmsghdr {
 
 struct timespec;
 
-int sendmmsg (int, struct mmsghdr *, unsigned int, unsigned int);
-int recvmmsg (int, struct mmsghdr *, unsigned int, unsigned int, struct timespec *);
+MUSL_EXPORT int sendmmsg (int, struct mmsghdr *, unsigned int, unsigned int);
+MUSL_EXPORT int recvmmsg (int, struct mmsghdr *, unsigned int, unsigned int, struct timespec *);
 #endif
 
 struct linger {
@@ -375,31 +375,31 @@ struct sockaddr_storage {
 	unsigned long __ss_align;
 };
 
-int socket (int, int, int);
-int socketpair (int, int, int, int [2]);
+MUSL_EXPORT int socket (int, int, int);
+MUSL_EXPORT int socketpair (int, int, int, int [2]);
 
-int shutdown (int, int);
+MUSL_EXPORT int shutdown (int, int);
 
-int bind (int, const struct sockaddr *, socklen_t);
-int connect (int, const struct sockaddr *, socklen_t);
-int listen (int, int);
-int accept (int, struct sockaddr *__restrict, socklen_t *__restrict);
-int accept4(int, struct sockaddr *__restrict, socklen_t *__restrict, int);
+MUSL_EXPORT int bind (int, const struct sockaddr *, socklen_t);
+MUSL_EXPORT int connect (int, const struct sockaddr *, socklen_t);
+MUSL_EXPORT int listen (int, int);
+MUSL_EXPORT int accept (int, struct sockaddr *__restrict, socklen_t *__restrict);
+MUSL_EXPORT int accept4(int, struct sockaddr *__restrict, socklen_t *__restrict, int);
 
-int getsockname (int, struct sockaddr *__restrict, socklen_t *__restrict);
-int getpeername (int, struct sockaddr *__restrict, socklen_t *__restrict);
+MUSL_EXPORT int getsockname (int, struct sockaddr *__restrict, socklen_t *__restrict);
+MUSL_EXPORT int getpeername (int, struct sockaddr *__restrict, socklen_t *__restrict);
 
-ssize_t send (int, const void *, size_t, int);
-ssize_t recv (int, void *, size_t, int);
-ssize_t sendto (int, const void *, size_t, int, const struct sockaddr *, socklen_t);
-ssize_t recvfrom (int, void *__restrict, size_t, int, struct sockaddr *__restrict, socklen_t *__restrict);
-ssize_t sendmsg (int, const struct msghdr *, int);
-ssize_t recvmsg (int, struct msghdr *, int);
+MUSL_EXPORT ssize_t send (int, const void *, size_t, int);
+MUSL_EXPORT ssize_t recv (int, void *, size_t, int);
+MUSL_EXPORT ssize_t sendto (int, const void *, size_t, int, const struct sockaddr *, socklen_t);
+MUSL_EXPORT ssize_t recvfrom (int, void *__restrict, size_t, int, struct sockaddr *__restrict, socklen_t *__restrict);
+MUSL_EXPORT ssize_t sendmsg (int, const struct msghdr *, int);
+MUSL_EXPORT ssize_t recvmsg (int, struct msghdr *, int);
 
-int getsockopt (int, int, int, void *__restrict, socklen_t *__restrict);
-int setsockopt (int, int, int, const void *, socklen_t);
+MUSL_EXPORT int getsockopt (int, int, int, void *__restrict, socklen_t *__restrict);
+MUSL_EXPORT int setsockopt (int, int, int, const void *, socklen_t);
 
-int sockatmark (int);
+MUSL_EXPORT int sockatmark (int);
 
 #if _REDIR_TIME64
 #ifdef _GNU_SOURCE

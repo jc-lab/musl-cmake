@@ -21,20 +21,20 @@ typedef struct __dirstream DIR;
 
 #define d_fileno d_ino
 
-int            closedir(DIR *);
-DIR           *fdopendir(int);
-DIR           *opendir(const char *);
-struct dirent *readdir(DIR *);
-int            readdir_r(DIR *__restrict, struct dirent *__restrict, struct dirent **__restrict);
-void           rewinddir(DIR *);
-int            dirfd(DIR *);
+MUSL_EXPORT int            closedir(DIR *);
+MUSL_EXPORT DIR           *fdopendir(int);
+MUSL_EXPORT DIR           *opendir(const char *);
+MUSL_EXPORT struct dirent *readdir(DIR *);
+MUSL_EXPORT int            readdir_r(DIR *__restrict, struct dirent *__restrict, struct dirent **__restrict);
+MUSL_EXPORT void           rewinddir(DIR *);
+MUSL_EXPORT int            dirfd(DIR *);
 
-int alphasort(const struct dirent **, const struct dirent **);
-int scandir(const char *, struct dirent ***, int (*)(const struct dirent *), int (*)(const struct dirent **, const struct dirent **));
+MUSL_EXPORT int alphasort(const struct dirent **, const struct dirent **);
+MUSL_EXPORT int scandir(const char *, struct dirent ***, int (*)(const struct dirent *), int (*)(const struct dirent **, const struct dirent **));
 
 #if defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
-void           seekdir(DIR *, long);
-long           telldir(DIR *);
+MUSL_EXPORT void           seekdir(DIR *, long);
+MUSL_EXPORT long           telldir(DIR *);
 #endif
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
@@ -49,11 +49,11 @@ long           telldir(DIR *);
 #define DT_WHT 14
 #define IFTODT(x) ((x)>>12 & 017)
 #define DTTOIF(x) ((x)<<12)
-int getdents(int, struct dirent *, size_t);
+MUSL_EXPORT int getdents(int, struct dirent *, size_t);
 #endif
 
 #ifdef _GNU_SOURCE
-int versionsort(const struct dirent **, const struct dirent **);
+MUSL_EXPORT int versionsort(const struct dirent **, const struct dirent **);
 #endif
 
 #if defined(_LARGEFILE64_SOURCE) || defined(_GNU_SOURCE)

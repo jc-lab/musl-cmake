@@ -46,10 +46,10 @@ struct inotify_event {
 #define IN_ISDIR         0x40000000
 #define IN_ONESHOT       0x80000000
 
-int inotify_init(void);
-int inotify_init1(int);
-int inotify_add_watch(int, const char *, uint32_t);
-int inotify_rm_watch(int, int);
+MUSL_EXPORT int inotify_init(void);
+MUSL_EXPORT int inotify_init1(int);
+MUSL_EXPORT int inotify_add_watch(int, const char *, uint32_t);
+MUSL_EXPORT int inotify_rm_watch(int, int);
 
 #ifdef __cplusplus
 }

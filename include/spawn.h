@@ -44,36 +44,36 @@ int posix_spawn(pid_t *__restrict, const char *__restrict, const posix_spawn_fil
 int posix_spawnp(pid_t *__restrict, const char *__restrict, const posix_spawn_file_actions_t *,
 	const posix_spawnattr_t *__restrict, char *const *__restrict, char *const *__restrict);
 
-int posix_spawnattr_init(posix_spawnattr_t *);
-int posix_spawnattr_destroy(posix_spawnattr_t *);
+MUSL_EXPORT int posix_spawnattr_init(posix_spawnattr_t *);
+MUSL_EXPORT int posix_spawnattr_destroy(posix_spawnattr_t *);
 
-int posix_spawnattr_setflags(posix_spawnattr_t *, short);
-int posix_spawnattr_getflags(const posix_spawnattr_t *__restrict, short *__restrict);
+MUSL_EXPORT int posix_spawnattr_setflags(posix_spawnattr_t *, short);
+MUSL_EXPORT int posix_spawnattr_getflags(const posix_spawnattr_t *__restrict, short *__restrict);
 
-int posix_spawnattr_setpgroup(posix_spawnattr_t *, pid_t);
-int posix_spawnattr_getpgroup(const posix_spawnattr_t *__restrict, pid_t *__restrict);
+MUSL_EXPORT int posix_spawnattr_setpgroup(posix_spawnattr_t *, pid_t);
+MUSL_EXPORT int posix_spawnattr_getpgroup(const posix_spawnattr_t *__restrict, pid_t *__restrict);
 
-int posix_spawnattr_setsigmask(posix_spawnattr_t *__restrict, const sigset_t *__restrict);
-int posix_spawnattr_getsigmask(const posix_spawnattr_t *__restrict, sigset_t *__restrict);
+MUSL_EXPORT int posix_spawnattr_setsigmask(posix_spawnattr_t *__restrict, const sigset_t *__restrict);
+MUSL_EXPORT int posix_spawnattr_getsigmask(const posix_spawnattr_t *__restrict, sigset_t *__restrict);
 
-int posix_spawnattr_setsigdefault(posix_spawnattr_t *__restrict, const sigset_t *__restrict);
-int posix_spawnattr_getsigdefault(const posix_spawnattr_t *__restrict, sigset_t *__restrict);
+MUSL_EXPORT int posix_spawnattr_setsigdefault(posix_spawnattr_t *__restrict, const sigset_t *__restrict);
+MUSL_EXPORT int posix_spawnattr_getsigdefault(const posix_spawnattr_t *__restrict, sigset_t *__restrict);
 
-int posix_spawnattr_setschedparam(posix_spawnattr_t *__restrict, const struct sched_param *__restrict);
-int posix_spawnattr_getschedparam(const posix_spawnattr_t *__restrict, struct sched_param *__restrict);
-int posix_spawnattr_setschedpolicy(posix_spawnattr_t *, int);
-int posix_spawnattr_getschedpolicy(const posix_spawnattr_t *__restrict, int *__restrict);
+MUSL_EXPORT int posix_spawnattr_setschedparam(posix_spawnattr_t *__restrict, const struct sched_param *__restrict);
+MUSL_EXPORT int posix_spawnattr_getschedparam(const posix_spawnattr_t *__restrict, struct sched_param *__restrict);
+MUSL_EXPORT int posix_spawnattr_setschedpolicy(posix_spawnattr_t *, int);
+MUSL_EXPORT int posix_spawnattr_getschedpolicy(const posix_spawnattr_t *__restrict, int *__restrict);
 
-int posix_spawn_file_actions_init(posix_spawn_file_actions_t *);
-int posix_spawn_file_actions_destroy(posix_spawn_file_actions_t *);
+MUSL_EXPORT int posix_spawn_file_actions_init(posix_spawn_file_actions_t *);
+MUSL_EXPORT int posix_spawn_file_actions_destroy(posix_spawn_file_actions_t *);
 
-int posix_spawn_file_actions_addopen(posix_spawn_file_actions_t *__restrict, int, const char *__restrict, int, mode_t);
-int posix_spawn_file_actions_addclose(posix_spawn_file_actions_t *, int);
-int posix_spawn_file_actions_adddup2(posix_spawn_file_actions_t *, int, int);
+MUSL_EXPORT int posix_spawn_file_actions_addopen(posix_spawn_file_actions_t *__restrict, int, const char *__restrict, int, mode_t);
+MUSL_EXPORT int posix_spawn_file_actions_addclose(posix_spawn_file_actions_t *, int);
+MUSL_EXPORT int posix_spawn_file_actions_adddup2(posix_spawn_file_actions_t *, int, int);
 
 #if defined(_BSD_SOURCE) || defined(_GNU_SOURCE)
-int posix_spawn_file_actions_addchdir_np(posix_spawn_file_actions_t *__restrict, const char *__restrict);
-int posix_spawn_file_actions_addfchdir_np(posix_spawn_file_actions_t *, int);
+MUSL_EXPORT int posix_spawn_file_actions_addchdir_np(posix_spawn_file_actions_t *__restrict, const char *__restrict);
+MUSL_EXPORT int posix_spawn_file_actions_addfchdir_np(posix_spawn_file_actions_t *, int);
 #endif
 
 #ifdef __cplusplus

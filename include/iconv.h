@@ -13,9 +13,9 @@ extern "C" {
 
 typedef void *iconv_t;
 
-iconv_t iconv_open(const char *, const char *);
-size_t iconv(iconv_t, char **__restrict, size_t *__restrict, char **__restrict, size_t *__restrict);
-int iconv_close(iconv_t);
+MUSL_EXPORT iconv_t iconv_open(const char *, const char *);
+MUSL_EXPORT size_t iconv(iconv_t, char **__restrict, size_t *__restrict, char **__restrict, size_t *__restrict);
+MUSL_EXPORT int iconv_close(iconv_t);
 
 #ifdef __cplusplus
 }

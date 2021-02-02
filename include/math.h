@@ -48,9 +48,9 @@ extern "C" {
 #define FP_FAST_FMAL 1
 #endif
 
-int __fpclassify(double);
-int __fpclassifyf(float);
-int __fpclassifyl(long double);
+MUSL_EXPORT int __fpclassify(double);
+MUSL_EXPORT int __fpclassifyf(float);
+MUSL_EXPORT int __fpclassifyl(long double);
 
 static __inline unsigned __FLOAT_BITS(float __f)
 {
@@ -90,9 +90,9 @@ static __inline unsigned long long __DOUBLE_BITS(double __f)
 	sizeof(x) == sizeof(double) ? (__DOUBLE_BITS(x) & -1ULL>>1) < 0x7ffULL<<52 : \
 	__fpclassifyl(x) > FP_INFINITE)
 
-int __signbit(double);
-int __signbitf(float);
-int __signbitl(long double);
+MUSL_EXPORT int __signbit(double);
+MUSL_EXPORT int __signbitf(float);
+MUSL_EXPORT int __signbitl(long double);
 
 #define signbit(x) ( \
 	sizeof(x) == sizeof(float) ? (int)(__FLOAT_BITS(x)>>31) : \
@@ -132,233 +132,233 @@ __ISREL_DEF(greaterequall, >=, long double)
 #define isgreater(x, y)         __tg_pred_2(x, y, __isgreater)
 #define isgreaterequal(x, y)    __tg_pred_2(x, y, __isgreaterequal)
 
-double      acos(double);
-float       acosf(float);
-long double acosl(long double);
+MUSL_EXPORT double      acos(double);
+MUSL_EXPORT float       acosf(float);
+MUSL_EXPORT long double acosl(long double);
 
-double      acosh(double);
-float       acoshf(float);
-long double acoshl(long double);
+MUSL_EXPORT double      acosh(double);
+MUSL_EXPORT float       acoshf(float);
+MUSL_EXPORT long double acoshl(long double);
 
-double      asin(double);
-float       asinf(float);
-long double asinl(long double);
+MUSL_EXPORT double      asin(double);
+MUSL_EXPORT float       asinf(float);
+MUSL_EXPORT long double asinl(long double);
 
-double      asinh(double);
-float       asinhf(float);
-long double asinhl(long double);
+MUSL_EXPORT double      asinh(double);
+MUSL_EXPORT float       asinhf(float);
+MUSL_EXPORT long double asinhl(long double);
 
-double      atan(double);
-float       atanf(float);
-long double atanl(long double);
+MUSL_EXPORT double      atan(double);
+MUSL_EXPORT float       atanf(float);
+MUSL_EXPORT long double atanl(long double);
 
-double      atan2(double, double);
-float       atan2f(float, float);
-long double atan2l(long double, long double);
+MUSL_EXPORT double      atan2(double, double);
+MUSL_EXPORT float       atan2f(float, float);
+MUSL_EXPORT long double atan2l(long double, long double);
 
-double      atanh(double);
-float       atanhf(float);
-long double atanhl(long double);
+MUSL_EXPORT double      atanh(double);
+MUSL_EXPORT float       atanhf(float);
+MUSL_EXPORT long double atanhl(long double);
 
-double      cbrt(double);
-float       cbrtf(float);
-long double cbrtl(long double);
+MUSL_EXPORT double      cbrt(double);
+MUSL_EXPORT float       cbrtf(float);
+MUSL_EXPORT long double cbrtl(long double);
 
-double      ceil(double);
-float       ceilf(float);
-long double ceill(long double);
+MUSL_EXPORT double      ceil(double);
+MUSL_EXPORT float       ceilf(float);
+MUSL_EXPORT long double ceill(long double);
 
-double      copysign(double, double);
-float       copysignf(float, float);
-long double copysignl(long double, long double);
+MUSL_EXPORT double      copysign(double, double);
+MUSL_EXPORT float       copysignf(float, float);
+MUSL_EXPORT long double copysignl(long double, long double);
 
-double      cos(double);
-float       cosf(float);
-long double cosl(long double);
+MUSL_EXPORT double      cos(double);
+MUSL_EXPORT float       cosf(float);
+MUSL_EXPORT long double cosl(long double);
 
-double      cosh(double);
-float       coshf(float);
-long double coshl(long double);
+MUSL_EXPORT double      cosh(double);
+MUSL_EXPORT float       coshf(float);
+MUSL_EXPORT long double coshl(long double);
 
-double      erf(double);
-float       erff(float);
-long double erfl(long double);
+MUSL_EXPORT double      erf(double);
+MUSL_EXPORT float       erff(float);
+MUSL_EXPORT long double erfl(long double);
 
-double      erfc(double);
-float       erfcf(float);
-long double erfcl(long double);
+MUSL_EXPORT double      erfc(double);
+MUSL_EXPORT float       erfcf(float);
+MUSL_EXPORT long double erfcl(long double);
 
-double      exp(double);
-float       expf(float);
-long double expl(long double);
+MUSL_EXPORT double      exp(double);
+MUSL_EXPORT float       expf(float);
+MUSL_EXPORT long double expl(long double);
 
-double      exp2(double);
-float       exp2f(float);
-long double exp2l(long double);
+MUSL_EXPORT double      exp2(double);
+MUSL_EXPORT float       exp2f(float);
+MUSL_EXPORT long double exp2l(long double);
 
-double      expm1(double);
-float       expm1f(float);
-long double expm1l(long double);
+MUSL_EXPORT double      expm1(double);
+MUSL_EXPORT float       expm1f(float);
+MUSL_EXPORT long double expm1l(long double);
 
-double      fabs(double);
-float       fabsf(float);
-long double fabsl(long double);
+MUSL_EXPORT double      fabs(double);
+MUSL_EXPORT float       fabsf(float);
+MUSL_EXPORT long double fabsl(long double);
 
-double      fdim(double, double);
-float       fdimf(float, float);
-long double fdiml(long double, long double);
+MUSL_EXPORT double      fdim(double, double);
+MUSL_EXPORT float       fdimf(float, float);
+MUSL_EXPORT long double fdiml(long double, long double);
 
-double      floor(double);
-float       floorf(float);
-long double floorl(long double);
+MUSL_EXPORT double      floor(double);
+MUSL_EXPORT float       floorf(float);
+MUSL_EXPORT long double floorl(long double);
 
-double      fma(double, double, double);
-float       fmaf(float, float, float);
-long double fmal(long double, long double, long double);
+MUSL_EXPORT double      fma(double, double, double);
+MUSL_EXPORT float       fmaf(float, float, float);
+MUSL_EXPORT long double fmal(long double, long double, long double);
 
-double      fmax(double, double);
-float       fmaxf(float, float);
-long double fmaxl(long double, long double);
+MUSL_EXPORT double      fmax(double, double);
+MUSL_EXPORT float       fmaxf(float, float);
+MUSL_EXPORT long double fmaxl(long double, long double);
 
-double      fmin(double, double);
-float       fminf(float, float);
-long double fminl(long double, long double);
+MUSL_EXPORT double      fmin(double, double);
+MUSL_EXPORT float       fminf(float, float);
+MUSL_EXPORT long double fminl(long double, long double);
 
-double      fmod(double, double);
-float       fmodf(float, float);
-long double fmodl(long double, long double);
+MUSL_EXPORT double      fmod(double, double);
+MUSL_EXPORT float       fmodf(float, float);
+MUSL_EXPORT long double fmodl(long double, long double);
 
-double      frexp(double, int *);
-float       frexpf(float, int *);
-long double frexpl(long double, int *);
+MUSL_EXPORT double      frexp(double, int *);
+MUSL_EXPORT float       frexpf(float, int *);
+MUSL_EXPORT long double frexpl(long double, int *);
 
-double      hypot(double, double);
-float       hypotf(float, float);
-long double hypotl(long double, long double);
+MUSL_EXPORT double      hypot(double, double);
+MUSL_EXPORT float       hypotf(float, float);
+MUSL_EXPORT long double hypotl(long double, long double);
 
-int         ilogb(double);
-int         ilogbf(float);
-int         ilogbl(long double);
+MUSL_EXPORT int         ilogb(double);
+MUSL_EXPORT int         ilogbf(float);
+MUSL_EXPORT int         ilogbl(long double);
 
-double      ldexp(double, int);
-float       ldexpf(float, int);
-long double ldexpl(long double, int);
+MUSL_EXPORT double      ldexp(double, int);
+MUSL_EXPORT float       ldexpf(float, int);
+MUSL_EXPORT long double ldexpl(long double, int);
 
-double      lgamma(double);
-float       lgammaf(float);
-long double lgammal(long double);
+MUSL_EXPORT double      lgamma(double);
+MUSL_EXPORT float       lgammaf(float);
+MUSL_EXPORT long double lgammal(long double);
 
-long long   llrint(double);
-long long   llrintf(float);
-long long   llrintl(long double);
+MUSL_EXPORT long long   llrint(double);
+MUSL_EXPORT long long   llrintf(float);
+MUSL_EXPORT long long   llrintl(long double);
 
-long long   llround(double);
-long long   llroundf(float);
-long long   llroundl(long double);
+MUSL_EXPORT long long   llround(double);
+MUSL_EXPORT long long   llroundf(float);
+MUSL_EXPORT long long   llroundl(long double);
 
-double      log(double);
-float       logf(float);
-long double logl(long double);
+MUSL_EXPORT double      log(double);
+MUSL_EXPORT float       logf(float);
+MUSL_EXPORT long double logl(long double);
 
-double      log10(double);
-float       log10f(float);
-long double log10l(long double);
+MUSL_EXPORT double      log10(double);
+MUSL_EXPORT float       log10f(float);
+MUSL_EXPORT long double log10l(long double);
 
-double      log1p(double);
-float       log1pf(float);
-long double log1pl(long double);
+MUSL_EXPORT double      log1p(double);
+MUSL_EXPORT float       log1pf(float);
+MUSL_EXPORT long double log1pl(long double);
 
-double      log2(double);
-float       log2f(float);
-long double log2l(long double);
+MUSL_EXPORT double      log2(double);
+MUSL_EXPORT float       log2f(float);
+MUSL_EXPORT long double log2l(long double);
 
-double      logb(double);
-float       logbf(float);
-long double logbl(long double);
+MUSL_EXPORT double      logb(double);
+MUSL_EXPORT float       logbf(float);
+MUSL_EXPORT long double logbl(long double);
 
-long        lrint(double);
-long        lrintf(float);
-long        lrintl(long double);
+MUSL_EXPORT long        lrint(double);
+MUSL_EXPORT long        lrintf(float);
+MUSL_EXPORT long        lrintl(long double);
 
-long        lround(double);
-long        lroundf(float);
-long        lroundl(long double);
+MUSL_EXPORT long        lround(double);
+MUSL_EXPORT long        lroundf(float);
+MUSL_EXPORT long        lroundl(long double);
 
-double      modf(double, double *);
-float       modff(float, float *);
-long double modfl(long double, long double *);
+MUSL_EXPORT double      modf(double, double *);
+MUSL_EXPORT float       modff(float, float *);
+MUSL_EXPORT long double modfl(long double, long double *);
 
-double      nan(const char *);
-float       nanf(const char *);
-long double nanl(const char *);
+MUSL_EXPORT double      nan(const char *);
+MUSL_EXPORT float       nanf(const char *);
+MUSL_EXPORT long double nanl(const char *);
 
-double      nearbyint(double);
-float       nearbyintf(float);
-long double nearbyintl(long double);
+MUSL_EXPORT double      nearbyint(double);
+MUSL_EXPORT float       nearbyintf(float);
+MUSL_EXPORT long double nearbyintl(long double);
 
-double      nextafter(double, double);
-float       nextafterf(float, float);
-long double nextafterl(long double, long double);
+MUSL_EXPORT double      nextafter(double, double);
+MUSL_EXPORT float       nextafterf(float, float);
+MUSL_EXPORT long double nextafterl(long double, long double);
 
-double      nexttoward(double, long double);
-float       nexttowardf(float, long double);
-long double nexttowardl(long double, long double);
+MUSL_EXPORT double      nexttoward(double, long double);
+MUSL_EXPORT float       nexttowardf(float, long double);
+MUSL_EXPORT long double nexttowardl(long double, long double);
 
-double      pow(double, double);
-float       powf(float, float);
-long double powl(long double, long double);
+MUSL_EXPORT double      pow(double, double);
+MUSL_EXPORT float       powf(float, float);
+MUSL_EXPORT long double powl(long double, long double);
 
-double      remainder(double, double);
-float       remainderf(float, float);
-long double remainderl(long double, long double);
+MUSL_EXPORT double      remainder(double, double);
+MUSL_EXPORT float       remainderf(float, float);
+MUSL_EXPORT long double remainderl(long double, long double);
 
-double      remquo(double, double, int *);
-float       remquof(float, float, int *);
-long double remquol(long double, long double, int *);
+MUSL_EXPORT double      remquo(double, double, int *);
+MUSL_EXPORT float       remquof(float, float, int *);
+MUSL_EXPORT long double remquol(long double, long double, int *);
 
-double      rint(double);
-float       rintf(float);
-long double rintl(long double);
+MUSL_EXPORT double      rint(double);
+MUSL_EXPORT float       rintf(float);
+MUSL_EXPORT long double rintl(long double);
 
-double      round(double);
-float       roundf(float);
-long double roundl(long double);
+MUSL_EXPORT double      round(double);
+MUSL_EXPORT float       roundf(float);
+MUSL_EXPORT long double roundl(long double);
 
-double      scalbln(double, long);
-float       scalblnf(float, long);
-long double scalblnl(long double, long);
+MUSL_EXPORT double      scalbln(double, long);
+MUSL_EXPORT float       scalblnf(float, long);
+MUSL_EXPORT long double scalblnl(long double, long);
 
-double      scalbn(double, int);
-float       scalbnf(float, int);
-long double scalbnl(long double, int);
+MUSL_EXPORT double      scalbn(double, int);
+MUSL_EXPORT float       scalbnf(float, int);
+MUSL_EXPORT long double scalbnl(long double, int);
 
-double      sin(double);
-float       sinf(float);
-long double sinl(long double);
+MUSL_EXPORT double      sin(double);
+MUSL_EXPORT float       sinf(float);
+MUSL_EXPORT long double sinl(long double);
 
-double      sinh(double);
-float       sinhf(float);
-long double sinhl(long double);
+MUSL_EXPORT double      sinh(double);
+MUSL_EXPORT float       sinhf(float);
+MUSL_EXPORT long double sinhl(long double);
 
-double      sqrt(double);
-float       sqrtf(float);
-long double sqrtl(long double);
+MUSL_EXPORT double      sqrt(double);
+MUSL_EXPORT float       sqrtf(float);
+MUSL_EXPORT long double sqrtl(long double);
 
-double      tan(double);
-float       tanf(float);
-long double tanl(long double);
+MUSL_EXPORT double      tan(double);
+MUSL_EXPORT float       tanf(float);
+MUSL_EXPORT long double tanl(long double);
 
-double      tanh(double);
-float       tanhf(float);
-long double tanhl(long double);
+MUSL_EXPORT double      tanh(double);
+MUSL_EXPORT float       tanhf(float);
+MUSL_EXPORT long double tanhl(long double);
 
-double      tgamma(double);
-float       tgammaf(float);
-long double tgammal(long double);
+MUSL_EXPORT double      tgamma(double);
+MUSL_EXPORT float       tgammaf(float);
+MUSL_EXPORT long double tgammal(long double);
 
-double      trunc(double);
-float       truncf(float);
-long double truncl(long double);
+MUSL_EXPORT double      trunc(double);
+MUSL_EXPORT float       truncf(float);
+MUSL_EXPORT long double truncl(long double);
 
 
 #if defined(_XOPEN_SOURCE) || defined(_BSD_SOURCE)
@@ -383,56 +383,56 @@ long double truncl(long double);
 
 extern int signgam;
 
-double      j0(double);
-double      j1(double);
-double      jn(int, double);
+MUSL_EXPORT double      j0(double);
+MUSL_EXPORT double      j1(double);
+MUSL_EXPORT double      jn(int, double);
 
-double      y0(double);
-double      y1(double);
-double      yn(int, double);
+MUSL_EXPORT double      y0(double);
+MUSL_EXPORT double      y1(double);
+MUSL_EXPORT double      yn(int, double);
 #endif
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
 #define HUGE            3.40282346638528859812e+38F
 
-double      drem(double, double);
-float       dremf(float, float);
+MUSL_EXPORT double      drem(double, double);
+MUSL_EXPORT float       dremf(float, float);
 
-int         finite(double);
-int         finitef(float);
+MUSL_EXPORT int         finite(double);
+MUSL_EXPORT int         finitef(float);
 
-double      scalb(double, double);
-float       scalbf(float, float);
+MUSL_EXPORT double      scalb(double, double);
+MUSL_EXPORT float       scalbf(float, float);
 
-double      significand(double);
-float       significandf(float);
+MUSL_EXPORT double      significand(double);
+MUSL_EXPORT float       significandf(float);
 
-double      lgamma_r(double, int*);
-float       lgammaf_r(float, int*);
+MUSL_EXPORT double      lgamma_r(double, int*);
+MUSL_EXPORT float       lgammaf_r(float, int*);
 
-float       j0f(float);
-float       j1f(float);
-float       jnf(int, float);
+MUSL_EXPORT float       j0f(float);
+MUSL_EXPORT float       j1f(float);
+MUSL_EXPORT float       jnf(int, float);
 
-float       y0f(float);
-float       y1f(float);
-float       ynf(int, float);
+MUSL_EXPORT float       y0f(float);
+MUSL_EXPORT float       y1f(float);
+MUSL_EXPORT float       ynf(int, float);
 #endif
 
 #ifdef _GNU_SOURCE
-long double lgammal_r(long double, int*);
+MUSL_EXPORT long double lgammal_r(long double, int*);
 
-void        sincos(double, double*, double*);
-void        sincosf(float, float*, float*);
-void        sincosl(long double, long double*, long double*);
+MUSL_EXPORT void        sincos(double, double*, double*);
+MUSL_EXPORT void        sincosf(float, float*, float*);
+MUSL_EXPORT void        sincosl(long double, long double*, long double*);
 
-double      exp10(double);
-float       exp10f(float);
-long double exp10l(long double);
+MUSL_EXPORT double      exp10(double);
+MUSL_EXPORT float       exp10f(float);
+MUSL_EXPORT long double exp10l(long double);
 
-double      pow10(double);
-float       pow10f(float);
-long double pow10l(long double);
+MUSL_EXPORT double      pow10(double);
+MUSL_EXPORT float       pow10f(float);
+MUSL_EXPORT long double pow10l(long double);
 #endif
 
 #ifdef __cplusplus

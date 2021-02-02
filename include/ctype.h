@@ -7,20 +7,20 @@ extern "C" {
 
 #include <features.h>
 
-int   isalnum(int);
-int   isalpha(int);
-int   isblank(int);
-int   iscntrl(int);
-int   isdigit(int);
-int   isgraph(int);
-int   islower(int);
-int   isprint(int);
-int   ispunct(int);
-int   isspace(int);
-int   isupper(int);
-int   isxdigit(int);
-int   tolower(int);
-int   toupper(int);
+MUSL_EXPORT int   isalnum(int);
+MUSL_EXPORT int   isalpha(int);
+MUSL_EXPORT int   isblank(int);
+MUSL_EXPORT int   iscntrl(int);
+MUSL_EXPORT int   isdigit(int);
+MUSL_EXPORT int   isgraph(int);
+MUSL_EXPORT int   islower(int);
+MUSL_EXPORT int   isprint(int);
+MUSL_EXPORT int   ispunct(int);
+MUSL_EXPORT int   isspace(int);
+MUSL_EXPORT int   isupper(int);
+MUSL_EXPORT int   isxdigit(int);
+MUSL_EXPORT int   tolower(int);
+MUSL_EXPORT int   toupper(int);
 
 #ifndef __cplusplus
 static __inline int __isspace(int _c)
@@ -45,23 +45,23 @@ static __inline int __isspace(int _c)
 #define __NEED_locale_t
 #include <bits/alltypes.h>
 
-int   isalnum_l(int, locale_t);
-int   isalpha_l(int, locale_t);
-int   isblank_l(int, locale_t);
-int   iscntrl_l(int, locale_t);
-int   isdigit_l(int, locale_t);
-int   isgraph_l(int, locale_t);
-int   islower_l(int, locale_t);
-int   isprint_l(int, locale_t);
-int   ispunct_l(int, locale_t);
-int   isspace_l(int, locale_t);
-int   isupper_l(int, locale_t);
-int   isxdigit_l(int, locale_t);
-int   tolower_l(int, locale_t);
-int   toupper_l(int, locale_t);
+MUSL_EXPORT int   isalnum_l(int, locale_t);
+MUSL_EXPORT int   isalpha_l(int, locale_t);
+MUSL_EXPORT int   isblank_l(int, locale_t);
+MUSL_EXPORT int   iscntrl_l(int, locale_t);
+MUSL_EXPORT int   isdigit_l(int, locale_t);
+MUSL_EXPORT int   isgraph_l(int, locale_t);
+MUSL_EXPORT int   islower_l(int, locale_t);
+MUSL_EXPORT int   isprint_l(int, locale_t);
+MUSL_EXPORT int   ispunct_l(int, locale_t);
+MUSL_EXPORT int   isspace_l(int, locale_t);
+MUSL_EXPORT int   isupper_l(int, locale_t);
+MUSL_EXPORT int   isxdigit_l(int, locale_t);
+MUSL_EXPORT int   tolower_l(int, locale_t);
+MUSL_EXPORT int   toupper_l(int, locale_t);
 
-int   isascii(int);
-int   toascii(int);
+MUSL_EXPORT int   isascii(int);
+MUSL_EXPORT int   toascii(int);
 #define _tolower(a) ((a)|0x20)
 #define _toupper(a) ((a)&0x5f)
 #define isascii(a) (0 ? isascii(a) : (unsigned)(a) < 128)

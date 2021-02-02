@@ -15,8 +15,8 @@ typedef struct __fsid_t {
 
 #include <bits/statfs.h>
 
-int statfs (const char *, struct statfs *);
-int fstatfs (int, struct statfs *);
+MUSL_EXPORT int statfs (const char *, struct statfs *);
+MUSL_EXPORT int fstatfs (int, struct statfs *);
 
 #if defined(_LARGEFILE64_SOURCE) || defined(_GNU_SOURCE)
 #define statfs64 statfs

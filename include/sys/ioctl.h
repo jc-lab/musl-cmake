@@ -112,7 +112,7 @@ extern "C" {
 #define SIOCDEVPRIVATE     0x89F0
 #define SIOCPROTOPRIVATE   0x89E0
 
-int ioctl (int, int, ...);
+MUSL_EXPORT int ioctl (int, int, ...);
 
 #ifdef __cplusplus
 }

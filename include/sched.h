@@ -30,14 +30,14 @@ struct sched_param {
 	int __reserved3;
 };
 
-int    sched_get_priority_max(int);
-int    sched_get_priority_min(int);
-int    sched_getparam(pid_t, struct sched_param *);
-int    sched_getscheduler(pid_t);
-int    sched_rr_get_interval(pid_t, struct timespec *);
-int    sched_setparam(pid_t, const struct sched_param *);
-int    sched_setscheduler(pid_t, int, const struct sched_param *);
-int     sched_yield(void);
+MUSL_EXPORT int    sched_get_priority_max(int);
+MUSL_EXPORT int    sched_get_priority_min(int);
+MUSL_EXPORT int    sched_getparam(pid_t, struct sched_param *);
+MUSL_EXPORT int    sched_getscheduler(pid_t);
+MUSL_EXPORT int    sched_rr_get_interval(pid_t, struct timespec *);
+MUSL_EXPORT int    sched_setparam(pid_t, const struct sched_param *);
+MUSL_EXPORT int    sched_setscheduler(pid_t, int, const struct sched_param *);
+MUSL_EXPORT int     sched_yield(void);
 
 #define SCHED_OTHER 0
 #define SCHED_FIFO 1
@@ -74,21 +74,21 @@ int     sched_yield(void);
 #define CLONE_NEWPID	0x20000000
 #define CLONE_NEWNET	0x40000000
 #define CLONE_IO	0x80000000
-int clone (int (*)(void *), void *, int, void *, ...);
-int unshare(int);
-int setns(int, int);
+MUSL_EXPORT int clone (int (*)(void *), void *, int, void *, ...);
+MUSL_EXPORT int unshare(int);
+MUSL_EXPORT int setns(int, int);
 
-void *memcpy(void *__restrict, const void *__restrict, size_t);
-int memcmp(const void *, const void *, size_t);
-void *memset (void *, int, size_t);
-void *calloc(size_t, size_t);
-void free(void *);
+MUSL_EXPORT void *memcpy(void *__restrict, const void *__restrict, size_t);
+MUSL_EXPORT int memcmp(const void *, const void *, size_t);
+MUSL_EXPORT void *memset (void *, int, size_t);
+MUSL_EXPORT void *calloc(size_t, size_t);
+MUSL_EXPORT void free(void *);
 
-typedef struct cpu_set_t { unsigned long __bits[128/sizeof(long)]; } cpu_set_t;
-int __sched_cpucount(size_t, const cpu_set_t *);
-int sched_getcpu(void);
-int sched_getaffinity(pid_t, size_t, cpu_set_t *);
-int sched_setaffinity(pid_t, size_t, const cpu_set_t *);
+MUSL_EXPORT typedef struct cpu_set_t { unsigned long __bits[128/sizeof(long)]; } cpu_set_t;
+MUSL_EXPORT int __sched_cpucount(size_t, const cpu_set_t *);
+MUSL_EXPORT int sched_getcpu(void);
+MUSL_EXPORT int sched_getaffinity(pid_t, size_t, cpu_set_t *);
+MUSL_EXPORT int sched_setaffinity(pid_t, size_t, const cpu_set_t *);
 
 #define __CPU_op_S(i, size, set, op) ( (i)/8U >= (size) ? 0 : \
 	(((unsigned long *)(set))[(i)/8/sizeof(long)] op (1UL<<((i)%(8*sizeof(long))))) )

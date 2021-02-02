@@ -8,7 +8,7 @@ extern "C" {
 
 #include <sys/select.h>
 
-int gettimeofday (struct timeval *__restrict, void *__restrict);
+MUSL_EXPORT int gettimeofday (struct timeval *__restrict, void *__restrict);
 
 #define ITIMER_REAL    0
 #define ITIMER_VIRTUAL 1
@@ -19,20 +19,20 @@ struct itimerval {
 	struct timeval it_value;
 };
 
-int getitimer (int, struct itimerval *);
-int setitimer (int, const struct itimerval *__restrict, struct itimerval *__restrict);
-int utimes (const char *, const struct timeval [2]);
+MUSL_EXPORT int getitimer (int, struct itimerval *);
+MUSL_EXPORT int setitimer (int, const struct itimerval *__restrict, struct itimerval *__restrict);
+MUSL_EXPORT int utimes (const char *, const struct timeval [2]);
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
 struct timezone {
 	int tz_minuteswest;
 	int tz_dsttime;
 };
-int futimes(int, const struct timeval [2]);
-int futimesat(int, const char *, const struct timeval [2]);
-int lutimes(const char *, const struct timeval [2]);
-int settimeofday(const struct timeval *, const struct timezone *);
-int adjtime (const struct timeval *, struct timeval *);
+MUSL_EXPORT int futimes(int, const struct timeval [2]);
+MUSL_EXPORT int futimesat(int, const char *, const struct timeval [2]);
+MUSL_EXPORT int lutimes(const char *, const struct timeval [2]);
+MUSL_EXPORT int settimeofday(const struct timeval *, const struct timezone *);
+MUSL_EXPORT int adjtime (const struct timeval *, struct timeval *);
 #define timerisset(t) ((t)->tv_sec || (t)->tv_usec)
 #define timerclear(t) ((t)->tv_sec = (t)->tv_usec = 0)
 #define timercmp(s,t,op) ((s)->tv_sec == (t)->tv_sec ? \

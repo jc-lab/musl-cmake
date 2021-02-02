@@ -93,7 +93,7 @@ struct dqinfo {
 	uint32_t dqi_valid;
 };
 
-int quotactl(int, const char *, int, char *);
+MUSL_EXPORT int quotactl(int, const char *, int, char *);
 
 #ifdef __cplusplus
 }

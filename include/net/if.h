@@ -14,10 +14,10 @@ struct if_nameindex {
 	char *if_name;
 };
 
-unsigned int if_nametoindex (const char *);
-char *if_indextoname (unsigned int, char *);
-struct if_nameindex *if_nameindex (void);
-void if_freenameindex (struct if_nameindex *);
+MUSL_EXPORT unsigned int if_nametoindex (const char *);
+MUSL_EXPORT char *if_indextoname (unsigned int, char *);
+MUSL_EXPORT struct if_nameindex *if_nameindex (void);
+MUSL_EXPORT void if_freenameindex (struct if_nameindex *);
 
 
 

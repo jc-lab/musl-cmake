@@ -23,11 +23,11 @@ struct sysinfo {
 	char __reserved[256];
 };
 
-int sysinfo (struct sysinfo *);
-int get_nprocs_conf (void);
-int get_nprocs (void);
-long get_phys_pages (void);
-long get_avphys_pages (void);
+MUSL_EXPORT int sysinfo (struct sysinfo *);
+MUSL_EXPORT int get_nprocs_conf (void);
+MUSL_EXPORT int get_nprocs (void);
+MUSL_EXPORT long get_phys_pages (void);
+MUSL_EXPORT long get_avphys_pages (void);
 
 #ifdef __cplusplus
 }

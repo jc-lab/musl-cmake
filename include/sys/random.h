@@ -12,7 +12,7 @@ extern "C" {
 #define GRND_RANDOM	0x0002
 #define GRND_INSECURE	0x0004
 
-ssize_t getrandom(void *, size_t, unsigned);
+MUSL_EXPORT ssize_t getrandom(void *, size_t, unsigned);
 
 #ifdef __cplusplus
 }

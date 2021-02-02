@@ -31,8 +31,8 @@ typedef struct {
 #define WRDE_CMDSUB  4
 #define WRDE_SYNTAX  5
 
-int wordexp (const char *__restrict, wordexp_t *__restrict, int);
-void wordfree (wordexp_t *);
+MUSL_EXPORT int wordexp (const char *__restrict, wordexp_t *__restrict, int);
+MUSL_EXPORT void wordfree (wordexp_t *);
 
 #ifdef __cplusplus
 }

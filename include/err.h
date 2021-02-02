@@ -8,10 +8,10 @@
 extern "C" {
 #endif
 
-void warn(const char *, ...);
-void vwarn(const char *, va_list);
-void warnx(const char *, ...);
-void vwarnx(const char *, va_list);
+MUSL_EXPORT void warn(const char *, ...);
+MUSL_EXPORT void vwarn(const char *, va_list);
+MUSL_EXPORT void warnx(const char *, ...);
+MUSL_EXPORT void vwarnx(const char *, va_list);
 
 _Noreturn void err(int, const char *, ...);
 _Noreturn void verr(int, const char *, va_list);

@@ -29,12 +29,12 @@ struct mntent {
 	int mnt_passno;
 };
 
-FILE *setmntent(const char *, const char *);
-int endmntent(FILE *);
-struct mntent *getmntent(FILE *);
-struct mntent *getmntent_r(FILE *, struct mntent *, char *, int);
-int addmntent(FILE *, const struct mntent *);
-char *hasmntopt(const struct mntent *, const char *);
+MUSL_EXPORT FILE *setmntent(const char *, const char *);
+MUSL_EXPORT int endmntent(FILE *);
+MUSL_EXPORT struct mntent *getmntent(FILE *);
+MUSL_EXPORT struct mntent *getmntent_r(FILE *, struct mntent *, char *, int);
+MUSL_EXPORT int addmntent(FILE *, const struct mntent *);
+MUSL_EXPORT char *hasmntopt(const struct mntent *, const char *);
 
 #ifdef __cplusplus
 }

@@ -13,7 +13,7 @@ extern "C" {
 #define L_INCR 1
 #define L_XTND 2
 
-int flock(int, int);
+MUSL_EXPORT int flock(int, int);
 
 #ifdef __cplusplus
 }

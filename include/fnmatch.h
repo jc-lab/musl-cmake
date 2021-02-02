@@ -15,7 +15,7 @@ extern "C" {
 #define	FNM_NOMATCH 1
 #define FNM_NOSYS   (-1)
 
-int fnmatch(const char *, const char *, int);
+MUSL_EXPORT int fnmatch(const char *, const char *, int);
 
 #ifdef __cplusplus
 }

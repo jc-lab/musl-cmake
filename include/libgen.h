@@ -5,8 +5,8 @@
 extern "C" {
 #endif
 
-char *dirname(char *);
-char *basename(char *);
+MUSL_EXPORT char *dirname(char *);
+MUSL_EXPORT char *basename(char *);
 
 #ifdef __cplusplus
 }

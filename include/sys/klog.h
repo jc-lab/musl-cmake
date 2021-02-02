@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-int klogctl (int, char *, int);
+MUSL_EXPORT int klogctl (int, char *, int);
 
 #ifdef __cplusplus
 }

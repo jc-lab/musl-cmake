@@ -8,7 +8,7 @@ extern "C" {
 #include <elf.h>
 #include <bits/hwcap.h>
 
-unsigned long getauxval(unsigned long);
+MUSL_EXPORT unsigned long getauxval(unsigned long);
 
 #ifdef __cplusplus
 }

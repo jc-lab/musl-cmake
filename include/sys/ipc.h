@@ -34,7 +34,7 @@ extern "C" {
 
 #define IPC_PRIVATE ((key_t) 0)
 
-key_t ftok (const char *, int);
+MUSL_EXPORT key_t ftok (const char *, int);
 
 #ifdef __cplusplus
 }

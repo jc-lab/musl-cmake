@@ -130,7 +130,7 @@ struct __ptrace_syscall_info {
 	};
 };
 
-long ptrace(int, ...);
+MUSL_EXPORT long ptrace(int, ...);
 
 #ifdef __cplusplus
 }

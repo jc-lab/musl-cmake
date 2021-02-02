@@ -16,7 +16,7 @@ struct utimbuf {
 	time_t modtime;
 };
 
-int utime (const char *, const struct utimbuf *);
+MUSL_EXPORT int utime (const char *, const struct utimbuf *);
 
 #if _REDIR_TIME64
 __REDIR(utime, __utime64);

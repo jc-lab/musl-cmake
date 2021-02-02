@@ -26,8 +26,8 @@ struct statvfs {
 	int __reserved[6];
 };
 
-int statvfs (const char *__restrict, struct statvfs *__restrict);
-int fstatvfs (int, struct statvfs *);
+MUSL_EXPORT int statvfs (const char *__restrict, struct statvfs *__restrict);
+MUSL_EXPORT int fstatvfs (int, struct statvfs *);
 
 #define ST_RDONLY 1
 #define ST_NOSUID 2

@@ -8,7 +8,7 @@ extern "C" {
 #define UL_GETFSIZE 1
 #define UL_SETFSIZE 2
 
-long ulimit (int, ...);
+MUSL_EXPORT long ulimit (int, ...);
 
 #ifdef __cplusplus
 }

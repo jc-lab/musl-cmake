@@ -32,166 +32,166 @@ extern "C" {
 
 #include <bits/alltypes.h>
 
-int pipe(int [2]);
-int pipe2(int [2], int);
-int close(int);
-int posix_close(int, int);
-int dup(int);
-int dup2(int, int);
-int dup3(int, int, int);
-off_t lseek(int, off_t, int);
-int fsync(int);
-int fdatasync(int);
+MUSL_EXPORT int pipe(int [2]);
+MUSL_EXPORT int pipe2(int [2], int);
+MUSL_EXPORT int close(int);
+MUSL_EXPORT int posix_close(int, int);
+MUSL_EXPORT int dup(int);
+MUSL_EXPORT int dup2(int, int);
+MUSL_EXPORT int dup3(int, int, int);
+MUSL_EXPORT off_t lseek(int, off_t, int);
+MUSL_EXPORT int fsync(int);
+MUSL_EXPORT int fdatasync(int);
 
-ssize_t read(int, void *, size_t);
-ssize_t write(int, const void *, size_t);
-ssize_t pread(int, void *, size_t, off_t);
-ssize_t pwrite(int, const void *, size_t, off_t);
+MUSL_EXPORT ssize_t read(int, void *, size_t);
+MUSL_EXPORT ssize_t write(int, const void *, size_t);
+MUSL_EXPORT ssize_t pread(int, void *, size_t, off_t);
+MUSL_EXPORT ssize_t pwrite(int, const void *, size_t, off_t);
 
-int chown(const char *, uid_t, gid_t);
-int fchown(int, uid_t, gid_t);
-int lchown(const char *, uid_t, gid_t);
-int fchownat(int, const char *, uid_t, gid_t, int);
+MUSL_EXPORT int chown(const char *, uid_t, gid_t);
+MUSL_EXPORT int fchown(int, uid_t, gid_t);
+MUSL_EXPORT int lchown(const char *, uid_t, gid_t);
+MUSL_EXPORT int fchownat(int, const char *, uid_t, gid_t, int);
 
-int link(const char *, const char *);
-int linkat(int, const char *, int, const char *, int);
-int symlink(const char *, const char *);
-int symlinkat(const char *, int, const char *);
-ssize_t readlink(const char *__restrict, char *__restrict, size_t);
-ssize_t readlinkat(int, const char *__restrict, char *__restrict, size_t);
-int unlink(const char *);
-int unlinkat(int, const char *, int);
-int rmdir(const char *);
-int truncate(const char *, off_t);
-int ftruncate(int, off_t);
+MUSL_EXPORT int link(const char *, const char *);
+MUSL_EXPORT int linkat(int, const char *, int, const char *, int);
+MUSL_EXPORT int symlink(const char *, const char *);
+MUSL_EXPORT int symlinkat(const char *, int, const char *);
+MUSL_EXPORT ssize_t readlink(const char *__restrict, char *__restrict, size_t);
+MUSL_EXPORT ssize_t readlinkat(int, const char *__restrict, char *__restrict, size_t);
+MUSL_EXPORT int unlink(const char *);
+MUSL_EXPORT int unlinkat(int, const char *, int);
+MUSL_EXPORT int rmdir(const char *);
+MUSL_EXPORT int truncate(const char *, off_t);
+MUSL_EXPORT int ftruncate(int, off_t);
 
 #define F_OK 0
 #define R_OK 4
 #define W_OK 2
 #define X_OK 1
 
-int access(const char *, int);
-int faccessat(int, const char *, int, int);
+MUSL_EXPORT int access(const char *, int);
+MUSL_EXPORT int faccessat(int, const char *, int, int);
 
-int chdir(const char *);
-int fchdir(int);
-char *getcwd(char *, size_t);
+MUSL_EXPORT int chdir(const char *);
+MUSL_EXPORT int fchdir(int);
+MUSL_EXPORT char *getcwd(char *, size_t);
 
-unsigned alarm(unsigned);
-unsigned sleep(unsigned);
-int pause(void);
+MUSL_EXPORT unsigned alarm(unsigned);
+MUSL_EXPORT unsigned sleep(unsigned);
+MUSL_EXPORT int pause(void);
 
-pid_t fork(void);
-pid_t _Fork(void);
-int execve(const char *, char *const [], char *const []);
-int execv(const char *, char *const []);
-int execle(const char *, const char *, ...);
-int execl(const char *, const char *, ...);
-int execvp(const char *, char *const []);
-int execlp(const char *, const char *, ...);
-int fexecve(int, char *const [], char *const []);
+MUSL_EXPORT pid_t fork(void);
+MUSL_EXPORT pid_t _Fork(void);
+MUSL_EXPORT int execve(const char *, char *const [], char *const []);
+MUSL_EXPORT int execv(const char *, char *const []);
+MUSL_EXPORT int execle(const char *, const char *, ...);
+MUSL_EXPORT int execl(const char *, const char *, ...);
+MUSL_EXPORT int execvp(const char *, char *const []);
+MUSL_EXPORT int execlp(const char *, const char *, ...);
+MUSL_EXPORT int fexecve(int, char *const [], char *const []);
 _Noreturn void _exit(int);
 
-pid_t getpid(void);
-pid_t getppid(void);
-pid_t getpgrp(void);
-pid_t getpgid(pid_t);
-int setpgid(pid_t, pid_t);
-pid_t setsid(void);
-pid_t getsid(pid_t);
-char *ttyname(int);
-int ttyname_r(int, char *, size_t);
-int isatty(int);
-pid_t tcgetpgrp(int);
-int tcsetpgrp(int, pid_t);
+MUSL_EXPORT pid_t getpid(void);
+MUSL_EXPORT pid_t getppid(void);
+MUSL_EXPORT pid_t getpgrp(void);
+MUSL_EXPORT pid_t getpgid(pid_t);
+MUSL_EXPORT int setpgid(pid_t, pid_t);
+MUSL_EXPORT pid_t setsid(void);
+MUSL_EXPORT pid_t getsid(pid_t);
+MUSL_EXPORT char *ttyname(int);
+MUSL_EXPORT int ttyname_r(int, char *, size_t);
+MUSL_EXPORT int isatty(int);
+MUSL_EXPORT pid_t tcgetpgrp(int);
+MUSL_EXPORT int tcsetpgrp(int, pid_t);
 
-uid_t getuid(void);
-uid_t geteuid(void);
-gid_t getgid(void);
-gid_t getegid(void);
-int getgroups(int, gid_t []);
-int setuid(uid_t);
-int seteuid(uid_t);
-int setgid(gid_t);
-int setegid(gid_t);
+MUSL_EXPORT uid_t getuid(void);
+MUSL_EXPORT uid_t geteuid(void);
+MUSL_EXPORT gid_t getgid(void);
+MUSL_EXPORT gid_t getegid(void);
+MUSL_EXPORT int getgroups(int, gid_t []);
+MUSL_EXPORT int setuid(uid_t);
+MUSL_EXPORT int seteuid(uid_t);
+MUSL_EXPORT int setgid(gid_t);
+MUSL_EXPORT int setegid(gid_t);
 
-char *getlogin(void);
-int getlogin_r(char *, size_t);
-int gethostname(char *, size_t);
-char *ctermid(char *);
+MUSL_EXPORT char *getlogin(void);
+MUSL_EXPORT int getlogin_r(char *, size_t);
+MUSL_EXPORT int gethostname(char *, size_t);
+MUSL_EXPORT char *ctermid(char *);
 
-int getopt(int, char * const [], const char *);
+MUSL_EXPORT int getopt(int, char * const [], const char *);
 extern char *optarg;
 extern int optind, opterr, optopt;
 
-long pathconf(const char *, int);
-long fpathconf(int, int);
-long sysconf(int);
-size_t confstr(int, char *, size_t);
+MUSL_EXPORT long pathconf(const char *, int);
+MUSL_EXPORT long fpathconf(int, int);
+MUSL_EXPORT long sysconf(int);
+MUSL_EXPORT size_t confstr(int, char *, size_t);
 
 #if defined(_XOPEN_SOURCE) || defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
 #define F_ULOCK 0
 #define F_LOCK  1
 #define F_TLOCK 2
 #define F_TEST  3
-int setreuid(uid_t, uid_t);
-int setregid(gid_t, gid_t);
-int lockf(int, int, off_t);
-long gethostid(void);
-int nice(int);
-void sync(void);
-pid_t setpgrp(void);
-char *crypt(const char *, const char *);
-void encrypt(char *, int);
-void swab(const void *__restrict, void *__restrict, ssize_t);
+MUSL_EXPORT int setreuid(uid_t, uid_t);
+MUSL_EXPORT int setregid(gid_t, gid_t);
+MUSL_EXPORT int lockf(int, int, off_t);
+MUSL_EXPORT long gethostid(void);
+MUSL_EXPORT int nice(int);
+MUSL_EXPORT void sync(void);
+MUSL_EXPORT pid_t setpgrp(void);
+MUSL_EXPORT char *crypt(const char *, const char *);
+MUSL_EXPORT void encrypt(char *, int);
+MUSL_EXPORT void swab(const void *__restrict, void *__restrict, ssize_t);
 #endif
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE) \
  || (defined(_XOPEN_SOURCE) && _XOPEN_SOURCE+0 < 700)
-int usleep(unsigned);
-unsigned ualarm(unsigned, unsigned);
+MUSL_EXPORT int usleep(unsigned);
+MUSL_EXPORT unsigned ualarm(unsigned, unsigned);
 #endif
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
 #define L_SET 0
 #define L_INCR 1
 #define L_XTND 2
-int brk(void *);
-void *sbrk(intptr_t);
-pid_t vfork(void);
-int vhangup(void);
-int chroot(const char *);
-int getpagesize(void);
-int getdtablesize(void);
-int sethostname(const char *, size_t);
-int getdomainname(char *, size_t);
-int setdomainname(const char *, size_t);
-int setgroups(size_t, const gid_t *);
-char *getpass(const char *);
-int daemon(int, int);
-void setusershell(void);
-void endusershell(void);
-char *getusershell(void);
-int acct(const char *);
-long syscall(long, ...);
-int execvpe(const char *, char *const [], char *const []);
-int issetugid(void);
-int getentropy(void *, size_t);
+MUSL_EXPORT int brk(void *);
+MUSL_EXPORT void *sbrk(intptr_t);
+MUSL_EXPORT pid_t vfork(void);
+MUSL_EXPORT int vhangup(void);
+MUSL_EXPORT int chroot(const char *);
+MUSL_EXPORT int getpagesize(void);
+MUSL_EXPORT int getdtablesize(void);
+MUSL_EXPORT int sethostname(const char *, size_t);
+MUSL_EXPORT int getdomainname(char *, size_t);
+MUSL_EXPORT int setdomainname(const char *, size_t);
+MUSL_EXPORT int setgroups(size_t, const gid_t *);
+MUSL_EXPORT char *getpass(const char *);
+MUSL_EXPORT int daemon(int, int);
+MUSL_EXPORT void setusershell(void);
+MUSL_EXPORT void endusershell(void);
+MUSL_EXPORT char *getusershell(void);
+MUSL_EXPORT int acct(const char *);
+MUSL_EXPORT long syscall(long, ...);
+MUSL_EXPORT int execvpe(const char *, char *const [], char *const []);
+MUSL_EXPORT int issetugid(void);
+MUSL_EXPORT int getentropy(void *, size_t);
 extern int optreset;
 #endif
 
 #ifdef _GNU_SOURCE
 extern char **environ;
-int setresuid(uid_t, uid_t, uid_t);
-int setresgid(gid_t, gid_t, gid_t);
-int getresuid(uid_t *, uid_t *, uid_t *);
-int getresgid(gid_t *, gid_t *, gid_t *);
-char *get_current_dir_name(void);
-int syncfs(int);
-int euidaccess(const char *, int);
-int eaccess(const char *, int);
-ssize_t copy_file_range(int, off_t *, int, off_t *, size_t, unsigned);
-pid_t gettid(void);
+MUSL_EXPORT int setresuid(uid_t, uid_t, uid_t);
+MUSL_EXPORT int setresgid(gid_t, gid_t, gid_t);
+MUSL_EXPORT int getresuid(uid_t *, uid_t *, uid_t *);
+MUSL_EXPORT int getresgid(gid_t *, gid_t *, gid_t *);
+MUSL_EXPORT char *get_current_dir_name(void);
+MUSL_EXPORT int syncfs(int);
+MUSL_EXPORT int euidaccess(const char *, int);
+MUSL_EXPORT int eaccess(const char *, int);
+MUSL_EXPORT ssize_t copy_file_range(int, off_t *, int, off_t *, size_t, unsigned);
+MUSL_EXPORT pid_t gettid(void);
 #endif
 
 #if defined(_LARGEFILE64_SOURCE) || defined(_GNU_SOURCE)

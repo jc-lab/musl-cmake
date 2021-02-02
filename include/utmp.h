@@ -25,17 +25,17 @@ struct lastlog {
 #define e_exit __e_exit
 #define e_termination __e_termination
 
-void         endutent(void);
-struct utmp *getutent(void);
-struct utmp *getutid(const struct utmp *);
-struct utmp *getutline(const struct utmp *);
-struct utmp *pututline(const struct utmp *);
-void         setutent(void);
+MUSL_EXPORT void         endutent(void);
+MUSL_EXPORT struct utmp *getutent(void);
+MUSL_EXPORT struct utmp *getutid(const struct utmp *);
+MUSL_EXPORT struct utmp *getutline(const struct utmp *);
+MUSL_EXPORT struct utmp *pututline(const struct utmp *);
+MUSL_EXPORT void         setutent(void);
 
-void updwtmp(const char *, const struct utmp *);
-int utmpname(const char *);
+MUSL_EXPORT void updwtmp(const char *, const struct utmp *);
+MUSL_EXPORT int utmpname(const char *);
 
-int login_tty(int);
+MUSL_EXPORT int login_tty(int);
 
 #define _PATH_UTMP "/dev/null/utmp"
 #define _PATH_WTMP "/dev/null/wtmp"

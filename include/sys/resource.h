@@ -46,15 +46,15 @@ struct rusage {
 	long    __reserved[16];
 };
 
-int getrlimit (int, struct rlimit *);
-int setrlimit (int, const struct rlimit *);
-int getrusage (int, struct rusage *);
+MUSL_EXPORT int getrlimit (int, struct rlimit *);
+MUSL_EXPORT int setrlimit (int, const struct rlimit *);
+MUSL_EXPORT int getrusage (int, struct rusage *);
 
-int getpriority (int, id_t);
-int setpriority (int, id_t, int);
+MUSL_EXPORT int getpriority (int, id_t);
+MUSL_EXPORT int setpriority (int, id_t, int);
 
 #ifdef _GNU_SOURCE
-int prlimit(pid_t, int, const struct rlimit *, struct rlimit *);
+MUSL_EXPORT int prlimit(pid_t, int, const struct rlimit *, struct rlimit *);
 #define prlimit64 prlimit
 #endif
 

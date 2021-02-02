@@ -39,15 +39,15 @@ struct aiocb {
 #define LIO_WAIT 0
 #define LIO_NOWAIT 1
 
-int aio_read(struct aiocb *);
-int aio_write(struct aiocb *);
-int aio_error(const struct aiocb *);
-ssize_t aio_return(struct aiocb *);
-int aio_cancel(int, struct aiocb *);
-int aio_suspend(const struct aiocb *const [], int, const struct timespec *);
-int aio_fsync(int, struct aiocb *);
+MUSL_EXPORT int aio_read(struct aiocb *);
+MUSL_EXPORT int aio_write(struct aiocb *);
+MUSL_EXPORT int aio_error(const struct aiocb *);
+MUSL_EXPORT ssize_t aio_return(struct aiocb *);
+MUSL_EXPORT int aio_cancel(int, struct aiocb *);
+MUSL_EXPORT int aio_suspend(const struct aiocb *const [], int, const struct timespec *);
+MUSL_EXPORT int aio_fsync(int, struct aiocb *);
 
-int lio_listio(int, struct aiocb *__restrict const *__restrict, int, struct sigevent *__restrict);
+MUSL_EXPORT int lio_listio(int, struct aiocb *__restrict const *__restrict, int, struct sigevent *__restrict);
 
 #if defined(_LARGEFILE64_SOURCE) || defined(_GNU_SOURCE)
 #define aiocb64 aiocb

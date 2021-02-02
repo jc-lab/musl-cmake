@@ -16,7 +16,7 @@ struct timeb {
 	short timezone, dstflag;
 };
 
-int ftime(struct timeb *);
+MUSL_EXPORT int ftime(struct timeb *);
 
 #if _REDIR_TIME64
 __REDIR(ftime, __ftime64);

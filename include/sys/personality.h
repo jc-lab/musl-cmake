@@ -41,7 +41,7 @@ extern "C" {
 #define PER_HPUX 0x10
 #define PER_MASK 0xff
 
-int personality(unsigned long);
+MUSL_EXPORT int personality(unsigned long);
 
 #ifdef __cplusplus
 }

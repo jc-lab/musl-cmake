@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+#include <features.h>
+
 #include <elf.h>
 #define __NEED_size_t
 #define __NEED_uint32_t
@@ -44,7 +46,7 @@ struct r_debug {
 	ElfW(Addr) r_ldbase;
 };
 
-int dl_iterate_phdr(int (*)(struct dl_phdr_info *, size_t, void *), void *);
+MUSL_EXPORT int dl_iterate_phdr(int (*)(struct dl_phdr_info *, size_t, void *), void *);
 
 #ifdef __cplusplus
 }

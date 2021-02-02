@@ -88,8 +88,8 @@ struct timex {
 
 #define MAXTC		6
 
-int adjtimex(struct timex *);
-int clock_adjtime(clockid_t, struct timex *);
+MUSL_EXPORT int adjtimex(struct timex *);
+MUSL_EXPORT int clock_adjtime(clockid_t, struct timex *);
 
 #if _REDIR_TIME64
 __REDIR(adjtimex, __adjtimex_time64);

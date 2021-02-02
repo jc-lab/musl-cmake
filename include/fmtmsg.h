@@ -38,7 +38,7 @@ extern "C" {
 #define MM_NULLTAG	((char*)0)
 #define MM_NULLSEV	0
 
-int fmtmsg(long, const char *, int, const char *, const char *, const char *);
+MUSL_EXPORT int fmtmsg(long, const char *, int, const char *, const char *, const char *);
 
 #ifdef __cplusplus
 }
