@@ -1,0 +1,6 @@
+#ifndef _MUSL_VERSION_H_
+#define _MUSL_VERSION_H_
+
+#define VERSION "@VERSION@"
+
+#endif /* _MUSL_VERSION_H_ */
