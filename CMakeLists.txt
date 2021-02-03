@@ -98,6 +98,7 @@ target_link_options(musl
 target_include_directories(musl
         PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src/internal
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/include
         ${CMAKE_CURRENT_BINARY_DIR}/priv-include
         )
 
@@ -112,7 +113,6 @@ target_include_directories(musl
         PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/arch/${MUSL_ARCH}>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/arch/generic>
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src/include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
         )
