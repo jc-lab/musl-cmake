@@ -1,5 +1,5 @@
 execute_process(
-        COMMAND sh ${CMAKE_CURRENT_SOURCE_DIR}/version.sh
+        COMMAND sh ${SCRIPT_FILE}
         OUTPUT_VARIABLE VERSION
 )
 message("INPUT_FILE = ${INPUT_FILE}")

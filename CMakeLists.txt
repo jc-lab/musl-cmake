@@ -56,6 +56,7 @@ message("SRC_FILES = ${SRC_FILES}")
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/include/bits)
 add_custom_command(
         OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/include/bits/alltypes.h
+        COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/include/bits
         COMMAND sed -f ${CMAKE_CURRENT_SOURCE_DIR}/tools/mkalltypes.sed
             ${CMAKE_CURRENT_SOURCE_DIR}/arch/${MUSL_ARCH}/bits/alltypes.h.in
             ${CMAKE_CURRENT_SOURCE_DIR}/include/alltypes.h.in > ${CMAKE_CURRENT_BINARY_DIR}/include/bits/alltypes.h
@@ -71,6 +72,7 @@ add_custom_command(
         OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/priv-include/version.h
         DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/tools/version.h.in
         COMMAND ${CMAKE_COMMAND}
+        -DSCRIPT_FILE=${CMAKE_CURRENT_SOURCE_DIR}/tools/version.sh
         -DINPUT_FILE=${CMAKE_CURRENT_SOURCE_DIR}/tools/version.h.in
         -DOUTPUT_FILE=${CMAKE_CURRENT_BINARY_DIR}/priv-include/version.h
         -P ${CMAKE_CURRENT_SOURCE_DIR}/tools/update_version.cmake
@@ -96,6 +98,8 @@ target_link_options(musl
 #        _BSD_SOURCE
 #        )
 target_include_directories(musl
+        PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
         PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src/internal
         ${CMAKE_CURRENT_SOURCE_DIR}/src/include
@@ -114,6 +118,6 @@ target_include_directories(musl
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/arch/${MUSL_ARCH}>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/arch/generic>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
         )
 
+add_subdirectory(test)
