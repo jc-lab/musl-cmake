@@ -6,7 +6,7 @@
 #include <string.h>
 #include <strings.h>
 
-char *strptime(const char *restrict s, const char *restrict f, struct tm *restrict tm)
+MUSL_EXPORT char *strptime(const char *restrict s, const char *restrict f, struct tm *restrict tm)
 {
 	int i, w, neg, adj, min, range, *dest, dummy;
 	const char *ex;

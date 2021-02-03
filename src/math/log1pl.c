@@ -51,7 +51,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double log1pl(long double x)
+MUSL_EXPORT long double log1pl(long double x)
 {
 	return log1p(x);
 }
@@ -101,7 +101,7 @@ static const long double C2 = 1.4286068203094172321215E-6L;
 
 #define SQRTH 0.70710678118654752440L
 
-long double log1pl(long double xm1)
+MUSL_EXPORT long double log1pl(long double xm1)
 {
 	long double x, y, z;
 	int e;
@@ -170,7 +170,7 @@ long double log1pl(long double xm1)
 }
 #elif LDBL_MANT_DIG == 113 && LDBL_MAX_EXP == 16384
 // TODO: broken implementation to make things compile
-long double log1pl(long double x)
+MUSL_EXPORT long double log1pl(long double x)
 {
 	return log1p(x);
 }

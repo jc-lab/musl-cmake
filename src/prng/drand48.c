@@ -2,7 +2,7 @@
 #include <inttypes.h>
 #include "rand48.h"
 
-double erand48(unsigned short s[3])
+MUSL_EXPORT double erand48(unsigned short s[3])
 {
 	union {
 		uint64_t u;
@@ -11,7 +11,7 @@ double erand48(unsigned short s[3])
 	return x.f - 1.0;
 }
 
-double drand48(void)
+MUSL_EXPORT double drand48(void)
 {
 	return erand48(__seed48);
 }

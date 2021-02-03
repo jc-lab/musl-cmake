@@ -3,7 +3,7 @@
 
 static volatile int check_pi_result = -1;
 
-int pthread_mutexattr_setprotocol(pthread_mutexattr_t *a, int protocol)
+MUSL_EXPORT int pthread_mutexattr_setprotocol(pthread_mutexattr_t *a, int protocol)
 {
 	int r;
 	switch (protocol) {

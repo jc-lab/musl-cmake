@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int unlink(const char *path)
+MUSL_EXPORT int unlink(const char *path)
 {
 #ifdef SYS_unlink
 	return syscall(SYS_unlink, path);

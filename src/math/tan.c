@@ -41,7 +41,7 @@
 
 #include "libm.h"
 
-double tan(double x)
+MUSL_EXPORT double tan(double x)
 {
 	double y[2];
 	uint32_t ix;

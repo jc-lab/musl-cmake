@@ -57,7 +57,7 @@ static void *start(void *arg)
 	return 0;
 }
 
-int timer_create(clockid_t clk, struct sigevent *restrict evp, timer_t *restrict res)
+MUSL_EXPORT int timer_create(clockid_t clk, struct sigevent *restrict evp, timer_t *restrict res)
 {
 	volatile static int init = 0;
 	pthread_t td;

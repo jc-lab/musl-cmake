@@ -4,7 +4,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-int fcntl(int fd, int cmd, ...)
+MUSL_EXPORT int fcntl(int fd, int cmd, ...)
 {
 	unsigned long arg;
 	va_list ap;

@@ -3,7 +3,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int dup2(int old, int new)
+MUSL_EXPORT int dup2(int old, int new)
 {
 	int r;
 #ifdef SYS_dup2

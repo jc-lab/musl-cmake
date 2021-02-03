@@ -1,7 +1,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int posix_fadvise(int fd, off_t base, off_t len, int advice)
+MUSL_EXPORT int posix_fadvise(int fd, off_t base, off_t len, int advice)
 {
 #if defined(SYSCALL_FADVISE_6_ARG)
 	/* Some archs, at least arm and powerpc, have the syscall

@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int mkdir(const char *path, mode_t mode)
+MUSL_EXPORT int mkdir(const char *path, mode_t mode)
 {
 #ifdef SYS_mkdir
 	return syscall(SYS_mkdir, path, mode);

@@ -1,7 +1,7 @@
 #include <termios.h>
 #include <sys/ioctl.h>
 
-int tcflow(int fd, int action)
+MUSL_EXPORT int tcflow(int fd, int action)
 {
 	return ioctl(fd, TCXONC, action);
 }

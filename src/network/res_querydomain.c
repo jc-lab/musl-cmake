@@ -1,7 +1,7 @@
 #include <resolv.h>
 #include <string.h>
 
-int res_querydomain(const char *name, const char *domain, int class, int type, unsigned char *dest, int len)
+MUSL_EXPORT int res_querydomain(const char *name, const char *domain, int class, int type, unsigned char *dest, int len)
 {
 	char tmp[255];
 	size_t nl = strnlen(name, 255);

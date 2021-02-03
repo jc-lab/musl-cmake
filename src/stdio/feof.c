@@ -2,7 +2,7 @@
 
 #undef feof
 
-int feof(FILE *f)
+MUSL_EXPORT int feof(FILE *f)
 {
 	FLOCK(f);
 	int ret = !!(f->flags & F_EOF);

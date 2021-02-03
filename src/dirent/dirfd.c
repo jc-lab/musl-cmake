@@ -1,7 +1,7 @@
 #include <dirent.h>
 #include "__dirent.h"
 
-int dirfd(DIR *d)
+MUSL_EXPORT int dirfd(DIR *d)
 {
 	return d->fd;
 }

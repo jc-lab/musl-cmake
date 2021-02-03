@@ -1,6 +1,6 @@
 #include <math.h>
 
-float ldexpf(float x, int n)
+MUSL_EXPORT float ldexpf(float x, int n)
 {
 	return scalbnf(x, n);
 }

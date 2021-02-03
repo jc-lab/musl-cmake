@@ -55,7 +55,7 @@ wint_t __fgetwc_unlocked(FILE *f)
 	return wc;
 }
 
-wint_t fgetwc(FILE *f)
+MUSL_EXPORT wint_t fgetwc(FILE *f)
 {
 	wint_t c;
 	FLOCK(f);

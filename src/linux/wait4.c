@@ -5,7 +5,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-pid_t wait4(pid_t pid, int *status, int options, struct rusage *ru)
+MUSL_EXPORT pid_t wait4(pid_t pid, int *status, int options, struct rusage *ru)
 {
 	int r;
 #ifdef SYS_wait4_time64

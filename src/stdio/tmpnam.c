@@ -9,7 +9,7 @@
 
 #define MAXTRIES 100
 
-char *tmpnam(char *buf)
+MUSL_EXPORT char *tmpnam(char *buf)
 {
 	static char internal[L_tmpnam];
 	char s[] = "/tmp/tmpnam_XXXXXX";

@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include "libc.h"
 
-int issetugid(void)
+MUSL_EXPORT int issetugid(void)
 {
 	return libc.secure;
 }

@@ -1,7 +1,7 @@
 #include "libm.h"
 
 // FIXME: macro in math.h
-int __signbitf(float x)
+MUSL_EXPORT int __signbitf(float x)
 {
 	union {
 		float f;

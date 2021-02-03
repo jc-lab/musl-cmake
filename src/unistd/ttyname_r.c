@@ -3,7 +3,7 @@
 #include <sys/stat.h>
 #include "syscall.h"
 
-int ttyname_r(int fd, char *name, size_t size)
+MUSL_EXPORT int ttyname_r(int fd, char *name, size_t size)
 {
 	struct stat st1, st2;
 	char procname[sizeof "/proc/self/fd/" + 3*sizeof(int) + 2];

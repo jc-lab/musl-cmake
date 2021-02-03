@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char *fcvt(double x, int n, int *dp, int *sign)
+MUSL_EXPORT char *fcvt(double x, int n, int *dp, int *sign)
 {
 	char tmp[1500];
 	int i, lz;

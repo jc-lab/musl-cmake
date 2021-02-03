@@ -1,6 +1,6 @@
 #include <math.h>
 
-float remainderf(float x, float y)
+MUSL_EXPORT float remainderf(float x, float y)
 {
 	unsigned short fpsr;
 	// fprem1 does not introduce excess precision into x

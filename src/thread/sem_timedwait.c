@@ -6,7 +6,7 @@ static void cleanup(void *p)
 	a_dec(p);
 }
 
-int sem_timedwait(sem_t *restrict sem, const struct timespec *restrict at)
+MUSL_EXPORT int sem_timedwait(sem_t *restrict sem, const struct timespec *restrict at)
 {
 	pthread_testcancel();
 

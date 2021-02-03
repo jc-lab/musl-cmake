@@ -1,7 +1,7 @@
 #include "pthread_impl.h"
 #include "lock.h"
 
-int pthread_getschedparam(pthread_t t, int *restrict policy, struct sched_param *restrict param)
+MUSL_EXPORT int pthread_getschedparam(pthread_t t, int *restrict policy, struct sched_param *restrict param)
 {
 	int r;
 	sigset_t set;

@@ -1,6 +1,6 @@
 #include "libm.h"
 
-float modff(float x, float *iptr)
+MUSL_EXPORT float modff(float x, float *iptr)
 {
 	union {float f; uint32_t i;} u = {x};
 	uint32_t mask;

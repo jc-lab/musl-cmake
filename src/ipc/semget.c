@@ -4,7 +4,7 @@
 #include "syscall.h"
 #include "ipc.h"
 
-int semget(key_t key, int n, int fl)
+MUSL_EXPORT int semget(key_t key, int n, int fl)
 {
 	/* The kernel uses the wrong type for the sem_nsems member
 	 * of struct semid_ds, and thus might not check that the

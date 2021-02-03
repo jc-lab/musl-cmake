@@ -1,6 +1,6 @@
 #include "complex_impl.h"
 
-float complex conjf(float complex z)
+MUSL_EXPORT float complex conjf(float complex z)
 {
 	return CMPLXF(crealf(z), -cimagf(z));
 }

@@ -188,10 +188,10 @@ MUSL_EXPORT int vasprintf(char **, const char *, __isoc_va_list);
 MUSL_EXPORT char *fgets_unlocked(char *, int, FILE *);
 MUSL_EXPORT int fputs_unlocked(const char *, FILE *);
 
-MUSL_EXPORT typedef ssize_t (cookie_read_function_t)(void *, char *, size_t);
-MUSL_EXPORT typedef ssize_t (cookie_write_function_t)(void *, const char *, size_t);
-MUSL_EXPORT typedef int (cookie_seek_function_t)(void *, off_t *, int);
-MUSL_EXPORT typedef int (cookie_close_function_t)(void *);
+typedef ssize_t (cookie_read_function_t)(void *, char *, size_t);
+typedef ssize_t (cookie_write_function_t)(void *, const char *, size_t);
+typedef int (cookie_seek_function_t)(void *, off_t *, int);
+typedef int (cookie_close_function_t)(void *);
 
 typedef struct _IO_cookie_io_functions_t {
 	cookie_read_function_t *read;

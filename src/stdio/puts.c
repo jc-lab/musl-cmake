@@ -1,6 +1,6 @@
 #include "stdio_impl.h"
 
-int puts(const char *s)
+MUSL_EXPORT int puts(const char *s)
 {
 	int r;
 	FLOCK(stdout);

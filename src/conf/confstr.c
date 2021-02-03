@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <errno.h>
 
-size_t confstr(int name, char *buf, size_t len)
+MUSL_EXPORT size_t confstr(int name, char *buf, size_t len)
 {
 	const char *s = "";
 	if (!name) {

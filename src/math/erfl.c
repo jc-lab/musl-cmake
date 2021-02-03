@@ -101,11 +101,11 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double erfl(long double x)
+MUSL_EXPORT long double erfl(long double x)
 {
 	return erf(x);
 }
-long double erfcl(long double x)
+MUSL_EXPORT long double erfcl(long double x)
 {
 	return erfc(x);
 }
@@ -283,7 +283,7 @@ static long double erfc2(uint32_t ix, long double x)
 	return expl(-z*z - 0.5625) * expl((z - x) * (z + x) + R / S) / x;
 }
 
-long double erfl(long double x)
+MUSL_EXPORT long double erfl(long double x)
 {
 	long double r, s, z, y;
 	union ldshape u = {x};
@@ -312,7 +312,7 @@ long double erfl(long double x)
 	return sign ? -y : y;
 }
 
-long double erfcl(long double x)
+MUSL_EXPORT long double erfcl(long double x)
 {
 	long double r, s, z, y;
 	union ldshape u = {x};
@@ -342,11 +342,11 @@ long double erfcl(long double x)
 }
 #elif LDBL_MANT_DIG == 113 && LDBL_MAX_EXP == 16384
 // TODO: broken implementation to make things compile
-long double erfl(long double x)
+MUSL_EXPORT long double erfl(long double x)
 {
 	return erf(x);
 }
-long double erfcl(long double x)
+MUSL_EXPORT long double erfcl(long double x)
 {
 	return erfc(x);
 }

@@ -1,7 +1,7 @@
 #include <sys/timeb.h>
 #include <time.h>
 
-int ftime(struct timeb *tp)
+MUSL_EXPORT int ftime(struct timeb *tp)
 {
 	struct timespec ts;
 	clock_gettime(CLOCK_REALTIME, &ts);

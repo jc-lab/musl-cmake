@@ -1,6 +1,6 @@
 #include <signal.h>
 
-int __libc_current_sigrtmin()
+MUSL_EXPORT int __libc_current_sigrtmin()
 {
 	return 35;
 }

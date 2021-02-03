@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "meta.h"
 
-size_t malloc_usable_size(void *p)
+MUSL_EXPORT size_t malloc_usable_size(void *p)
 {
 	if (!p) return 0;
 	struct meta *g = get_meta(p);

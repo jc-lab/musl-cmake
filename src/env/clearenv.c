@@ -5,7 +5,7 @@
 static void dummy(char *old, char *new) {}
 weak_alias(dummy, __env_rm_add);
 
-int clearenv()
+MUSL_EXPORT int clearenv()
 {
 	char **e = __environ;
 	__environ = 0;

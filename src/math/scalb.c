@@ -18,7 +18,7 @@
 #define _GNU_SOURCE
 #include <math.h>
 
-double scalb(double x, double fn)
+MUSL_EXPORT double scalb(double x, double fn)
 {
 	if (isnan(x) || isnan(fn))
 		return x*fn;

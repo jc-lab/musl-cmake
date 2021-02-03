@@ -5,7 +5,7 @@
 
 extern char *__progname;
 
-void vwarn(const char *fmt, va_list ap)
+MUSL_EXPORT void vwarn(const char *fmt, va_list ap)
 {
 	fprintf (stderr, "%s: ", __progname);
 	if (fmt) {
@@ -15,7 +15,7 @@ void vwarn(const char *fmt, va_list ap)
 	perror(0);
 }
 
-void vwarnx(const char *fmt, va_list ap)
+MUSL_EXPORT void vwarnx(const char *fmt, va_list ap)
 {
 	fprintf (stderr, "%s: ", __progname);
 	if (fmt) vfprintf(stderr, fmt, ap);
@@ -34,7 +34,7 @@ _Noreturn void verrx(int status, const char *fmt, va_list ap)
 	exit(status);
 }
 
-void warn(const char *fmt, ...)
+MUSL_EXPORT void warn(const char *fmt, ...)
 {
 	va_list ap;
 	va_start(ap, fmt);
@@ -42,7 +42,7 @@ void warn(const char *fmt, ...)
 	va_end(ap);
 }
 
-void warnx(const char *fmt, ...)
+MUSL_EXPORT void warnx(const char *fmt, ...)
 {
 	va_list ap;
 	va_start(ap, fmt);

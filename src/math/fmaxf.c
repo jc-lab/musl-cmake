@@ -1,6 +1,6 @@
 #include <math.h>
 
-float fmaxf(float x, float y)
+MUSL_EXPORT float fmaxf(float x, float y)
 {
 	if (isnan(x))
 		return y;

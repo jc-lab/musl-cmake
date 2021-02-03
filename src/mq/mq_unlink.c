@@ -2,7 +2,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-int mq_unlink(const char *name)
+MUSL_EXPORT int mq_unlink(const char *name)
 {
 	int ret;
 	if (*name == '/') name++;

@@ -7,7 +7,7 @@
 #undef SYSCALL_IPC_BROKEN_MODE
 #endif
 
-int msgctl(int q, int cmd, struct msqid_ds *buf)
+MUSL_EXPORT int msgctl(int q, int cmd, struct msqid_ds *buf)
 {
 #if IPC_TIME64
 	struct msqid_ds out, *orig;

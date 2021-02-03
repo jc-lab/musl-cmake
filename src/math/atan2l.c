@@ -18,14 +18,14 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double atan2l(long double y, long double x)
+MUSL_EXPORT long double atan2l(long double y, long double x)
 {
 	return atan2(y, x);
 }
 #elif (LDBL_MANT_DIG == 64 || LDBL_MANT_DIG == 113) && LDBL_MAX_EXP == 16384
 #include "__invtrigl.h"
 
-long double atan2l(long double y, long double x)
+MUSL_EXPORT long double atan2l(long double y, long double x)
 {
 	union ldshape ux, uy;
 	long double z;

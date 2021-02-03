@@ -2,7 +2,7 @@
 #include "stdio_impl.h"
 #include "locale_impl.h"
 
-int fwide(FILE *f, int mode)
+MUSL_EXPORT int fwide(FILE *f, int mode)
 {
 	FLOCK(f);
 	if (mode) {

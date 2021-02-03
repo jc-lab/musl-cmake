@@ -3,7 +3,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-int socketpair(int domain, int type, int protocol, int fd[2])
+MUSL_EXPORT int socketpair(int domain, int type, int protocol, int fd[2])
 {
 	int r = socketcall(socketpair, domain, type, protocol, fd, 0, 0);
 	if (r<0 && (errno==EINVAL || errno==EPROTONOSUPPORT)

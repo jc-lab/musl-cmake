@@ -54,7 +54,7 @@ static int match(int *offset, const unsigned char *base, const unsigned char *dn
 	}
 }
 
-int dn_comp(const char *src, unsigned char *dst, int space, unsigned char **dnptrs, unsigned char **lastdnptr)
+MUSL_EXPORT int dn_comp(const char *src, unsigned char *dst, int space, unsigned char **dnptrs, unsigned char **lastdnptr)
 {
 	int i, j, n, m=0, offset, bestlen=0, bestoff;
 	unsigned char lens[127];

@@ -2,7 +2,7 @@
 
 // FIXME
 
-float complex casinf(float complex z)
+MUSL_EXPORT float complex casinf(float complex z)
 {
 	float complex w;
 	float x, y;

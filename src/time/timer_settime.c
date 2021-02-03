@@ -4,7 +4,7 @@
 
 #define IS32BIT(x) !((x)+0x80000000ULL>>32)
 
-int timer_settime(timer_t t, int flags, const struct itimerspec *restrict val, struct itimerspec *restrict old)
+MUSL_EXPORT int timer_settime(timer_t t, int flags, const struct itimerspec *restrict val, struct itimerspec *restrict old)
 {
 	if ((intptr_t)t < 0) {
 		pthread_t td = (void *)((uintptr_t)t << 1);

@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int chmod(const char *path, mode_t mode)
+MUSL_EXPORT int chmod(const char *path, mode_t mode)
 {
 #ifdef SYS_chmod
 	return syscall(SYS_chmod, path, mode);

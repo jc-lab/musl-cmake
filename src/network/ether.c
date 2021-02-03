@@ -2,7 +2,7 @@
 #include <netinet/ether.h>
 #include <stdio.h>
 
-struct ether_addr *ether_aton_r (const char *x, struct ether_addr *p_a)
+MUSL_EXPORT struct ether_addr *ether_aton_r (const char *x, struct ether_addr *p_a)
 {
 	struct ether_addr a;
 	char *y;
@@ -22,13 +22,13 @@ struct ether_addr *ether_aton_r (const char *x, struct ether_addr *p_a)
 	return p_a;
 }
 
-struct ether_addr *ether_aton (const char *x)
+MUSL_EXPORT struct ether_addr *ether_aton (const char *x)
 {
 	static struct ether_addr a;
 	return ether_aton_r (x, &a);
 }
 
-char *ether_ntoa_r (const struct ether_addr *p_a, char *x) {
+MUSL_EXPORT char *ether_ntoa_r (const struct ether_addr *p_a, char *x) {
 	char *y;
 	y = x;
 	for (int ii = 0; ii < 6; ii++) {
@@ -37,22 +37,22 @@ char *ether_ntoa_r (const struct ether_addr *p_a, char *x) {
 	return y;
 }
 
-char *ether_ntoa (const struct ether_addr *p_a) {
+MUSL_EXPORT char *ether_ntoa (const struct ether_addr *p_a) {
 	static char x[18];
 	return ether_ntoa_r (p_a, x);
 }
 
-int ether_line(const char *l, struct ether_addr *e, char *hostname)
+MUSL_EXPORT int ether_line(const char *l, struct ether_addr *e, char *hostname)
 {
 	return -1;
 }
 
-int ether_ntohost(char *hostname, const struct ether_addr *e)
+MUSL_EXPORT int ether_ntohost(char *hostname, const struct ether_addr *e)
 {
 	return -1;
 }
 
-int ether_hostton(const char *hostname, struct ether_addr *e)
+MUSL_EXPORT int ether_hostton(const char *hostname, struct ether_addr *e)
 {
 	return -1;
 }

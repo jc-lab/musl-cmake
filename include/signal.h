@@ -258,11 +258,11 @@ MUSL_EXPORT void (*sigset(int, void (*)(int)))(int);
 
 #if defined(_BSD_SOURCE) || defined(_GNU_SOURCE)
 #define NSIG _NSIG
-MUSL_EXPORT typedef void (*sig_t)(int);
+typedef void (*sig_t)(int);
 #endif
 
 #ifdef _GNU_SOURCE
-MUSL_EXPORT typedef void (*sighandler_t)(int);
+typedef void (*sighandler_t)(int);
 MUSL_EXPORT void (*bsd_signal(int, void (*)(int)))(int);
 MUSL_EXPORT int sigisemptyset(const sigset_t *);
 MUSL_EXPORT int sigorset (sigset_t *, const sigset_t *, const sigset_t *);

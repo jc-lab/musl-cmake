@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include <wchar.h>
 
-int vwscanf(const wchar_t *restrict fmt, va_list ap)
+MUSL_EXPORT int vwscanf(const wchar_t *restrict fmt, va_list ap)
 {
 	return vfwscanf(stdin, fmt, ap);
 }

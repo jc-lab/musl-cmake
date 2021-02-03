@@ -31,7 +31,7 @@ static float R(float z)
 	return p/q;
 }
 
-float acosf(float x)
+MUSL_EXPORT float acosf(float x)
 {
 	float z,w,s,c,df;
 	uint32_t hx,ix;

@@ -16,7 +16,7 @@ static const char msgs[] =
 	"Overflow\0"
 	"\0Unknown error";
 
-const char *gai_strerror(int ecode)
+MUSL_EXPORT const char *gai_strerror(int ecode)
 {
 	const char *s;
 	for (s=msgs, ecode++; ecode && *s; ecode++, s++) for (; *s; s++);

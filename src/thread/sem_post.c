@@ -1,7 +1,7 @@
 #include <semaphore.h>
 #include "pthread_impl.h"
 
-int sem_post(sem_t *sem)
+MUSL_EXPORT int sem_post(sem_t *sem)
 {
 	int val, waiters, priv = sem->__val[2];
 	do {

@@ -2,7 +2,7 @@
 #include "syscall.h"
 #include "ipc.h"
 
-int shmdt(const void *addr)
+MUSL_EXPORT int shmdt(const void *addr)
 {
 #ifndef SYS_ipc
 	return syscall(SYS_shmdt, addr);

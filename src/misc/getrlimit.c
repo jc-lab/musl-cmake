@@ -4,7 +4,7 @@
 
 #define FIX(x) do{ if ((x)>=SYSCALL_RLIM_INFINITY) (x)=RLIM_INFINITY; }while(0)
 
-int getrlimit(int resource, struct rlimit *rlim)
+MUSL_EXPORT int getrlimit(int resource, struct rlimit *rlim)
 {
 	unsigned long k_rlim[2];
 	int ret = syscall(SYS_prlimit64, 0, resource, 0, rlim);

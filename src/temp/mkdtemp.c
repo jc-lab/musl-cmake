@@ -3,7 +3,7 @@
 #include <errno.h>
 #include <sys/stat.h>
 
-char *mkdtemp(char *template)
+MUSL_EXPORT char *mkdtemp(char *template)
 {
 	size_t l = strlen(template);
 	int retries = 100;

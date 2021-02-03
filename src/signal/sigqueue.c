@@ -4,7 +4,7 @@
 #include "syscall.h"
 #include "pthread_impl.h"
 
-int sigqueue(pid_t pid, int sig, const union sigval value)
+MUSL_EXPORT int sigqueue(pid_t pid, int sig, const union sigval value)
 {
 	siginfo_t si;
 	sigset_t set;

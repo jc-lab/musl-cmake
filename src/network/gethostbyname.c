@@ -5,7 +5,7 @@
 #include <string.h>
 #include <netinet/in.h>
 
-struct hostent *gethostbyname(const char *name)
+MUSL_EXPORT struct hostent *gethostbyname(const char *name)
 {
 	return gethostbyname2(name, AF_INET);
 }

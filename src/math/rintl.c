@@ -1,7 +1,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double rintl(long double x)
+MUSL_EXPORT long double rintl(long double x)
 {
 	return rint(x);
 }
@@ -9,7 +9,7 @@ long double rintl(long double x)
 
 static const long double toint = 1/LDBL_EPSILON;
 
-long double rintl(long double x)
+MUSL_EXPORT long double rintl(long double x)
 {
 	union ldshape u = {x};
 	int e = u.i.se & 0x7fff;

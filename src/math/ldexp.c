@@ -1,6 +1,6 @@
 #include <math.h>
 
-double ldexp(double x, int n)
+MUSL_EXPORT double ldexp(double x, int n)
 {
 	return scalbn(x, n);
 }

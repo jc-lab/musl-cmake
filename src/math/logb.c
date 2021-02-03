@@ -1,13 +1,13 @@
 #include <math.h>
 
 /*
-special cases:
+MUSL_EXPORT special cases:
 	logb(+-0) = -inf, and raise divbyzero
 	logb(+-inf) = +inf
 	logb(nan) = nan
 */
 
-double logb(double x)
+MUSL_EXPORT double logb(double x)
 {
 	if (!isfinite(x))
 		return x * x;

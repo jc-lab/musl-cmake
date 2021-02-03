@@ -4,7 +4,7 @@
 #include <errno.h>
 #include "fdop.h"
 
-int posix_spawn_file_actions_addchdir_np(posix_spawn_file_actions_t *restrict fa, const char *restrict path)
+MUSL_EXPORT int posix_spawn_file_actions_addchdir_np(posix_spawn_file_actions_t *restrict fa, const char *restrict path)
 {
 	struct fdop *op = malloc(sizeof *op + strlen(path) + 1);
 	if (!op) return ENOMEM;

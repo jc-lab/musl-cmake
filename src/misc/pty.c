@@ -5,19 +5,19 @@
 #include <errno.h>
 #include "syscall.h"
 
-int posix_openpt(int flags)
+MUSL_EXPORT int posix_openpt(int flags)
 {
 	int r = open("/dev/ptmx", flags);
 	if (r < 0 && errno == ENOSPC) errno = EAGAIN;
 	return r;
 }
 
-int grantpt(int fd)
+MUSL_EXPORT int grantpt(int fd)
 {
 	return 0;
 }
 
-int unlockpt(int fd)
+MUSL_EXPORT int unlockpt(int fd)
 {
 	int unlock = 0;
 	return ioctl(fd, TIOCSPTLCK, &unlock);

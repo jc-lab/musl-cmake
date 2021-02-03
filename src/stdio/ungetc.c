@@ -1,6 +1,6 @@
 #include "stdio_impl.h"
 
-int ungetc(int c, FILE *f)
+MUSL_EXPORT int ungetc(int c, FILE *f)
 {
 	if (c == EOF) return c;
 

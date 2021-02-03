@@ -4,7 +4,7 @@
 
 #define IS32BIT(x) !((x)+0x80000000ULL>>32)
 
-int clock_settime(clockid_t clk, const struct timespec *ts)
+MUSL_EXPORT int clock_settime(clockid_t clk, const struct timespec *ts)
 {
 #ifdef SYS_clock_settime64
 	time_t s = ts->tv_sec;

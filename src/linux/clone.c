@@ -5,7 +5,7 @@
 #include "pthread_impl.h"
 #include "syscall.h"
 
-int clone(int (*func)(void *), void *stack, int flags, void *arg, ...)
+MUSL_EXPORT int clone(int (*func)(void *), void *stack, int flags, void *arg, ...)
 {
 	va_list ap;
 	pid_t *ptid, *ctid;

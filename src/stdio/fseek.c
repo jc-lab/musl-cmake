@@ -33,7 +33,7 @@ int __fseeko(FILE *f, off_t off, int whence)
 	return result;
 }
 
-int fseek(FILE *f, long off, int whence)
+MUSL_EXPORT int fseek(FILE *f, long off, int whence)
 {
 	return __fseeko(f, off, whence);
 }

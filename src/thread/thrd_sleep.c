@@ -3,7 +3,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-int thrd_sleep(const struct timespec *req, struct timespec *rem)
+MUSL_EXPORT int thrd_sleep(const struct timespec *req, struct timespec *rem)
 {
 	int ret = -__clock_nanosleep(CLOCK_REALTIME, 0, req, rem);
 	switch (ret) {

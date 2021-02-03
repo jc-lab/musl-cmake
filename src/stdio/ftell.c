@@ -26,7 +26,7 @@ off_t __ftello(FILE *f)
 	return pos;
 }
 
-long ftell(FILE *f)
+MUSL_EXPORT long ftell(FILE *f)
 {
 	off_t pos = __ftello(f);
 	if (pos > LONG_MAX) {

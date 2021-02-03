@@ -65,7 +65,7 @@ static int wms_close(FILE *f)
 	return 0;
 }
 
-FILE *open_wmemstream(wchar_t **bufp, size_t *sizep)
+MUSL_EXPORT FILE *open_wmemstream(wchar_t **bufp, size_t *sizep)
 {
 	struct wms_FILE *f;
 	wchar_t *buf;

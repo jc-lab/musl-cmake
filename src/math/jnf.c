@@ -16,7 +16,7 @@
 #define _GNU_SOURCE
 #include "libm.h"
 
-float jnf(int n, float x)
+MUSL_EXPORT float jnf(int n, float x)
 {
 	uint32_t ix;
 	int nm1, sign, i;
@@ -159,7 +159,7 @@ float jnf(int n, float x)
 	return sign ? -b : b;
 }
 
-float ynf(int n, float x)
+MUSL_EXPORT float ynf(int n, float x)
 {
 	uint32_t ix, ib;
 	int nm1, sign, i;

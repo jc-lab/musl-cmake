@@ -1,7 +1,7 @@
 #include <limits.h>
 #include <math.h>
 
-double scalbln(double x, long n)
+MUSL_EXPORT double scalbln(double x, long n)
 {
 	if (n > INT_MAX)
 		n = INT_MAX;

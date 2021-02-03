@@ -120,7 +120,7 @@ static void convert_ioctl_struct(const struct ioctl_compat_map *map, char *old, 
 	else memcpy(new+new_offset, old+old_offset, old_size-old_offset);
 }
 
-int ioctl(int fd, int req, ...)
+MUSL_EXPORT int ioctl(int fd, int req, ...)
 {
 	void *arg;
 	va_list ap;

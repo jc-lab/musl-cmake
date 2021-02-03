@@ -3,7 +3,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int fchmod(int fd, mode_t mode)
+MUSL_EXPORT int fchmod(int fd, mode_t mode)
 {
 	int ret = __syscall(SYS_fchmod, fd, mode);
 	if (ret != -EBADF || __syscall(SYS_fcntl, fd, F_GETFD) < 0)

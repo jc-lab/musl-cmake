@@ -5,7 +5,7 @@
 
 #undef syscall
 
-long syscall(long n, ...)
+MUSL_EXPORT long syscall(long n, ...)
 {
 	va_list ap;
 	syscall_arg_t a,b,c,d,e,f;

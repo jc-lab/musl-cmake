@@ -30,7 +30,7 @@ static int allzerop(void *p)
 }
 weak_alias(allzerop, __malloc_allzerop);
 
-void *calloc(size_t m, size_t n)
+MUSL_EXPORT void *calloc(size_t m, size_t n)
 {
 	if (n && m > (size_t)-1/n) {
 		errno = ENOMEM;

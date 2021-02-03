@@ -2,7 +2,7 @@
 #include <threads.h>
 #include <pthread.h>
 
-int thrd_join(thrd_t t, int *res)
+MUSL_EXPORT int thrd_join(thrd_t t, int *res)
 {
         void *pthread_res;
         __pthread_join(t, &pthread_res);

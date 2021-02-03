@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include "syscall.h"
 
-int prctl(int op, ...)
+MUSL_EXPORT int prctl(int op, ...)
 {
 	unsigned long x[4];
 	int i;

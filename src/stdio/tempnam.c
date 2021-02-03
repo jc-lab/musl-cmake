@@ -10,7 +10,7 @@
 
 #define MAXTRIES 100
 
-char *tempnam(const char *dir, const char *pfx)
+MUSL_EXPORT char *tempnam(const char *dir, const char *pfx)
 {
 	char s[PATH_MAX];
 	size_t l, dl, pl;

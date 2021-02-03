@@ -2,7 +2,7 @@
 #include "stdio_impl.h"
 #include <string.h>
 
-char *fgetln(FILE *f, size_t *plen)
+MUSL_EXPORT char *fgetln(FILE *f, size_t *plen)
 {
 	char *ret = 0, *z;
 	ssize_t l;

@@ -2,7 +2,7 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 
-int futimes(int fd, const struct timeval tv[2])
+MUSL_EXPORT int futimes(int fd, const struct timeval tv[2])
 {
 	struct timespec times[2];
 	if (!tv) return futimens(fd, 0);

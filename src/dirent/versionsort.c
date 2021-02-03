@@ -2,7 +2,7 @@
 #include <string.h>
 #include <dirent.h>
 
-int versionsort(const struct dirent **a, const struct dirent **b)
+MUSL_EXPORT int versionsort(const struct dirent **a, const struct dirent **b)
 {
 	return strverscmp((*a)->d_name, (*b)->d_name);
 }

@@ -2,7 +2,7 @@
 
 #include <math.h>
 
-float sqrtf(float x)
+MUSL_EXPORT float sqrtf(float x)
 {
 	float r;
 	__asm__("sqrt.s %0,%1" : "=f"(r) : "f"(x));

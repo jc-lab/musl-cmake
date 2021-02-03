@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int rmdir(const char *path)
+MUSL_EXPORT int rmdir(const char *path)
 {
 #ifdef SYS_rmdir
 	return syscall(SYS_rmdir, path);

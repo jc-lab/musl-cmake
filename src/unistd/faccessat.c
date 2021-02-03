@@ -23,7 +23,7 @@ static int checker(void *p)
 	return 0;
 }
 
-int faccessat(int fd, const char *filename, int amode, int flag)
+MUSL_EXPORT int faccessat(int fd, const char *filename, int amode, int flag)
 {
 	if (flag) {
 		int ret = __syscall(SYS_faccessat2, fd, filename, amode, flag);

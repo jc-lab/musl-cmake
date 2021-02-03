@@ -6,7 +6,7 @@
 
 static struct expanded_key __encrypt_key;
 
-void setkey(const char *key)
+MUSL_EXPORT void setkey(const char *key)
 {
 	unsigned char bkey[8];
 	int i, j;
@@ -20,7 +20,7 @@ void setkey(const char *key)
 	__des_setkey(bkey, &__encrypt_key);
 }
 
-void encrypt(char *block, int edflag)
+MUSL_EXPORT void encrypt(char *block, int edflag)
 {
 	struct expanded_key decrypt_key, *key;
 	uint32_t b[2];

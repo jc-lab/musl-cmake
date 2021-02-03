@@ -1,6 +1,6 @@
 #include <math.h>
 
-double remainder(double x, double y)
+MUSL_EXPORT double remainder(double x, double y)
 {
 	unsigned short fpsr;
 	// fprem1 does not introduce excess precision into x

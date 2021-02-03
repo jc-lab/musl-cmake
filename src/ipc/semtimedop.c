@@ -13,7 +13,7 @@
 #define NO_TIME32 0
 #endif
 
-int semtimedop(int id, struct sembuf *buf, size_t n, const struct timespec *ts)
+MUSL_EXPORT int semtimedop(int id, struct sembuf *buf, size_t n, const struct timespec *ts)
 {
 #ifdef SYS_semtimedop_time64
 	time_t s = ts ? ts->tv_sec : 0;

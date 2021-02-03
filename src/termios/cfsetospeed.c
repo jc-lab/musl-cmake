@@ -3,7 +3,7 @@
 #include <sys/ioctl.h>
 #include <errno.h>
 
-int cfsetospeed(struct termios *tio, speed_t speed)
+MUSL_EXPORT int cfsetospeed(struct termios *tio, speed_t speed)
 {
 	if (speed & ~CBAUD) {
 		errno = EINVAL;
@@ -14,7 +14,7 @@ int cfsetospeed(struct termios *tio, speed_t speed)
 	return 0;
 }
 
-int cfsetispeed(struct termios *tio, speed_t speed)
+MUSL_EXPORT int cfsetispeed(struct termios *tio, speed_t speed)
 {
 	return speed ? cfsetospeed(tio, speed) : 0;
 }

@@ -1,6 +1,6 @@
 #include "libm.h"
 
-float coshf(float x)
+MUSL_EXPORT float coshf(float x)
 {
 	union {float f; uint32_t i;} u = {.f = x};
 	uint32_t w;

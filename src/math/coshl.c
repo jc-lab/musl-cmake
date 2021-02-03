@@ -1,12 +1,12 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double coshl(long double x)
+MUSL_EXPORT long double coshl(long double x)
 {
 	return cosh(x);
 }
 #elif LDBL_MANT_DIG == 64 && LDBL_MAX_EXP == 16384
-long double coshl(long double x)
+MUSL_EXPORT long double coshl(long double x)
 {
 	union ldshape u = {x};
 	unsigned ex = u.i.se & 0x7fff;
@@ -40,7 +40,7 @@ long double coshl(long double x)
 }
 #elif LDBL_MANT_DIG == 113 && LDBL_MAX_EXP == 16384
 // TODO: broken implementation to make things compile
-long double coshl(long double x)
+MUSL_EXPORT long double coshl(long double x)
 {
 	return cosh(x);
 }

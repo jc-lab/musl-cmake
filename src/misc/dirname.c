@@ -1,7 +1,7 @@
 #include <string.h>
 #include <libgen.h>
 
-char *dirname(char *s)
+MUSL_EXPORT char *dirname(char *s)
 {
 	size_t i;
 	if (!s || !*s) return ".";

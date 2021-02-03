@@ -1,7 +1,7 @@
 #include <mqueue.h>
 #include "syscall.h"
 
-int mq_close(mqd_t mqd)
+MUSL_EXPORT int mq_close(mqd_t mqd)
 {
 	return syscall(SYS_close, mqd);
 }

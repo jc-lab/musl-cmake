@@ -1,7 +1,7 @@
 #include <spawn.h>
 #include <errno.h>
 
-int posix_spawnattr_setflags(posix_spawnattr_t *attr, short flags)
+MUSL_EXPORT int posix_spawnattr_setflags(posix_spawnattr_t *attr, short flags)
 {
 	const unsigned all_flags =
 		POSIX_SPAWN_RESETIDS |

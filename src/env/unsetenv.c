@@ -6,7 +6,7 @@
 static void dummy(char *old, char *new) {}
 weak_alias(dummy, __env_rm_add);
 
-int unsetenv(const char *name)
+MUSL_EXPORT int unsetenv(const char *name)
 {
 	size_t l = __strchrnul(name, '=') - name;
 	if (!l || name[l]) {

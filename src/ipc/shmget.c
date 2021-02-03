@@ -3,7 +3,7 @@
 #include "syscall.h"
 #include "ipc.h"
 
-int shmget(key_t key, size_t size, int flag)
+MUSL_EXPORT int shmget(key_t key, size_t size, int flag)
 {
 	if (size > PTRDIFF_MAX) size = SIZE_MAX;
 #ifndef SYS_ipc

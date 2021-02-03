@@ -1,7 +1,7 @@
 #include <threads.h>
 #include <pthread.h>
 
-int mtx_unlock(mtx_t *mtx)
+MUSL_EXPORT int mtx_unlock(mtx_t *mtx)
 {
 	/* The only cases where pthread_mutex_unlock can return an
 	 * error are undefined behavior for C11 mtx_unlock, so we can

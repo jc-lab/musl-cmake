@@ -1,7 +1,7 @@
 #include "pthread_impl.h"
 #include "atomic.h"
 
-int pthread_mutex_consistent(pthread_mutex_t *m)
+MUSL_EXPORT int pthread_mutex_consistent(pthread_mutex_t *m)
 {
 	int old = m->_m_lock;
 	int own = old & 0x3fffffff;

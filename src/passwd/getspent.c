@@ -1,14 +1,14 @@
 #include "pwf.h"
 
-void setspent()
+MUSL_EXPORT void setspent()
 {
 }
 
-void endspent()
+MUSL_EXPORT void endspent()
 {
 }
 
-struct spwd *getspent()
+MUSL_EXPORT struct spwd *getspent()
 {
 	return 0;
 }

@@ -28,7 +28,7 @@
 
 #include "libm.h"
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double fmal(long double x, long double y, long double z)
+MUSL_EXPORT long double fmal(long double x, long double y, long double z)
 {
 	return fma(x, y, z);
 }
@@ -162,7 +162,7 @@ static inline struct dd dd_mul(long double a, long double b)
  *      Dekker, T.  A Floating-Point Technique for Extending the
  *      Available Precision.  Numer. Math. 18, 224-242 (1971).
  */
-long double fmal(long double x, long double y, long double z)
+MUSL_EXPORT long double fmal(long double x, long double y, long double z)
 {
 	#pragma STDC FENV_ACCESS ON
 	long double xs, ys, zs, adj;

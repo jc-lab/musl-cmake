@@ -7,7 +7,7 @@
 
 static char buf[LC_ALL*(LOCALE_NAME_MAX+1)];
 
-char *setlocale(int cat, const char *name)
+MUSL_EXPORT char *setlocale(int cat, const char *name)
 {
 	const struct __locale_map *lm;
 

@@ -1,7 +1,7 @@
 #include <fenv.h>
 #include <math.h>
 
-float nearbyintf(float x)
+MUSL_EXPORT float nearbyintf(float x)
 {
 #ifdef FE_INEXACT
 	#pragma STDC FENV_ACCESS ON

@@ -4,7 +4,7 @@
 static void dummy(FILE *f) { }
 weak_alias(dummy, __unlist_locked_file);
 
-int fclose(FILE *f)
+MUSL_EXPORT int fclose(FILE *f)
 {
 	int r;
 	

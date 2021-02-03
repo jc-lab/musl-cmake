@@ -39,7 +39,7 @@ static void mul(uint64_t *hi, uint64_t *lo, uint64_t x, uint64_t y)
 	*hi = t3 + (t2>>32) + (t1 > *lo);
 }
 
-double fma(double x, double y, double z)
+MUSL_EXPORT double fma(double x, double y, double z)
 {
 	#pragma STDC FENV_ACCESS ON
 

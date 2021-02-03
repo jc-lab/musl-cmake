@@ -17,7 +17,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double atanl(long double x)
+MUSL_EXPORT long double atanl(long double x)
 {
 	return atan(x);
 }
@@ -126,7 +126,7 @@ static long double T_odd(long double x)
 }
 #endif
 
-long double atanl(long double x)
+MUSL_EXPORT long double atanl(long double x)
 {
 	union ldshape u = {x};
 	long double w, s1, s2, z;

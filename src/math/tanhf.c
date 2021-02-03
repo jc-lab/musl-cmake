@@ -1,6 +1,6 @@
 #include "libm.h"
 
-float tanhf(float x)
+MUSL_EXPORT float tanhf(float x)
 {
 	union {float f; uint32_t i;} u = {.f = x};
 	uint32_t w;

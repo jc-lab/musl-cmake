@@ -1,7 +1,7 @@
 #include "stdio_impl.h"
 #include "pthread_impl.h"
 
-void funlockfile(FILE *f)
+MUSL_EXPORT void funlockfile(FILE *f)
 {
 	if (f->lockcount == 1) {
 		__unlist_locked_file(f);

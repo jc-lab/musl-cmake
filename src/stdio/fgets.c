@@ -3,7 +3,7 @@
 
 #define MIN(a,b) ((a)<(b) ? (a) : (b))
 
-char *fgets(char *restrict s, int n, FILE *restrict f)
+MUSL_EXPORT char *fgets(char *restrict s, int n, FILE *restrict f)
 {
 	char *p = s;
 	unsigned char *z;

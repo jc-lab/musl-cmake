@@ -1,7 +1,7 @@
 #define _GNU_SOURCE
 #include <string.h>
 
-char *strsep(char **str, const char *sep)
+MUSL_EXPORT char *strsep(char **str, const char *sep)
 {
 	char *s = *str, *end;
 	if (!s) return NULL;

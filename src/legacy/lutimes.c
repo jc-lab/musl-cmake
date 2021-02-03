@@ -3,7 +3,7 @@
 #include <sys/time.h>
 #include <fcntl.h>
 
-int lutimes(const char *filename, const struct timeval tv[2])
+MUSL_EXPORT int lutimes(const char *filename, const struct timeval tv[2])
 {
 	struct timespec times[2];
 	if (tv) {

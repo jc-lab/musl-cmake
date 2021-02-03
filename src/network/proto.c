@@ -43,17 +43,17 @@ static const unsigned char protos[] = {
 	"\377raw"
 };
 
-void endprotoent(void)
+MUSL_EXPORT void endprotoent(void)
 {
 	idx = 0;
 }
 
-void setprotoent(int stayopen)
+MUSL_EXPORT void setprotoent(int stayopen)
 {
 	idx = 0;
 }
 
-struct protoent *getprotoent(void)
+MUSL_EXPORT struct protoent *getprotoent(void)
 {
 	static struct protoent p;
 	static const char *aliases;
@@ -65,7 +65,7 @@ struct protoent *getprotoent(void)
 	return &p;
 }
 
-struct protoent *getprotobyname(const char *name)
+MUSL_EXPORT struct protoent *getprotobyname(const char *name)
 {
 	struct protoent *p;
 	endprotoent();
@@ -74,7 +74,7 @@ struct protoent *getprotobyname(const char *name)
 	return p;
 }
 
-struct protoent *getprotobynumber(int num)
+MUSL_EXPORT struct protoent *getprotobynumber(int num)
 {
 	struct protoent *p;
 	endprotoent();

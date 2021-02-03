@@ -1,6 +1,6 @@
 #include "stdio_impl.h"
 
-int getchar_unlocked(void)
+MUSL_EXPORT int getchar_unlocked(void)
 {
 	return getc_unlocked(stdin);
 }

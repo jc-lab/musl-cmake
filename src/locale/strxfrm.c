@@ -10,7 +10,7 @@ size_t __strxfrm_l(char *restrict dest, const char *restrict src, size_t n, loca
 	return l;
 }
 
-size_t strxfrm(char *restrict dest, const char *restrict src, size_t n)
+MUSL_EXPORT size_t strxfrm(char *restrict dest, const char *restrict src, size_t n)
 {
 	return __strxfrm_l(dest, src, n, CURRENT_LOCALE);
 }

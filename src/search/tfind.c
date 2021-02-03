@@ -1,7 +1,7 @@
 #include <search.h>
 #include "tsearch.h"
 
-void *tfind(const void *key, void *const *rootp,
+MUSL_EXPORT void *tfind(const void *key, void *const *rootp,
 	int(*cmp)(const void *, const void *))
 {
 	if (!rootp)

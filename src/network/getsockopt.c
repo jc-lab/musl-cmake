@@ -3,7 +3,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-int getsockopt(int fd, int level, int optname, void *restrict optval, socklen_t *restrict optlen)
+MUSL_EXPORT int getsockopt(int fd, int level, int optname, void *restrict optval, socklen_t *restrict optlen)
 {
 	long tv32[2];
 	struct timeval *tv;

@@ -1,7 +1,7 @@
 #include <string.h>
 #include <libgen.h>
 
-char *basename(char *s)
+MUSL_EXPORT char *basename(char *s)
 {
 	size_t i;
 	if (!s || !*s) return ".";

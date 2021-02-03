@@ -18,32 +18,32 @@ static unsigned long long strtox(const char *s, char **p, int base, unsigned lon
 	return y;
 }
 
-unsigned long long strtoull(const char *restrict s, char **restrict p, int base)
+MUSL_EXPORT unsigned long long strtoull(const char *restrict s, char **restrict p, int base)
 {
 	return strtox(s, p, base, ULLONG_MAX);
 }
 
-long long strtoll(const char *restrict s, char **restrict p, int base)
+MUSL_EXPORT long long strtoll(const char *restrict s, char **restrict p, int base)
 {
 	return strtox(s, p, base, LLONG_MIN);
 }
 
-unsigned long strtoul(const char *restrict s, char **restrict p, int base)
+MUSL_EXPORT unsigned long strtoul(const char *restrict s, char **restrict p, int base)
 {
 	return strtox(s, p, base, ULONG_MAX);
 }
 
-long strtol(const char *restrict s, char **restrict p, int base)
+MUSL_EXPORT long strtol(const char *restrict s, char **restrict p, int base)
 {
 	return strtox(s, p, base, 0UL+LONG_MIN);
 }
 
-intmax_t strtoimax(const char *restrict s, char **restrict p, int base)
+MUSL_EXPORT intmax_t strtoimax(const char *restrict s, char **restrict p, int base)
 {
 	return strtoll(s, p, base);
 }
 
-uintmax_t strtoumax(const char *restrict s, char **restrict p, int base)
+MUSL_EXPORT uintmax_t strtoumax(const char *restrict s, char **restrict p, int base)
 {
 	return strtoull(s, p, base);
 }

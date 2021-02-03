@@ -9,7 +9,7 @@
 static void dummy(int x) { }
 weak_alias(dummy, __aio_atfork);
 
-pid_t _Fork(void)
+MUSL_EXPORT pid_t _Fork(void)
 {
 	pid_t ret;
 	sigset_t set;

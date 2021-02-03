@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <sys/utsname.h>
 
-int gethostname(char *name, size_t len)
+MUSL_EXPORT int gethostname(char *name, size_t len)
 {
 	size_t i;
 	struct utsname uts;

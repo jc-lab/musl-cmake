@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include "syscall.h"
 
-void sync(void)
+MUSL_EXPORT void sync(void)
 {
 	__syscall(SYS_sync);
 }

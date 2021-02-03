@@ -9,7 +9,7 @@
 #include <errno.h>
 #include "lookup.h"
 
-int getaddrinfo(const char *restrict host, const char *restrict serv, const struct addrinfo *restrict hint, struct addrinfo **restrict res)
+MUSL_EXPORT int getaddrinfo(const char *restrict host, const char *restrict serv, const struct addrinfo *restrict hint, struct addrinfo **restrict res)
 {
 	struct service ports[MAXSERVS];
 	struct address addrs[MAXADDRS];

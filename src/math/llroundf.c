@@ -1,6 +1,6 @@
 #include <math.h>
 
-long long llroundf(float x)
+MUSL_EXPORT long long llroundf(float x)
 {
 	return roundf(x);
 }

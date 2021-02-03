@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include "libc.h"
 
-int getpagesize(void)
+MUSL_EXPORT int getpagesize(void)
 {
 	return PAGE_SIZE;
 }

@@ -17,7 +17,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double asinl(long double x)
+MUSL_EXPORT long double asinl(long double x)
 {
 	return asin(x);
 }
@@ -31,7 +31,7 @@ long double asinl(long double x)
 #define CLEARBOTTOM(u) (u.i.lo = 0)
 #endif
 
-long double asinl(long double x)
+MUSL_EXPORT long double asinl(long double x)
 {
 	union ldshape u = {x};
 	long double z, r, s;

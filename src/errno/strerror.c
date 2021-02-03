@@ -39,7 +39,7 @@ char *__strerror_l(int e, locale_t loc)
 	return (char *)LCTRANS(s, LC_MESSAGES, loc);
 }
 
-char *strerror(int e)
+MUSL_EXPORT char *strerror(int e)
 {
 	return __strerror_l(e, CURRENT_LOCALE);
 }

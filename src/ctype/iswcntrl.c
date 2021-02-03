@@ -1,6 +1,6 @@
 #include <wctype.h>
 
-int iswcntrl(wint_t wc)
+MUSL_EXPORT int iswcntrl(wint_t wc)
 {
 	return (unsigned)wc < 32
 	    || (unsigned)(wc-0x7f) < 33

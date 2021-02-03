@@ -224,7 +224,7 @@ static int expand_tilde(char **pat, char *buf, size_t *pos)
 	return 0;
 }
 
-int glob(const char *restrict pat, int flags, int (*errfunc)(const char *path, int err), glob_t *restrict g)
+MUSL_EXPORT int glob(const char *restrict pat, int flags, int (*errfunc)(const char *path, int err), glob_t *restrict g)
 {
 	struct match head = { .next = NULL }, *tail = &head;
 	size_t cnt, i;
@@ -297,7 +297,7 @@ int glob(const char *restrict pat, int flags, int (*errfunc)(const char *path, i
 	return error;
 }
 
-void globfree(glob_t *g)
+MUSL_EXPORT void globfree(glob_t *g)
 {
 	size_t i;
 	for (i=0; i<g->gl_pathc; i++)

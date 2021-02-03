@@ -2,7 +2,7 @@
 #include <string.h>
 #include <unistd.h>
 
-char *getenv(const char *name)
+MUSL_EXPORT char *getenv(const char *name)
 {
 	size_t l = __strchrnul(name, '=') - name;
 	if (l && !name[l] && __environ)

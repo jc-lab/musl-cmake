@@ -321,17 +321,17 @@ static int submit(struct aiocb *cb, int op)
 	return ret;
 }
 
-int aio_read(struct aiocb *cb)
+MUSL_EXPORT int aio_read(struct aiocb *cb)
 {
 	return submit(cb, LIO_READ);
 }
 
-int aio_write(struct aiocb *cb)
+MUSL_EXPORT int aio_write(struct aiocb *cb)
 {
 	return submit(cb, LIO_WRITE);
 }
 
-int aio_fsync(int op, struct aiocb *cb)
+MUSL_EXPORT int aio_fsync(int op, struct aiocb *cb)
 {
 	if (op != O_SYNC && op != O_DSYNC) {
 		errno = EINVAL;
@@ -340,18 +340,18 @@ int aio_fsync(int op, struct aiocb *cb)
 	return submit(cb, op);
 }
 
-ssize_t aio_return(struct aiocb *cb)
+MUSL_EXPORT ssize_t aio_return(struct aiocb *cb)
 {
 	return cb->__ret;
 }
 
-int aio_error(const struct aiocb *cb)
+MUSL_EXPORT int aio_error(const struct aiocb *cb)
 {
 	a_barrier();
 	return cb->__err & 0x7fffffff;
 }
 
-int aio_cancel(int fd, struct aiocb *cb)
+MUSL_EXPORT int aio_cancel(int fd, struct aiocb *cb)
 {
 	sigset_t allmask, origmask;
 	int ret = AIO_ALLDONE;

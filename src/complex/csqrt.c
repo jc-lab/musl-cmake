@@ -39,7 +39,7 @@
 /* We risk spurious overflow for components >= DBL_MAX / (1 + sqrt(2)). */
 #define THRESH  0x1.a827999fcef32p+1022
 
-double complex csqrt(double complex z)
+MUSL_EXPORT double complex csqrt(double complex z)
 {
 	double complex result;
 	double a, b;

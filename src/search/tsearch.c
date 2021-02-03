@@ -59,7 +59,7 @@ int __tsearch_balance(void **p)
 	return rot(p, n, h0<h1);
 }
 
-void *tsearch(const void *key, void **rootp,
+MUSL_EXPORT void *tsearch(const void *key, void **rootp,
 	int (*cmp)(const void *, const void *))
 {
 	if (!rootp)

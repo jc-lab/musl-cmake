@@ -2,7 +2,7 @@
 #include <limits.h>
 #include <string.h>
 
-char *gets(char *s)
+MUSL_EXPORT char *gets(char *s)
 {
 	size_t i=0;
 	int c;

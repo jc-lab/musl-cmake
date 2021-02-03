@@ -1,7 +1,7 @@
 #include <sys/time.h>
 #include "syscall.h"
 
-int getitimer(int which, struct itimerval *old)
+MUSL_EXPORT int getitimer(int which, struct itimerval *old)
 {
 	if (sizeof(time_t) > sizeof(long)) {
 		long old32[4];

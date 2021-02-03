@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int getsubopt(char **opt, char *const *keys, char **val)
+MUSL_EXPORT int getsubopt(char **opt, char *const *keys, char **val)
 {
 	char *s = *opt;
 	int i;

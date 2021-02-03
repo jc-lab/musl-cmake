@@ -1,6 +1,6 @@
 #include "pthread_impl.h"
 
-int pthread_attr_setscope(pthread_attr_t *a, int scope)
+MUSL_EXPORT int pthread_attr_setscope(pthread_attr_t *a, int scope)
 {
 	switch (scope) {
 	case PTHREAD_SCOPE_SYSTEM:

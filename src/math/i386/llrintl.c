@@ -1,6 +1,6 @@
 #include <math.h>
 
-long long llrintl(long double x)
+MUSL_EXPORT long long llrintl(long double x)
 {
 	long long r;
 	__asm__ ("fistpll %0" : "=m"(r) : "t"(x) : "st");

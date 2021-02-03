@@ -36,7 +36,7 @@
  */
 #pragma STDC CX_LIMITED_RANGE ON
 
-float complex csqrtf(float complex z)
+MUSL_EXPORT float complex csqrtf(float complex z)
 {
 	float a = crealf(z), b = cimagf(z);
 	double t;

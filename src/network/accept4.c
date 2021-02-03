@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int accept4(int fd, struct sockaddr *restrict addr, socklen_t *restrict len, int flg)
+MUSL_EXPORT int accept4(int fd, struct sockaddr *restrict addr, socklen_t *restrict len, int flg)
 {
 	if (!flg) return accept(fd, addr, len);
 	int ret = socketcall_cp(accept4, fd, addr, len, flg, 0, 0);

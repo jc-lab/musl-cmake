@@ -1,6 +1,6 @@
 #include <ctype.h>
 
-int isblank(int c)
+MUSL_EXPORT int isblank(int c)
 {
 	return (c == ' ' || c == '\t');
 }

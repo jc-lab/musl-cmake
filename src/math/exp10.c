@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdint.h>
 
-double exp10(double x)
+MUSL_EXPORT double exp10(double x)
 {
 	static const double p10[] = {
 		1e-15, 1e-14, 1e-13, 1e-12, 1e-11, 1e-10,

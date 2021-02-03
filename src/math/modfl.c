@@ -1,7 +1,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double modfl(long double x, long double *iptr)
+MUSL_EXPORT long double modfl(long double x, long double *iptr)
 {
 	double d;
 	long double r;
@@ -14,7 +14,7 @@ long double modfl(long double x, long double *iptr)
 
 static const long double toint = 1/LDBL_EPSILON;
 
-long double modfl(long double x, long double *iptr)
+MUSL_EXPORT long double modfl(long double x, long double *iptr)
 {
 	union ldshape u = {x};
 	int e = (u.i.se & 0x7fff) - 0x3fff;

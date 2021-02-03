@@ -2,7 +2,7 @@
 
 #ifdef _ARCH_PWR5X
 
-double round(double x)
+MUSL_EXPORT double round(double x)
 {
 	__asm__ ("frin %0, %1" : "=d"(x) : "d"(x));
 	return x;

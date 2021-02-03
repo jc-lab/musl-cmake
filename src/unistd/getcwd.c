@@ -4,7 +4,7 @@
 #include <string.h>
 #include "syscall.h"
 
-char *getcwd(char *buf, size_t size)
+MUSL_EXPORT char *getcwd(char *buf, size_t size)
 {
 	char tmp[buf ? 1 : PATH_MAX];
 	if (!buf) {

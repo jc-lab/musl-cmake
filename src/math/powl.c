@@ -70,7 +70,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double powl(long double x, long double y)
+MUSL_EXPORT long double powl(long double x, long double y)
 {
 	return pow(x, y);
 }
@@ -191,7 +191,7 @@ static const volatile long double twom10000 = 0x1p-10000L;
 static long double reducl(long double);
 static long double powil(long double, int);
 
-long double powl(long double x, long double y)
+MUSL_EXPORT long double powl(long double x, long double y)
 {
 	/* double F, Fa, Fb, G, Ga, Gb, H, Ha, Hb */
 	int i, nflg, iyflg, yoddint;
@@ -515,7 +515,7 @@ static long double powil(long double x, int nn)
 }
 #elif LDBL_MANT_DIG == 113 && LDBL_MAX_EXP == 16384
 // TODO: broken implementation to make things compile
-long double powl(long double x, long double y)
+MUSL_EXPORT long double powl(long double x, long double y)
 {
 	return pow(x, y);
 }

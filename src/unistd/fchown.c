@@ -3,7 +3,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int fchown(int fd, uid_t uid, gid_t gid)
+MUSL_EXPORT int fchown(int fd, uid_t uid, gid_t gid)
 {
 	int ret = __syscall(SYS_fchown, fd, uid, gid);
 	if (ret != -EBADF || __syscall(SYS_fcntl, fd, F_GETFD) < 0)

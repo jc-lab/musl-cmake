@@ -2,7 +2,7 @@
 #include <pthread.h>
 #include <errno.h>
 
-int mtx_timedlock(mtx_t *restrict m, const struct timespec *restrict ts)
+MUSL_EXPORT int mtx_timedlock(mtx_t *restrict m, const struct timespec *restrict ts)
 {
 	int ret = __pthread_mutex_timedlock((pthread_mutex_t *)m, ts);
 	switch (ret) {

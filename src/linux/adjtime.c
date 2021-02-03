@@ -4,7 +4,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-int adjtime(const struct timeval *in, struct timeval *out)
+MUSL_EXPORT int adjtime(const struct timeval *in, struct timeval *out)
 {
 	struct timex tx = { 0 };
 	if (in) {

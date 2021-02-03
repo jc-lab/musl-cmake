@@ -1,7 +1,7 @@
 #define _GNU_SOURCE
 #include <netdb.h>
 
-struct servent *getservbyname(const char *name, const char *prots)
+MUSL_EXPORT struct servent *getservbyname(const char *name, const char *prots)
 {
 	static struct servent se;
 	static char *buf[2];

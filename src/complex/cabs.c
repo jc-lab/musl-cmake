@@ -1,6 +1,6 @@
 #include "complex_impl.h"
 
-double cabs(double complex z)
+MUSL_EXPORT double cabs(double complex z)
 {
 	return hypot(creal(z), cimag(z));
 }

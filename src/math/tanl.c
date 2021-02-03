@@ -1,12 +1,12 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double tanl(long double x)
+MUSL_EXPORT long double tanl(long double x)
 {
 	return tan(x);
 }
 #elif (LDBL_MANT_DIG == 64 || LDBL_MANT_DIG == 113) && LDBL_MAX_EXP == 16384
-long double tanl(long double x)
+MUSL_EXPORT long double tanl(long double x)
 {
 	union ldshape u = {x};
 	long double y[2];

@@ -2,7 +2,7 @@
 
 #ifdef __VSX__
 
-long lroundf(float x)
+MUSL_EXPORT long lroundf(float x)
 {
 	long n;
 	__asm__ (

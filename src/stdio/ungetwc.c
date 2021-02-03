@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include <string.h>
 
-wint_t ungetwc(wint_t c, FILE *f)
+MUSL_EXPORT wint_t ungetwc(wint_t c, FILE *f)
 {
 	unsigned char mbc[MB_LEN_MAX];
 	int l;

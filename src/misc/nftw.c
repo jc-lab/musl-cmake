@@ -118,7 +118,7 @@ static int do_nftw(char *path, int (*fn)(const char *, const struct stat *, int,
 	return 0;
 }
 
-int nftw(const char *path, int (*fn)(const char *, const struct stat *, int, struct FTW *), int fd_limit, int flags)
+MUSL_EXPORT int nftw(const char *path, int (*fn)(const char *, const struct stat *, int, struct FTW *), int fd_limit, int flags)
 {
 	int r, cs;
 	size_t l;

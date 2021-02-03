@@ -22,7 +22,7 @@
 
 #define RLIM(x) (-32768|(RLIMIT_ ## x))
 
-long sysconf(int name)
+MUSL_EXPORT long sysconf(int name)
 {
 	static const short values[] = {
 		[_SC_ARG_MAX] = JT_ARG_MAX,

@@ -1,7 +1,7 @@
 #include <sys/socket.h>
 #include "syscall.h"
 
-int listen(int fd, int backlog)
+MUSL_EXPORT int listen(int fd, int backlog)
 {
 	return socketcall(listen, fd, backlog, 0, 0, 0, 0);
 }

@@ -21,7 +21,7 @@ void __env_rm_add(char *old, char *new)
 	(env_alloced = t)[env_alloced_n++] = new;
 }
 
-int setenv(const char *var, const char *value, int overwrite)
+MUSL_EXPORT int setenv(const char *var, const char *value, int overwrite)
 {
 	char *s;
 	size_t l1, l2;

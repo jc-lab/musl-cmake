@@ -337,7 +337,7 @@ overflow:
 	return -1;
 }
 
-int vfwprintf(FILE *restrict f, const wchar_t *restrict fmt, va_list ap)
+MUSL_EXPORT int vfwprintf(FILE *restrict f, const wchar_t *restrict fmt, va_list ap)
 {
 	va_list ap2;
 	int nl_type[NL_ARGMAX] = {0};

@@ -13,7 +13,7 @@ static int cmp(const void *a, const void *b)
 	return x<y ? -1 : x>y ? 1 : 0;
 }
 
-char *catgets (nl_catd catd, int set_id, int msg_id, const char *s)
+MUSL_EXPORT char *catgets (nl_catd catd, int set_id, int msg_id, const char *s)
 {
 	const char *map = (const char *)catd;
 	uint32_t nsets = V(map+4);

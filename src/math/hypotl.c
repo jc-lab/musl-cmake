@@ -1,7 +1,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double hypotl(long double x, long double y)
+MUSL_EXPORT long double hypotl(long double x, long double y)
 {
 	return hypot(x, y);
 }
@@ -22,7 +22,7 @@ static void sq(long double *hi, long double *lo, long double x)
 	*lo = xh*xh - *hi + 2*xh*xl + xl*xl;
 }
 
-long double hypotl(long double x, long double y)
+MUSL_EXPORT long double hypotl(long double x, long double y)
 {
 	union ldshape ux = {x}, uy = {y};
 	int ex, ey;

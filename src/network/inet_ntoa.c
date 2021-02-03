@@ -1,7 +1,7 @@
 #include <arpa/inet.h>
 #include <stdio.h>
 
-char *inet_ntoa(struct in_addr in)
+MUSL_EXPORT char *inet_ntoa(struct in_addr in)
 {
 	static char buf[16];
 	unsigned char *a = (void *)&in;

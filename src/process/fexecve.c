@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int fexecve(int fd, char *const argv[], char *const envp[])
+MUSL_EXPORT int fexecve(int fd, char *const argv[], char *const envp[])
 {
 	int r = __syscall(SYS_execveat, fd, "", argv, envp, AT_EMPTY_PATH);
 	if (r != -ENOSYS) return __syscall_ret(r);

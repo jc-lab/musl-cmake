@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int access(const char *filename, int amode)
+MUSL_EXPORT int access(const char *filename, int amode)
 {
 #ifdef SYS_access
 	return syscall(SYS_access, filename, amode);

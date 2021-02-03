@@ -4,7 +4,7 @@
 #include <string.h>
 #include "meta.h"
 
-void *realloc(void *p, size_t n)
+MUSL_EXPORT void *realloc(void *p, size_t n)
 {
 	if (!p) return malloc(n);
 	if (size_overflows(n)) return 0;

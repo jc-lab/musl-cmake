@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <time.h>
 
-int usleep(unsigned useconds)
+MUSL_EXPORT int usleep(unsigned useconds)
 {
 	struct timespec tv = {
 		.tv_sec = useconds/1000000,

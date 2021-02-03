@@ -1,6 +1,6 @@
 #include <signal.h>
 
-int sigismember(const sigset_t *set, int sig)
+MUSL_EXPORT int sigismember(const sigset_t *set, int sig)
 {
 	unsigned s = sig-1;
 	if (s >= _NSIG-1) return 0;

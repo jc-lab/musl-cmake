@@ -83,7 +83,7 @@ static double _redupi(double x)
 	return t;
 }
 
-double complex catan(double complex z)
+MUSL_EXPORT double complex catan(double complex z)
 {
 	double complex w;
 	double a, t, x, x2, y;

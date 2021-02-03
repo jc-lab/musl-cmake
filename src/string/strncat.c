@@ -1,6 +1,6 @@
 #include <string.h>
 
-char *strncat(char *restrict d, const char *restrict s, size_t n)
+MUSL_EXPORT char *strncat(char *restrict d, const char *restrict s, size_t n)
 {
 	char *a = d;
 	d += strlen(d);

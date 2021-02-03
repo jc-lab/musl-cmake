@@ -68,7 +68,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double expl(long double x)
+MUSL_EXPORT long double expl(long double x)
 {
 	return exp(x);
 }
@@ -90,7 +90,7 @@ LN2HI = 6.9314575195312500000000E-1L,
 LN2LO = 1.4286068203094172321215E-6L,
 LOG2E = 1.4426950408889634073599E0L;
 
-long double expl(long double x)
+MUSL_EXPORT long double expl(long double x)
 {
 	long double px, xx;
 	int k;
@@ -121,7 +121,7 @@ long double expl(long double x)
 }
 #elif LDBL_MANT_DIG == 113 && LDBL_MAX_EXP == 16384
 // TODO: broken implementation to make things compile
-long double expl(long double x)
+MUSL_EXPORT long double expl(long double x)
 {
 	return exp(x);
 }

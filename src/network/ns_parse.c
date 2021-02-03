@@ -23,23 +23,23 @@ const struct _ns_flagdata _ns_flagdata[16] = {
 	{ 0x0000, 0 },
 };
 
-unsigned ns_get16(const unsigned char *cp)
+MUSL_EXPORT unsigned ns_get16(const unsigned char *cp)
 {
 	return cp[0]<<8 | cp[1];
 }
 
-unsigned long ns_get32(const unsigned char *cp)
+MUSL_EXPORT unsigned long ns_get32(const unsigned char *cp)
 {
 	return (unsigned)cp[0]<<24 | cp[1]<<16 | cp[2]<<8 | cp[3];
 }
 
-void ns_put16(unsigned s, unsigned char *cp)
+MUSL_EXPORT void ns_put16(unsigned s, unsigned char *cp)
 {
 	*cp++ = s>>8;
 	*cp++ = s;
 }
 
-void ns_put32(unsigned long l, unsigned char *cp)
+MUSL_EXPORT void ns_put32(unsigned long l, unsigned char *cp)
 {
 	*cp++ = l>>24;
 	*cp++ = l>>16;
@@ -47,7 +47,7 @@ void ns_put32(unsigned long l, unsigned char *cp)
 	*cp++ = l;
 }
 
-int ns_initparse(const unsigned char *msg, int msglen, ns_msg *handle)
+MUSL_EXPORT int ns_initparse(const unsigned char *msg, int msglen, ns_msg *handle)
 {
 	int i, r;
 
@@ -77,7 +77,7 @@ bad:
 	return -1;
 }
 
-int ns_skiprr(const unsigned char *ptr, const unsigned char *eom, ns_sect section, int count)
+MUSL_EXPORT int ns_skiprr(const unsigned char *ptr, const unsigned char *eom, ns_sect section, int count)
 {
 	const unsigned char *p = ptr;
 	int r;
@@ -101,7 +101,7 @@ bad:
 	return -1;
 }
 
-int ns_parserr(ns_msg *handle, ns_sect section, int rrnum, ns_rr *rr)
+MUSL_EXPORT int ns_parserr(ns_msg *handle, ns_sect section, int rrnum, ns_rr *rr)
 {
 	int r;
 
@@ -160,7 +160,7 @@ size:
 	return -1;
 }
 
-int ns_name_uncompress(const unsigned char *msg, const unsigned char *eom,
+MUSL_EXPORT int ns_name_uncompress(const unsigned char *msg, const unsigned char *eom,
                        const unsigned char *src, char *dst, size_t dstsiz)
 {
 	int r;

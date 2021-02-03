@@ -4,7 +4,7 @@
 #include <pthread.h>
 #include <errno.h>
 
-int getentropy(void *buffer, size_t len)
+MUSL_EXPORT int getentropy(void *buffer, size_t len)
 {
 	int cs, ret = 0;
 	char *pos = buffer;

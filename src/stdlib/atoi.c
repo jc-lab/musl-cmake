@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-int atoi(const char *s)
+MUSL_EXPORT int atoi(const char *s)
 {
 	int n=0, neg=0;
 	while (isspace(*s)) s++;

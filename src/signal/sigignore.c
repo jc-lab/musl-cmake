@@ -1,6 +1,6 @@
 #include <signal.h>
 
-int sigignore(int sig)
+MUSL_EXPORT int sigignore(int sig)
 {
 	struct sigaction sa;
 

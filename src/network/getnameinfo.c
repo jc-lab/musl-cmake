@@ -118,7 +118,7 @@ static int dns_parse_callback(void *c, int rr, const void *data, int len, const 
 	
 }
 
-int getnameinfo(const struct sockaddr *restrict sa, socklen_t sl,
+MUSL_EXPORT int getnameinfo(const struct sockaddr *restrict sa, socklen_t sl,
 	char *restrict node, socklen_t nodelen,
 	char *restrict serv, socklen_t servlen,
 	int flags)

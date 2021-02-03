@@ -2,7 +2,7 @@
 #include <limits.h>
 #include "pthread_impl.h"
 
-int timer_getoverrun(timer_t t)
+MUSL_EXPORT int timer_getoverrun(timer_t t)
 {
 	if ((intptr_t)t < 0) {
 		pthread_t td = (void *)((uintptr_t)t << 1);

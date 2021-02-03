@@ -5,7 +5,7 @@
  * minus non-breaking spaces (U+00A0, U+2007, and U+202F) and script-
  * specific characters with non-blank glyphs (U+1680 and U+180E). */
 
-int iswspace(wint_t wc)
+MUSL_EXPORT int iswspace(wint_t wc)
 {
 	static const wchar_t spaces[] = {
 		' ', '\t', '\n', '\r', 11, 12,  0x0085,

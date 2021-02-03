@@ -2,7 +2,7 @@
 #include <errno.h>
 #include <limits.h>
 
-char *ttyname(int fd)
+MUSL_EXPORT char *ttyname(int fd)
 {
 	static char buf[TTY_NAME_MAX];
 	int result;

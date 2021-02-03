@@ -2,7 +2,7 @@
 #include <limits.h>
 #include <errno.h>
 
-long fpathconf(int fd, int name)
+MUSL_EXPORT long fpathconf(int fd, int name)
 {
 	static const short values[] = {
 		[_PC_LINK_MAX] = _POSIX_LINK_MAX,

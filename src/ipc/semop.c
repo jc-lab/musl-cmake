@@ -2,7 +2,7 @@
 #include "syscall.h"
 #include "ipc.h"
 
-int semop(int id, struct sembuf *buf, size_t n)
+MUSL_EXPORT int semop(int id, struct sembuf *buf, size_t n)
 {
 #ifndef SYS_ipc
 	return syscall(SYS_semop, id, buf, n);

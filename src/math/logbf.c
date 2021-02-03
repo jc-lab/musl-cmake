@@ -1,6 +1,6 @@
 #include <math.h>
 
-float logbf(float x)
+MUSL_EXPORT float logbf(float x)
 {
 	if (!isfinite(x))
 		return x * x;

@@ -3,7 +3,7 @@
 #include <limits.h>
 #include "syscall.h"
 
-int nice(int inc)
+MUSL_EXPORT int nice(int inc)
 {
 	int prio = inc;
 	// Only query old priority if it can affect the result.

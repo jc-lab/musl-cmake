@@ -1,7 +1,7 @@
 #include <sys/mman.h>
 #include "syscall.h"
 
-int mlock(const void *addr, size_t len)
+MUSL_EXPORT int mlock(const void *addr, size_t len)
 {
 #ifdef SYS_mlock
 	return syscall(SYS_mlock, addr, len);

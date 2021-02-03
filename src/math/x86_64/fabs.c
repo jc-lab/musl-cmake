@@ -1,6 +1,6 @@
 #include <math.h>
 
-double fabs(double x)
+MUSL_EXPORT double fabs(double x)
 {
 	double t;
 	__asm__ ("pcmpeqd %0, %0" : "=x"(t));          // t = ~0

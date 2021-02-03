@@ -3,7 +3,7 @@
 #include <signal.h>
 #include <errno.h>
 
-void psignal(int sig, const char *msg)
+MUSL_EXPORT void psignal(int sig, const char *msg)
 {
 	FILE *f = stderr;
 	char *s = strsignal(sig);

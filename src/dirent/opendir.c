@@ -5,7 +5,7 @@
 #include "__dirent.h"
 #include "syscall.h"
 
-DIR *opendir(const char *name)
+MUSL_EXPORT DIR *opendir(const char *name)
 {
 	int fd;
 	DIR *dir;

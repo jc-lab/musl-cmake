@@ -10,7 +10,7 @@
  * lock, via flockfile or otherwise, when freopen is called, and in that
  * case, freopen cannot act until the lock is released. */
 
-FILE *freopen(const char *restrict filename, const char *restrict mode, FILE *restrict f)
+MUSL_EXPORT FILE *freopen(const char *restrict filename, const char *restrict mode, FILE *restrict f)
 {
 	int fl = __fmodeflags(mode);
 	FILE *f2;

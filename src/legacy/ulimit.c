@@ -2,7 +2,7 @@
 #include <ulimit.h>
 #include <stdarg.h>
 
-long ulimit(int cmd, ...)
+MUSL_EXPORT long ulimit(int cmd, ...)
 {
 	struct rlimit rl;
 	getrlimit(RLIMIT_FSIZE, &rl);

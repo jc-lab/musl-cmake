@@ -8,18 +8,18 @@ static size_t internal_bufsize;
 
 #define SENTINEL (char *)&internal_buf
 
-FILE *setmntent(const char *name, const char *mode)
+MUSL_EXPORT FILE *setmntent(const char *name, const char *mode)
 {
 	return fopen(name, mode);
 }
 
-int endmntent(FILE *f)
+MUSL_EXPORT int endmntent(FILE *f)
 {
 	if (f) fclose(f);
 	return 1;
 }
 
-struct mntent *getmntent_r(FILE *f, struct mntent *mnt, char *linebuf, int buflen)
+MUSL_EXPORT struct mntent *getmntent_r(FILE *f, struct mntent *mnt, char *linebuf, int buflen)
 {
 	int cnt, n[8], use_internal = (linebuf == SENTINEL);
 
@@ -57,13 +57,13 @@ struct mntent *getmntent_r(FILE *f, struct mntent *mnt, char *linebuf, int bufle
 	return mnt;
 }
 
-struct mntent *getmntent(FILE *f)
+MUSL_EXPORT struct mntent *getmntent(FILE *f)
 {
 	static struct mntent mnt;
 	return getmntent_r(f, &mnt, SENTINEL, 0);
 }
 
-int addmntent(FILE *f, const struct mntent *mnt)
+MUSL_EXPORT int addmntent(FILE *f, const struct mntent *mnt)
 {
 	if (fseek(f, 0, SEEK_END)) return 1;
 	return fprintf(f, "%s\t%s\t%s\t%s\t%d\t%d\n",
@@ -71,7 +71,7 @@ int addmntent(FILE *f, const struct mntent *mnt)
 		mnt->mnt_freq, mnt->mnt_passno) < 0;
 }
 
-char *hasmntopt(const struct mntent *mnt, const char *opt)
+MUSL_EXPORT char *hasmntopt(const struct mntent *mnt, const char *opt)
 {
 	return strstr(mnt->mnt_opts, opt);
 }

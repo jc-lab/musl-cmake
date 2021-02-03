@@ -1,6 +1,6 @@
 #include "pthread_impl.h"
 
-int pthread_setcanceltype(int new, int *old)
+MUSL_EXPORT int pthread_setcanceltype(int new, int *old)
 {
 	struct pthread *self = __pthread_self();
 	if (new > 1U) return EINVAL;

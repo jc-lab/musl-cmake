@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-int abs(int a)
+MUSL_EXPORT int abs(int a)
 {
 	return a>0 ? a : -a;
 }

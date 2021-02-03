@@ -1,6 +1,6 @@
 #include <ftw.h>
 
-int ftw(const char *path, int (*fn)(const char *, const struct stat *, int), int fd_limit)
+MUSL_EXPORT int ftw(const char *path, int (*fn)(const char *, const struct stat *, int), int fd_limit)
 {
 	/* The following cast assumes that calling a function with one
 	 * argument more than it needs behaves as expected. This is

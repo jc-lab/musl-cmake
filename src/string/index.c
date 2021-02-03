@@ -2,7 +2,7 @@
 #include <string.h>
 #include <strings.h>
 
-char *index(const char *s, int c)
+MUSL_EXPORT char *index(const char *s, int c)
 {
 	return strchr(s, c);
 }

@@ -2,7 +2,7 @@
 #include <limits.h>
 #include <string.h>
 
-size_t wcsnrtombs(char *restrict dst, const wchar_t **restrict wcs, size_t wn, size_t n, mbstate_t *restrict st)
+MUSL_EXPORT size_t wcsnrtombs(char *restrict dst, const wchar_t **restrict wcs, size_t wn, size_t n, mbstate_t *restrict st)
 {
 	const wchar_t *ws = *wcs;
 	size_t cnt = 0;

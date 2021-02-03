@@ -6,7 +6,7 @@
 #include <sys/wait.h>
 #include <pthread.h>
 
-int forkpty(int *pm, char *name, const struct termios *tio, const struct winsize *ws)
+MUSL_EXPORT int forkpty(int *pm, char *name, const struct termios *tio, const struct winsize *ws)
 {
 	int m, s, ec=0, p[2], cs;
 	pid_t pid=-1;

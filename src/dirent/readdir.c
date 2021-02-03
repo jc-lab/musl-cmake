@@ -7,7 +7,7 @@
 typedef char dirstream_buf_alignment_check[1-2*(int)(
 	offsetof(struct __dirstream, buf) % sizeof(off_t))];
 
-struct dirent *readdir(DIR *dir)
+MUSL_EXPORT struct dirent *readdir(DIR *dir)
 {
 	struct dirent *de;
 	

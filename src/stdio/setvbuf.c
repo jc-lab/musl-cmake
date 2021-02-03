@@ -6,7 +6,7 @@
  * performed here. No allocation of buffers is performed, but a buffer
  * provided by the caller is used as long as it is suitably sized. */
 
-int setvbuf(FILE *restrict f, char *restrict buf, int type, size_t size)
+MUSL_EXPORT int setvbuf(FILE *restrict f, char *restrict buf, int type, size_t size)
 {
 	f->lbf = EOF;
 

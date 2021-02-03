@@ -36,7 +36,7 @@
  * direct double-precision arithmetic suffices, except where double
  * rounding occurs.
  */
-float fmaf(float x, float y, float z)
+MUSL_EXPORT float fmaf(float x, float y, float z)
 {
 	#pragma STDC FENV_ACCESS ON
 	double xy, result;

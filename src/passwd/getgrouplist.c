@@ -9,7 +9,7 @@
 #include <errno.h>
 #include "nscd.h"
 
-int getgrouplist(const char *user, gid_t gid, gid_t *groups, int *ngroups)
+MUSL_EXPORT int getgrouplist(const char *user, gid_t gid, gid_t *groups, int *ngroups)
 {
 	int rv, nlim, ret = -1;
 	ssize_t i, n = 1;

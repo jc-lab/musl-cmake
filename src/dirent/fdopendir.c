@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include "__dirent.h"
 
-DIR *fdopendir(int fd)
+MUSL_EXPORT DIR *fdopendir(int fd)
 {
 	DIR *dir;
 	struct stat st;

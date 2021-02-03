@@ -3,7 +3,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-int sync_file_range(int fd, off_t pos, off_t len, unsigned flags)
+MUSL_EXPORT int sync_file_range(int fd, off_t pos, off_t len, unsigned flags)
 {
 #if defined(SYS_sync_file_range2)
 	return syscall(SYS_sync_file_range2, fd, flags,

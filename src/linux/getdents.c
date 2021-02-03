@@ -3,7 +3,7 @@
 #include <limits.h>
 #include "syscall.h"
 
-int getdents(int fd, struct dirent *buf, size_t len)
+MUSL_EXPORT int getdents(int fd, struct dirent *buf, size_t len)
 {
 	if (len>INT_MAX) len = INT_MAX;
 	return syscall(SYS_getdents, fd, buf, len);

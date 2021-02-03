@@ -1,11 +1,11 @@
 #include <shadow.h>
 
-int lckpwdf()
+MUSL_EXPORT int lckpwdf()
 {
 	return 0;
 }
 
-int ulckpwdf()
+MUSL_EXPORT int ulckpwdf()
 {
 	return 0;
 }

@@ -4,7 +4,7 @@
  *         = (exp(x)-1 + (exp(x)-1)/exp(x))/2
  *         = x + x^3/6 + o(x^5)
  */
-double sinh(double x)
+MUSL_EXPORT double sinh(double x)
 {
 	union {double f; uint64_t i;} u = {.f = x};
 	uint32_t w;

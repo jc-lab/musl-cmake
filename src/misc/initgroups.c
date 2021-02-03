@@ -2,7 +2,7 @@
 #include <grp.h>
 #include <limits.h>
 
-int initgroups(const char *user, gid_t gid)
+MUSL_EXPORT int initgroups(const char *user, gid_t gid)
 {
 	gid_t groups[NGROUPS_MAX];
 	int count = NGROUPS_MAX;

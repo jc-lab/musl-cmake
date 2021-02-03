@@ -1,7 +1,7 @@
 #include <sys/ipc.h>
 #include <sys/stat.h>
 
-key_t ftok(const char *path, int id)
+MUSL_EXPORT key_t ftok(const char *path, int id)
 {
 	struct stat st;
 	if (stat(path, &st) < 0) return -1;

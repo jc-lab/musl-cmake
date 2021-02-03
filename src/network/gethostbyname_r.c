@@ -3,7 +3,7 @@
 #include <sys/socket.h>
 #include <netdb.h>
 
-int gethostbyname_r(const char *name,
+MUSL_EXPORT int gethostbyname_r(const char *name,
 	struct hostent *h, char *buf, size_t buflen,
 	struct hostent **res, int *err)
 {

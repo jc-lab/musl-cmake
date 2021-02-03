@@ -2,11 +2,11 @@
 #include <errno.h>
 #include "syscall.h"
 
-int inotify_init()
+MUSL_EXPORT int inotify_init()
 {
 	return inotify_init1(0);
 }
-int inotify_init1(int flags)
+MUSL_EXPORT int inotify_init1(int flags)
 {
 	int r = __syscall(SYS_inotify_init1, flags);
 #ifdef SYS_inotify_init
@@ -15,12 +15,12 @@ int inotify_init1(int flags)
 	return __syscall_ret(r);
 }
 
-int inotify_add_watch(int fd, const char *pathname, uint32_t mask)
+MUSL_EXPORT int inotify_add_watch(int fd, const char *pathname, uint32_t mask)
 {
 	return syscall(SYS_inotify_add_watch, fd, pathname, mask);
 }
 
-int inotify_rm_watch(int fd, int wd)
+MUSL_EXPORT int inotify_rm_watch(int fd, int wd)
 {
 	return syscall(SYS_inotify_rm_watch, fd, wd);
 }

@@ -167,7 +167,7 @@ nospace:
 	return WRDE_NOSPACE;
 }
 
-int wordexp(const char *restrict s, wordexp_t *restrict we, int flags)
+MUSL_EXPORT int wordexp(const char *restrict s, wordexp_t *restrict we, int flags)
 {
 	int r, cs;
 	pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &cs);
@@ -176,7 +176,7 @@ int wordexp(const char *restrict s, wordexp_t *restrict we, int flags)
 	return r;
 }
 
-void wordfree(wordexp_t *we)
+MUSL_EXPORT void wordfree(wordexp_t *we)
 {
 	size_t i;
 	if (!we->we_wordv) return;

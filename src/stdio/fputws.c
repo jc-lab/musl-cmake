@@ -2,7 +2,7 @@
 #include "locale_impl.h"
 #include <wchar.h>
 
-int fputws(const wchar_t *restrict ws, FILE *restrict f)
+MUSL_EXPORT int fputws(const wchar_t *restrict ws, FILE *restrict f)
 {
 	unsigned char buf[BUFSIZ];
 	size_t l=0;

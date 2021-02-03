@@ -1,7 +1,7 @@
 #include <threads.h>
 #include <pthread.h>
 
-int tss_create(tss_t *tss, tss_dtor_t dtor)
+MUSL_EXPORT int tss_create(tss_t *tss, tss_dtor_t dtor)
 {
 	/* Different error returns are possible. C glues them together into
 	 * just failure notification. Can't be optimized to a tail call,

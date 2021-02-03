@@ -3,35 +3,35 @@
 #include <stddef.h>
 #include <errno.h>
 
-void endutxent(void)
+MUSL_EXPORT void endutxent(void)
 {
 }
 
-void setutxent(void)
+MUSL_EXPORT void setutxent(void)
 {
 }
 
-struct utmpx *getutxent(void)
-{
-	return NULL;
-}
-
-struct utmpx *getutxid(const struct utmpx *ut)
+MUSL_EXPORT struct utmpx *getutxent(void)
 {
 	return NULL;
 }
 
-struct utmpx *getutxline(const struct utmpx *ut)
+MUSL_EXPORT struct utmpx *getutxid(const struct utmpx *ut)
 {
 	return NULL;
 }
 
-struct utmpx *pututxline(const struct utmpx *ut)
+MUSL_EXPORT struct utmpx *getutxline(const struct utmpx *ut)
 {
 	return NULL;
 }
 
-void updwtmpx(const char *f, const struct utmpx *u)
+MUSL_EXPORT struct utmpx *pututxline(const struct utmpx *ut)
+{
+	return NULL;
+}
+
+MUSL_EXPORT void updwtmpx(const char *f, const struct utmpx *u)
 {
 }
 

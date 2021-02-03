@@ -17,7 +17,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double acosl(long double x)
+MUSL_EXPORT long double acosl(long double x)
 {
 	return acos(x);
 }
@@ -29,7 +29,7 @@ long double acosl(long double x)
 #define CLEARBOTTOM(u) (u.i.lo = 0)
 #endif
 
-long double acosl(long double x)
+MUSL_EXPORT long double acosl(long double x)
 {
 	union ldshape u = {x};
 	long double z, s, c, f;

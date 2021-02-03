@@ -2,7 +2,7 @@
 #include <sys/time.h>
 #include "syscall.h"
 
-int gettimeofday(struct timeval *restrict tv, void *restrict tz)
+MUSL_EXPORT int gettimeofday(struct timeval *restrict tv, void *restrict tz)
 {
 	struct timespec ts;
 	if (!tv) return 0;

@@ -1,6 +1,6 @@
 #include <signal.h>
 
-int sighold(int sig)
+MUSL_EXPORT int sighold(int sig)
 {
 	sigset_t mask;
 

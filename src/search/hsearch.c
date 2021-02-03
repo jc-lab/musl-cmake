@@ -69,12 +69,12 @@ static int resize(size_t nel, struct hsearch_data *htab)
 	return 1;
 }
 
-int hcreate(size_t nel)
+MUSL_EXPORT int hcreate(size_t nel)
 {
 	return __hcreate_r(nel, &htab);
 }
 
-void hdestroy(void)
+MUSL_EXPORT void hdestroy(void)
 {
 	__hdestroy_r(&htab);
 }
@@ -92,7 +92,7 @@ static ENTRY *lookup(char *key, size_t hash, struct hsearch_data *htab)
 	return e;
 }
 
-ENTRY *hsearch(ENTRY item, ACTION action)
+MUSL_EXPORT ENTRY *hsearch(ENTRY item, ACTION action)
 {
 	ENTRY *e;
 

@@ -84,7 +84,7 @@ static void init_cancellation()
 	__libc_sigaction(SIGCANCEL, &sa, 0);
 }
 
-int pthread_cancel(pthread_t t)
+MUSL_EXPORT int pthread_cancel(pthread_t t)
 {
 	static int init;
 	if (!init) {

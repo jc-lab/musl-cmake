@@ -4,7 +4,7 @@
 
 wint_t __fgetwc_unlocked(FILE *);
 
-wchar_t *fgetws(wchar_t *restrict s, int n, FILE *restrict f)
+MUSL_EXPORT wchar_t *fgetws(wchar_t *restrict s, int n, FILE *restrict f)
 {
 	wchar_t *p = s;
 

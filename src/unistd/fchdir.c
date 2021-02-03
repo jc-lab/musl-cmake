@@ -3,7 +3,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int fchdir(int fd)
+MUSL_EXPORT int fchdir(int fd)
 {
 	int ret = __syscall(SYS_fchdir, fd);
 	if (ret != -EBADF || __syscall(SYS_fcntl, fd, F_GETFD) < 0)

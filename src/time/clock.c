@@ -1,7 +1,7 @@
 #include <time.h>
 #include <limits.h>
 
-clock_t clock()
+MUSL_EXPORT clock_t clock()
 {
 	struct timespec ts;
 

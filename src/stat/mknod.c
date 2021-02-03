@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int mknod(const char *path, mode_t mode, dev_t dev)
+MUSL_EXPORT int mknod(const char *path, mode_t mode, dev_t dev)
 {
 #ifdef SYS_mknod
 	return syscall(SYS_mknod, path, mode, dev);

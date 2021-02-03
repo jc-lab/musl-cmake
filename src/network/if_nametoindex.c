@@ -5,7 +5,7 @@
 #include <string.h>
 #include "syscall.h"
 
-unsigned if_nametoindex(const char *name)
+MUSL_EXPORT unsigned if_nametoindex(const char *name)
 {
 	struct ifreq ifr;
 	int fd, r;

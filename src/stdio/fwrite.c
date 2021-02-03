@@ -25,7 +25,7 @@ size_t __fwritex(const unsigned char *restrict s, size_t l, FILE *restrict f)
 	return l+i;
 }
 
-size_t fwrite(const void *restrict src, size_t size, size_t nmemb, FILE *restrict f)
+MUSL_EXPORT size_t fwrite(const void *restrict src, size_t size, size_t nmemb, FILE *restrict f)
 {
 	size_t k, l = size*nmemb;
 	if (!size) nmemb = 0;

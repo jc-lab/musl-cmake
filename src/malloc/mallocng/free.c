@@ -98,7 +98,7 @@ static struct mapinfo nontrivial_free(struct meta *g, int i)
 	return (struct mapinfo){ 0 };
 }
 
-void free(void *p)
+MUSL_EXPORT void free(void *p)
 {
 	if (!p) return;
 

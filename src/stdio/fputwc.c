@@ -28,7 +28,7 @@ wint_t __fputwc_unlocked(wchar_t c, FILE *f)
 	return c;
 }
 
-wint_t fputwc(wchar_t c, FILE *f)
+MUSL_EXPORT wint_t fputwc(wchar_t c, FILE *f)
 {
 	FLOCK(f);
 	c = __fputwc_unlocked(c, f);

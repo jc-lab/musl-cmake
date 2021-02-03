@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int chown(const char *path, uid_t uid, gid_t gid)
+MUSL_EXPORT int chown(const char *path, uid_t uid, gid_t gid)
 {
 #ifdef SYS_chown
 	return syscall(SYS_chown, path, uid, gid);

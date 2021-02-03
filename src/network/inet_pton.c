@@ -12,7 +12,7 @@ static int hexval(unsigned c)
 	return -1;
 }
 
-int inet_pton(int af, const char *restrict s, void *restrict a0)
+MUSL_EXPORT int inet_pton(int af, const char *restrict s, void *restrict a0)
 {
 	uint16_t ip[8];
 	unsigned char *a = a0;

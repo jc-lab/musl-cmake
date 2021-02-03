@@ -4,7 +4,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double sqrtl(long double x)
+MUSL_EXPORT long double sqrtl(long double x)
 {
 	return sqrt(x);
 }
@@ -176,7 +176,7 @@ static inline u128 mul128_tail(u128 a, u128 b)
 
 /* see sqrt.c for detailed comments.  */
 
-long double sqrtl(long double x)
+MUSL_EXPORT long double sqrtl(long double x)
 {
 	u128 ix, ml;
 	uint64_t top;

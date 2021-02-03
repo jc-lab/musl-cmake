@@ -3,7 +3,7 @@
 #include <signal.h>
 #include "syscall.h"
 
-pid_t vfork(void)
+MUSL_EXPORT pid_t vfork(void)
 {
 	/* vfork syscall cannot be made from C code */
 #ifdef SYS_fork

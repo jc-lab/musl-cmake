@@ -79,7 +79,7 @@ static int mclose(FILE *m)
 	return 0;
 }
 
-FILE *fmemopen(void *restrict buf, size_t size, const char *restrict mode)
+MUSL_EXPORT FILE *fmemopen(void *restrict buf, size_t size, const char *restrict mode)
 {
 	struct mem_FILE *f;
 	int plus = !!strchr(mode, '+');

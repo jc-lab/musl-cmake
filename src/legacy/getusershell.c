@@ -8,19 +8,19 @@ static char *line;
 static size_t linesize;
 static FILE *f;
 
-void endusershell(void)
+MUSL_EXPORT void endusershell(void)
 {
 	if (f) fclose(f);
 	f = 0;
 }
 
-void setusershell(void)
+MUSL_EXPORT void setusershell(void)
 {
 	if (!f) f = fopen("/etc/shells", "rbe");
 	if (!f) f = fmemopen((void *)defshells, sizeof defshells - 1, "rb");
 }
 
-char *getusershell(void)
+MUSL_EXPORT char *getusershell(void)
 {
 	ssize_t l;
 	if (!f) setusershell();

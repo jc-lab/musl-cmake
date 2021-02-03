@@ -25,7 +25,7 @@ static nl_catd do_catopen(const char *name)
 	return (nl_catd)map;
 }
 
-nl_catd catopen(const char *name, int oflag)
+MUSL_EXPORT nl_catd catopen(const char *name, int oflag)
 {
 	nl_catd catd;
 

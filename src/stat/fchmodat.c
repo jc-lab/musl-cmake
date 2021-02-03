@@ -4,7 +4,7 @@
 #include "syscall.h"
 #include "kstat.h"
 
-int fchmodat(int fd, const char *path, mode_t mode, int flag)
+MUSL_EXPORT int fchmodat(int fd, const char *path, mode_t mode, int flag)
 {
 	if (!flag) return syscall(SYS_fchmodat, fd, path, mode, flag);
 

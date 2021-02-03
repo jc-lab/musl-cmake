@@ -2,7 +2,7 @@
 #include <errno.h>
 #include <stdlib.h>
 
-void *reallocarray(void *ptr, size_t m, size_t n)
+MUSL_EXPORT void *reallocarray(void *ptr, size_t m, size_t n)
 {
 	if (n && m > -1 / n) {
 		errno = ENOMEM;

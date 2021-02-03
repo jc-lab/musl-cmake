@@ -1,6 +1,6 @@
 #include <signal.h>
 
-int sigwait(const sigset_t *restrict mask, int *restrict sig)
+MUSL_EXPORT int sigwait(const sigset_t *restrict mask, int *restrict sig)
 {
 	siginfo_t si;
 	if (sigtimedwait(mask, &si, 0) < 0)

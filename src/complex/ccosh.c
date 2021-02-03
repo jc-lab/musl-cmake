@@ -38,7 +38,7 @@
 
 static const double huge = 0x1p1023;
 
-double complex ccosh(double complex z)
+MUSL_EXPORT double complex ccosh(double complex z)
 {
 	double x, y, h;
 	int32_t hx, hy, ix, iy, lx, ly;

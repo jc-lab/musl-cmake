@@ -1,6 +1,6 @@
 #include <ctype.h>
 
-int isalnum(int c)
+MUSL_EXPORT int isalnum(int c)
 {
 	return isalpha(c) || isdigit(c);
 }

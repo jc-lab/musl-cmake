@@ -9,7 +9,7 @@ static const char msgs[] =
 	"Address not available\0"
 	"\0Unknown error";
 
-const char *hstrerror(int ecode)
+MUSL_EXPORT const char *hstrerror(int ecode)
 {
 	const char *s;
 	for (s=msgs, ecode--; ecode && *s; ecode--, s++) for (; *s; s++);

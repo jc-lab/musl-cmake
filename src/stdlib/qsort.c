@@ -154,7 +154,7 @@ static void trinkle(unsigned char *head, size_t width, cmpfun cmp, size_t pp[2],
 	}
 }
 
-void qsort(void *base, size_t nel, size_t width, cmpfun cmp)
+MUSL_EXPORT void qsort(void *base, size_t nel, size_t width, cmpfun cmp)
 {
 	size_t lp[12*sizeof(size_t)];
 	size_t i, size = width * nel;

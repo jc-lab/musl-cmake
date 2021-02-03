@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-int vasprintf(char **s, const char *fmt, va_list ap)
+MUSL_EXPORT int vasprintf(char **s, const char *fmt, va_list ap)
 {
 	va_list ap2;
 	va_copy(ap2, ap);

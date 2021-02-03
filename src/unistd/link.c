@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int link(const char *existing, const char *new)
+MUSL_EXPORT int link(const char *existing, const char *new)
 {
 #ifdef SYS_link
 	return syscall(SYS_link, existing, new);

@@ -4,7 +4,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-ssize_t sendmsg(int fd, const struct msghdr *msg, int flags)
+MUSL_EXPORT ssize_t sendmsg(int fd, const struct msghdr *msg, int flags)
 {
 #if LONG_MAX > INT_MAX
 	struct msghdr h;

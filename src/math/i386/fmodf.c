@@ -1,6 +1,6 @@
 #include <math.h>
 
-float fmodf(float x, float y)
+MUSL_EXPORT float fmodf(float x, float y)
 {
 	unsigned short fpsr;
 	// fprem does not introduce excess precision into x

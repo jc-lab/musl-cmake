@@ -1,6 +1,6 @@
 #include "libm.h"
 
-float nexttowardf(float x, long double y)
+MUSL_EXPORT float nexttowardf(float x, long double y)
 {
 	union {float f; uint32_t i;} ux = {x};
 	uint32_t e;

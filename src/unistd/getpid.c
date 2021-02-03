@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include "syscall.h"
 
-pid_t getpid(void)
+MUSL_EXPORT pid_t getpid(void)
 {
 	return __syscall(SYS_getpid);
 }

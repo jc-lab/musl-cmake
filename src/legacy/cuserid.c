@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-char *cuserid(char *buf)
+MUSL_EXPORT char *cuserid(char *buf)
 {
 	struct passwd pw, *ppw;
 	long pwb[256];

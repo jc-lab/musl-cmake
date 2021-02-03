@@ -1,7 +1,7 @@
 #define _GNU_SOURCE
 #include "pwf.h"
 
-struct group *fgetgrent(FILE *f)
+MUSL_EXPORT struct group *fgetgrent(FILE *f)
 {
 	static char *line, **mem;
 	static struct group gr;

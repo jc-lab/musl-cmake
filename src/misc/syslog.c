@@ -20,7 +20,7 @@ static int log_mask = 0xff;
 static int log_fd = -1;
 volatile int *const __syslog_lockptr = lock;
 
-int setlogmask(int maskpri)
+MUSL_EXPORT int setlogmask(int maskpri)
 {
 	LOCK(lock);
 	int ret = log_mask;
@@ -37,7 +37,7 @@ static const struct {
 	"/dev/log"
 };
 
-void closelog(void)
+MUSL_EXPORT void closelog(void)
 {
 	int cs;
 	pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &cs);
@@ -54,7 +54,7 @@ static void __openlog()
 	if (log_fd >= 0) connect(log_fd, (void *)&log_addr, sizeof log_addr);
 }
 
-void openlog(const char *ident, int opt, int facility)
+MUSL_EXPORT void openlog(const char *ident, int opt, int facility)
 {
 	int cs;
 	pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &cs);
@@ -135,7 +135,7 @@ static void __vsyslog(int priority, const char *message, va_list ap)
 	pthread_setcancelstate(cs, 0);
 }
 
-void syslog(int priority, const char *message, ...)
+MUSL_EXPORT void syslog(int priority, const char *message, ...)
 {
 	va_list ap;
 	va_start(ap, message);

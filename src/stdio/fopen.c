@@ -3,7 +3,7 @@
 #include <string.h>
 #include <errno.h>
 
-FILE *fopen(const char *restrict filename, const char *restrict mode)
+MUSL_EXPORT FILE *fopen(const char *restrict filename, const char *restrict mode)
 {
 	FILE *f;
 	int fd;

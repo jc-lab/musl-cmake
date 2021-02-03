@@ -3,7 +3,7 @@
 #include <errno.h>
 #include "internal.h"
 
-int mbtowc(wchar_t *restrict wc, const char *restrict src, size_t n)
+MUSL_EXPORT int mbtowc(wchar_t *restrict wc, const char *restrict src, size_t n)
 {
 	unsigned c;
 	const unsigned char *s = (const void *)src;

@@ -7,7 +7,7 @@
 
 /* Nonstandard, but vastly superior to the standard functions */
 
-int openpty(int *pm, int *ps, char *name, const struct termios *tio, const struct winsize *ws)
+MUSL_EXPORT int openpty(int *pm, int *ps, char *name, const struct termios *tio, const struct winsize *ws)
 {
 	int m, s, n=0, cs;
 	char buf[20];

@@ -1,7 +1,7 @@
 #define _GNU_SOURCE
 #include <netdb.h>
 
-struct servent *getservbyport(int port, const char *prots)
+MUSL_EXPORT struct servent *getservbyport(int port, const char *prots)
 {
 	static struct servent se;
 	static long buf[32/sizeof(long)];

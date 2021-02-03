@@ -4,7 +4,7 @@
 #include <string.h>
 #include <errno.h>
 
-int getdomainname(char *name, size_t len)
+MUSL_EXPORT int getdomainname(char *name, size_t len)
 {
 	struct utsname temp;
 	uname(&temp);

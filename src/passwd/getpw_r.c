@@ -31,12 +31,12 @@ static int getpw_r(const char *name, uid_t uid, struct passwd *pw, char *buf, si
 	return rv;
 }
 
-int getpwnam_r(const char *name, struct passwd *pw, char *buf, size_t size, struct passwd **res)
+MUSL_EXPORT int getpwnam_r(const char *name, struct passwd *pw, char *buf, size_t size, struct passwd **res)
 {
 	return getpw_r(name, 0, pw, buf, size, res);
 }
 
-int getpwuid_r(uid_t uid, struct passwd *pw, char *buf, size_t size, struct passwd **res)
+MUSL_EXPORT int getpwuid_r(uid_t uid, struct passwd *pw, char *buf, size_t size, struct passwd **res)
 {
 	return getpw_r(0, uid, pw, buf, size, res);
 }

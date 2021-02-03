@@ -43,7 +43,7 @@ static char *gettextdir(const char *domainname, size_t *dirlen)
 static volatile int lock[1];
 volatile int *const __gettext_lockptr = lock;
 
-char *bindtextdomain(const char *domainname, const char *dirname)
+MUSL_EXPORT char *bindtextdomain(const char *domainname, const char *dirname)
 {
 	struct binding *p, *q;
 
@@ -122,7 +122,7 @@ static char *dummy_gettextdomain()
 
 weak_alias(dummy_gettextdomain, __gettextdomain);
 
-char *dcngettext(const char *domainname, const char *msgid1, const char *msgid2, unsigned long int n, int category)
+MUSL_EXPORT char *dcngettext(const char *domainname, const char *msgid1, const char *msgid2, unsigned long int n, int category)
 {
 	static struct msgcat *volatile cats;
 	struct msgcat *p;
@@ -264,17 +264,17 @@ notrans:
 	return (char *)trans;
 }
 
-char *dcgettext(const char *domainname, const char *msgid, int category)
+MUSL_EXPORT char *dcgettext(const char *domainname, const char *msgid, int category)
 {
 	return dcngettext(domainname, msgid, 0, 1, category);
 }
 
-char *dngettext(const char *domainname, const char *msgid1, const char *msgid2, unsigned long int n)
+MUSL_EXPORT char *dngettext(const char *domainname, const char *msgid1, const char *msgid2, unsigned long int n)
 {
 	return dcngettext(domainname, msgid1, msgid2, n, LC_MESSAGES);
 }
 
-char *dgettext(const char *domainname, const char *msgid)
+MUSL_EXPORT char *dgettext(const char *domainname, const char *msgid)
 {
 	return dcngettext(domainname, msgid, 0, 1, LC_MESSAGES);
 }

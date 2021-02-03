@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-long long atoll(const char *s)
+MUSL_EXPORT long long atoll(const char *s)
 {
 	long long n=0;
 	int neg=0;

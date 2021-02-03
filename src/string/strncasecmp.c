@@ -1,7 +1,7 @@
 #include <strings.h>
 #include <ctype.h>
 
-int strncasecmp(const char *_l, const char *_r, size_t n)
+MUSL_EXPORT int strncasecmp(const char *_l, const char *_r, size_t n)
 {
 	const unsigned char *l=(void *)_l, *r=(void *)_r;
 	if (!n--) return 0;

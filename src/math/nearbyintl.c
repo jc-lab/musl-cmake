@@ -2,13 +2,13 @@
 #include <float.h>
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double nearbyintl(long double x)
+MUSL_EXPORT long double nearbyintl(long double x)
 {
 	return nearbyint(x);
 }
 #else
 #include <fenv.h>
-long double nearbyintl(long double x)
+MUSL_EXPORT long double nearbyintl(long double x)
 {
 #ifdef FE_INEXACT
 	#pragma STDC FENV_ACCESS ON

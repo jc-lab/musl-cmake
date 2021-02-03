@@ -32,7 +32,7 @@
 
 static const float huge = 0x1p127;
 
-float complex ccoshf(float complex z)
+MUSL_EXPORT float complex ccoshf(float complex z)
 {
 	float x, y, h;
 	int32_t hx, hy, ix, iy;

@@ -21,7 +21,7 @@ static int _strcolcmp(const char *lstr, const char *bstr)
 	return 0;
 }
 
-int fmtmsg(long classification, const char *label, int severity,
+MUSL_EXPORT int fmtmsg(long classification, const char *label, int severity,
            const char *text, const char *action, const char *tag)
 {
 	int ret = 0, i, consolefd, verb = 0;

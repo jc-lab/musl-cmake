@@ -4,7 +4,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-int settimeofday(const struct timeval *tv, const struct timezone *tz)
+MUSL_EXPORT int settimeofday(const struct timeval *tv, const struct timezone *tz)
 {
 	if (!tv) return 0;
 	if (tv->tv_usec >= 1000000ULL) return __syscall_ret(-EINVAL);

@@ -1,7 +1,7 @@
 #include <math.h>
 #include <stdint.h>
 
-double scalbn(double x, int n)
+MUSL_EXPORT double scalbn(double x, int n)
 {
 	union {double f; uint64_t i;} u;
 	double_t y = x;

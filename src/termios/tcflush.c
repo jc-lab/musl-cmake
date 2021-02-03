@@ -1,7 +1,7 @@
 #include <termios.h>
 #include <sys/ioctl.h>
 
-int tcflush(int fd, int queue)
+MUSL_EXPORT int tcflush(int fd, int queue)
 {
 	return ioctl(fd, TCFLSH, queue);
 }

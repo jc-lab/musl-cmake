@@ -5,7 +5,7 @@ struct node {
 	struct node *prev;
 };
 
-void insque(void *element, void *pred)
+MUSL_EXPORT void insque(void *element, void *pred)
 {
 	struct node *e = element;
 	struct node *p = pred;
@@ -21,7 +21,7 @@ void insque(void *element, void *pred)
 		e->next->prev = e;
 }
 
-void remque(void *element)
+MUSL_EXPORT void remque(void *element)
 {
 	struct node *e = element;
 

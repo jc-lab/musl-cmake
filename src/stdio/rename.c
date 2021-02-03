@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int rename(const char *old, const char *new)
+MUSL_EXPORT int rename(const char *old, const char *new)
 {
 #if defined(SYS_rename)
 	return syscall(SYS_rename, old, new);

@@ -16,7 +16,7 @@
 #define _GNU_SOURCE
 #include <math.h>
 
-float scalbf(float x, float fn)
+MUSL_EXPORT float scalbf(float x, float fn)
 {
 	if (isnan(x) || isnan(fn)) return x*fn;
 	if (!isfinite(fn)) {

@@ -3,7 +3,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int pipe2(int fd[2], int flag)
+MUSL_EXPORT int pipe2(int fd[2], int flag)
 {
 	if (!flag) return pipe(fd);
 	int ret = __syscall(SYS_pipe2, fd, flag);

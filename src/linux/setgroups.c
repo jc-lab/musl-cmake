@@ -26,7 +26,7 @@ static void do_setgroups(void *p)
 	c->ret = ret;
 }
 
-int setgroups(size_t count, const gid_t list[])
+MUSL_EXPORT int setgroups(size_t count, const gid_t list[])
 {
 	/* ret is initially nonzero so that failure of the first thread does not
 	 * trigger the safety kill above. */

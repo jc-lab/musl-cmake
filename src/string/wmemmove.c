@@ -1,7 +1,7 @@
 #include <wchar.h>
 #include <stdint.h>
 
-wchar_t *wmemmove(wchar_t *d, const wchar_t *s, size_t n)
+MUSL_EXPORT wchar_t *wmemmove(wchar_t *d, const wchar_t *s, size_t n)
 {
 	wchar_t *d0 = d;
 	if (d == s) return d;

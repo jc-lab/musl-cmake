@@ -1,6 +1,6 @@
 #include <string.h>
 
-char *strtok(char *restrict s, const char *restrict sep)
+MUSL_EXPORT char *strtok(char *restrict s, const char *restrict sep)
 {
 	static char *p;
 	if (!s && !(s = p)) return NULL;

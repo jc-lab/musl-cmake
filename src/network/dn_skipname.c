@@ -1,6 +1,6 @@
 #include <resolv.h>
 
-int dn_skipname(const unsigned char *s, const unsigned char *end)
+MUSL_EXPORT int dn_skipname(const unsigned char *s, const unsigned char *end)
 {
 	const unsigned char *p = s;
 	while (p < end)

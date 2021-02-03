@@ -2,7 +2,7 @@
 #include "time_impl.h"
 #include <errno.h>
 
-time_t timegm(struct tm *tm)
+MUSL_EXPORT time_t timegm(struct tm *tm)
 {
 	struct tm new;
 	long long t = __tm_to_secs(tm);

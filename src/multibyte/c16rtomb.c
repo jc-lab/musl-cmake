@@ -2,7 +2,7 @@
 #include <errno.h>
 #include <wchar.h>
 
-size_t c16rtomb(char *restrict s, char16_t c16, mbstate_t *restrict ps)
+MUSL_EXPORT size_t c16rtomb(char *restrict s, char16_t c16, mbstate_t *restrict ps)
 {
 	static unsigned internal_state;
 	if (!ps) ps = (void *)&internal_state;

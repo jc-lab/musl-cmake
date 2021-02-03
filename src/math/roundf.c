@@ -9,7 +9,7 @@
 #endif
 static const float_t toint = 1/EPS;
 
-float roundf(float x)
+MUSL_EXPORT float roundf(float x)
 {
 	union {float f; uint32_t i;} u = {x};
 	int e = u.i >> 23 & 0xff;

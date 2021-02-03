@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include "syscall.h"
 
-int vhangup(void)
+MUSL_EXPORT int vhangup(void)
 {
 	return syscall(SYS_vhangup);
 }

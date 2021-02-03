@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "getc.h"
 
-int getchar(void)
+MUSL_EXPORT int getchar(void)
 {
 	return do_getc(stdin);
 }

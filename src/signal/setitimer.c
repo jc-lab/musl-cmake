@@ -4,7 +4,7 @@
 
 #define IS32BIT(x) !((x)+0x80000000ULL>>32)
 
-int setitimer(int which, const struct itimerval *restrict new, struct itimerval *restrict old)
+MUSL_EXPORT int setitimer(int which, const struct itimerval *restrict new, struct itimerval *restrict old)
 {
 	if (sizeof(time_t) > sizeof(long)) {
 		time_t is = new->it_interval.tv_sec, vs = new->it_value.tv_sec;

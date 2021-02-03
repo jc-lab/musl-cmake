@@ -1,7 +1,7 @@
 #include "pwf.h"
 #include <pthread.h>
 
-struct spwd *fgetspent(FILE *f)
+MUSL_EXPORT struct spwd *fgetspent(FILE *f)
 {
 	static char *line;
 	static struct spwd sp;

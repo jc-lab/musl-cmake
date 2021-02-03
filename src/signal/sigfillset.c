@@ -1,7 +1,7 @@
 #include <signal.h>
 #include <limits.h>
 
-int sigfillset(sigset_t *set)
+MUSL_EXPORT int sigfillset(sigset_t *set)
 {
 #if ULONG_MAX == 0xffffffff
 	set->__bits[0] = 0x7ffffffful;

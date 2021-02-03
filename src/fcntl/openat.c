@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include "syscall.h"
 
-int openat(int fd, const char *filename, int flags, ...)
+MUSL_EXPORT int openat(int fd, const char *filename, int flags, ...)
 {
 	mode_t mode = 0;
 

@@ -6,7 +6,7 @@
 
 int getdate_err;
 
-struct tm *getdate(const char *s)
+MUSL_EXPORT struct tm *getdate(const char *s)
 {
 	static struct tm tmbuf;
 	struct tm *ret = 0;

@@ -5,7 +5,7 @@ static FILE *volatile dummy = 0;
 weak_alias(dummy, __stdout_used);
 weak_alias(dummy, __stderr_used);
 
-int fflush(FILE *f)
+MUSL_EXPORT int fflush(FILE *f)
 {
 	if (!f) {
 		int r = 0;

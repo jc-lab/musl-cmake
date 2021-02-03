@@ -10,7 +10,7 @@ static int dummy(int fd)
 
 weak_alias(dummy, __aio_close);
 
-int close(int fd)
+MUSL_EXPORT int close(int fd)
 {
 	fd = __aio_close(fd);
 	int r = __syscall_cp(SYS_close, fd);

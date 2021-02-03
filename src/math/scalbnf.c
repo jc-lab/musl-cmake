@@ -1,7 +1,7 @@
 #include <math.h>
 #include <stdint.h>
 
-float scalbnf(float x, int n)
+MUSL_EXPORT float scalbnf(float x, int n)
 {
 	union {float f; uint32_t i;} u;
 	float_t y = x;

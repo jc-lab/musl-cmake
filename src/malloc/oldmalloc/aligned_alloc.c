@@ -3,7 +3,7 @@
 #include <errno.h>
 #include "malloc_impl.h"
 
-void *aligned_alloc(size_t align, size_t len)
+MUSL_EXPORT void *aligned_alloc(size_t align, size_t len)
 {
 	unsigned char *mem, *new;
 

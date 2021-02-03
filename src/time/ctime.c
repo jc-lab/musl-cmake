@@ -1,6 +1,6 @@
 #include <time.h>
 
-char *ctime(const time_t *t)
+MUSL_EXPORT char *ctime(const time_t *t)
 {
 	struct tm *tm = localtime(t);
 	if (!tm) return 0;

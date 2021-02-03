@@ -2,7 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 
-int strverscmp(const char *l0, const char *r0)
+MUSL_EXPORT int strverscmp(const char *l0, const char *r0)
 {
 	const unsigned char *l = (const void *)l0;
 	const unsigned char *r = (const void *)r0;

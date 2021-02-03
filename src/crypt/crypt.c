@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <crypt.h>
 
-char *crypt(const char *key, const char *salt)
+MUSL_EXPORT char *crypt(const char *key, const char *salt)
 {
 	/* This buffer is sufficiently large for all
 	 * currently-supported hash types. It needs to be updated if

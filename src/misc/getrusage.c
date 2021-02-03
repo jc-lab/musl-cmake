@@ -3,7 +3,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-int getrusage(int who, struct rusage *ru)
+MUSL_EXPORT int getrusage(int who, struct rusage *ru)
 {
 	int r;
 #ifdef SYS_getrusage_time64

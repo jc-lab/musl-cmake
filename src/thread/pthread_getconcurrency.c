@@ -1,6 +1,6 @@
 #include <pthread.h>
 
-int pthread_getconcurrency()
+MUSL_EXPORT int pthread_getconcurrency()
 {
 	return 0;
 }

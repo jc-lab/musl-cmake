@@ -3,7 +3,7 @@
 #include <errno.h>
 #include "stdio_impl.h"
 
-void perror(const char *msg)
+MUSL_EXPORT void perror(const char *msg)
 {
 	FILE *f = stderr;
 	char *errstr = strerror(errno);

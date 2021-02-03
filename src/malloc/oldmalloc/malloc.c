@@ -290,7 +290,7 @@ static void trim(struct chunk *self, size_t n)
 	unlock_bin(i);
 }
 
-void *malloc(size_t n)
+MUSL_EXPORT void *malloc(size_t n)
 {
 	struct chunk *c;
 	int i, j;
@@ -349,7 +349,7 @@ int __malloc_allzerop(void *p)
 	return IS_MMAPPED(MEM_TO_CHUNK(p));
 }
 
-void *realloc(void *p, size_t n)
+MUSL_EXPORT void *realloc(void *p, size_t n)
 {
 	struct chunk *self, *next;
 	size_t n0, n1;
@@ -502,7 +502,7 @@ static void unmap_chunk(struct chunk *self)
 	__munmap(base, len);
 }
 
-void free(void *p)
+MUSL_EXPORT void free(void *p)
 {
 	if (!p) return;
 

@@ -3,7 +3,7 @@
 
 /* nearbyint is the same as rint, but it must not raise the inexact exception */
 
-double nearbyint(double x)
+MUSL_EXPORT double nearbyint(double x)
 {
 #ifdef FE_INEXACT
 	#pragma STDC FENV_ACCESS ON

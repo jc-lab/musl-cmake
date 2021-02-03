@@ -3,7 +3,7 @@
 #include "__dirent.h"
 #include "lock.h"
 
-void rewinddir(DIR *dir)
+MUSL_EXPORT void rewinddir(DIR *dir)
 {
 	LOCK(dir->lock);
 	lseek(dir->fd, 0, SEEK_SET);

@@ -1,6 +1,6 @@
 #include "complex_impl.h"
 
-float cabsf(float complex z)
+MUSL_EXPORT float cabsf(float complex z)
 {
 	return hypotf(crealf(z), cimagf(z));
 }

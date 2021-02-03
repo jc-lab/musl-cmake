@@ -6,7 +6,7 @@
 #endif
 
 /* acosh(x) = log(x + sqrt(x*x-1)) */
-double acosh(double x)
+MUSL_EXPORT double acosh(double x)
 {
 	union {double f; uint64_t i;} u = {.f = x};
 	unsigned e = u.i >> 52 & 0x7ff;

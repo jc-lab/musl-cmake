@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-long gethostid()
+MUSL_EXPORT long gethostid()
 {
 	return 0;
 }

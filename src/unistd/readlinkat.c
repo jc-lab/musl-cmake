@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include "syscall.h"
 
-ssize_t readlinkat(int fd, const char *restrict path, char *restrict buf, size_t bufsize)
+MUSL_EXPORT ssize_t readlinkat(int fd, const char *restrict path, char *restrict buf, size_t bufsize)
 {
 	char dummy[1];
 	if (!bufsize) {

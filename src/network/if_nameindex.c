@@ -80,7 +80,7 @@ static int netlink_msg_to_nameindex(void *pctx, struct nlmsghdr *h)
 	return 0;
 }
 
-struct if_nameindex *if_nameindex()
+MUSL_EXPORT struct if_nameindex *if_nameindex()
 {
 	struct ifnameindexctx _ctx, *ctx = &_ctx;
 	struct if_nameindex *ifs = 0, *d;

@@ -14,7 +14,7 @@ union semun {
 	unsigned short *array;
 };
 
-int semctl(int id, int num, int cmd, ...)
+MUSL_EXPORT int semctl(int id, int num, int cmd, ...)
 {
 	union semun arg = {0};
 	va_list ap;

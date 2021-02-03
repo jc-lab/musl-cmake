@@ -38,7 +38,7 @@ oom:
 	return -1;
 }
 
-int putenv(char *s)
+MUSL_EXPORT int putenv(char *s)
 {
 	size_t l = __strchrnul(s, '=') - s;
 	if (!l || !s[l]) return unsetenv(s);

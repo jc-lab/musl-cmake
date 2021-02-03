@@ -6,7 +6,7 @@
 
 #define V(p) be32toh(*(uint32_t *)(p))
 
-int catclose (nl_catd catd)
+MUSL_EXPORT int catclose (nl_catd catd)
 {
 	char *map = (char *)catd;
 	munmap(map, V(map+8)+20);

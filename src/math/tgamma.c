@@ -105,7 +105,7 @@ static double S(double x)
 	return num/den;
 }
 
-double tgamma(double x)
+MUSL_EXPORT double tgamma(double x)
 {
 	union {double f; uint64_t i;} u = {x};
 	double absx, y;

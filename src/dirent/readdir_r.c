@@ -4,7 +4,7 @@
 #include "__dirent.h"
 #include "lock.h"
 
-int readdir_r(DIR *restrict dir, struct dirent *restrict buf, struct dirent **restrict result)
+MUSL_EXPORT int readdir_r(DIR *restrict dir, struct dirent *restrict buf, struct dirent **restrict result)
 {
 	struct dirent *de;
 	int errno_save = errno;

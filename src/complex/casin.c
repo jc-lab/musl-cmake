@@ -4,7 +4,7 @@
 
 /* asin(z) = -i log(i z + sqrt(1 - z*z)) */
 
-double complex casin(double complex z)
+MUSL_EXPORT double complex casin(double complex z)
 {
 	double complex w;
 	double x, y;

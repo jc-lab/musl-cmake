@@ -11,7 +11,7 @@ static size_t slash_len(const char *s)
 	return s-s0;
 }
 
-char *realpath(const char *restrict filename, char *restrict resolved)
+MUSL_EXPORT char *realpath(const char *restrict filename, char *restrict resolved)
 {
 	char stack[PATH_MAX+1];
 	char output[PATH_MAX];

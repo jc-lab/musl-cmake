@@ -273,7 +273,7 @@ size_t __strftime_l(char *restrict s, size_t n, const char *restrict f, const st
 	return 0;
 }
 
-size_t strftime(char *restrict s, size_t n, const char *restrict f, const struct tm *restrict tm)
+MUSL_EXPORT size_t strftime(char *restrict s, size_t n, const char *restrict f, const struct tm *restrict tm)
 {
 	return __strftime_l(s, n, f, tm, CURRENT_LOCALE);
 }

@@ -1,7 +1,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double truncl(long double x)
+MUSL_EXPORT long double truncl(long double x)
 {
 	return trunc(x);
 }
@@ -9,7 +9,7 @@ long double truncl(long double x)
 
 static const long double toint = 1/LDBL_EPSILON;
 
-long double truncl(long double x)
+MUSL_EXPORT long double truncl(long double x)
 {
 	union ldshape u = {x};
 	int e = u.i.se & 0x7fff;

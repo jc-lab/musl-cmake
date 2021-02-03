@@ -4,7 +4,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-int sendmmsg(int fd, struct mmsghdr *msgvec, unsigned int vlen, unsigned int flags)
+MUSL_EXPORT int sendmmsg(int fd, struct mmsghdr *msgvec, unsigned int vlen, unsigned int flags)
 {
 #if LONG_MAX > INT_MAX
 	/* Can't use the syscall directly because the kernel has the wrong

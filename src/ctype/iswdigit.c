@@ -2,7 +2,7 @@
 
 #undef iswdigit
 
-int iswdigit(wint_t wc)
+MUSL_EXPORT int iswdigit(wint_t wc)
 {
 	return (unsigned)wc-'0' < 10;
 }

@@ -15,7 +15,7 @@ static size_t string_read(FILE *f, unsigned char *buf, size_t len)
 	return len;
 }
 
-int vsscanf(const char *restrict s, const char *restrict fmt, va_list ap)
+MUSL_EXPORT int vsscanf(const char *restrict s, const char *restrict fmt, va_list ap)
 {
 	FILE f = {
 		.buf = (void *)s, .cookie = (void *)s,

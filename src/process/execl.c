@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-int execl(const char *path, const char *argv0, ...)
+MUSL_EXPORT int execl(const char *path, const char *argv0, ...)
 {
 	int argc;
 	va_list ap;

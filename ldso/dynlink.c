@@ -2021,7 +2021,7 @@ static void prepare_lazy(struct dso *p)
 	lazy_head = p;
 }
 
-void *dlopen(const char *file, int mode)
+MUSL_EXPORT void *dlopen(const char *file, int mode)
 {
 	struct dso *volatile p, *orig_tail, *orig_syms_tail, *orig_lazy_head, *next;
 	struct tls_module *orig_tls_tail;
@@ -2214,7 +2214,7 @@ static void *do_dlsym(struct dso *p, const char *s, void *ra)
 	return laddr(def.dso, def.sym->st_value);
 }
 
-int dladdr(const void *addr_arg, Dl_info *info)
+MUSL_EXPORT int dladdr(const void *addr_arg, Dl_info *info)
 {
 	size_t addr = (size_t)addr_arg;
 	struct dso *p;
@@ -2317,7 +2317,7 @@ no_redir:
 	return __dlsym(p, s, ra);
 }
 
-int dl_iterate_phdr(int(*callback)(struct dl_phdr_info *info, size_t size, void *data), void *data)
+MUSL_EXPORT int dl_iterate_phdr(int(*callback)(struct dl_phdr_info *info, size_t size, void *data), void *data)
 {
 	struct dso *current;
 	struct dl_phdr_info info;

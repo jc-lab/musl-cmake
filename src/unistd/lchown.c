@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int lchown(const char *path, uid_t uid, gid_t gid)
+MUSL_EXPORT int lchown(const char *path, uid_t uid, gid_t gid)
 {
 #ifdef SYS_lchown
 	return syscall(SYS_lchown, path, uid, gid);

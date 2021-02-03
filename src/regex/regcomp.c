@@ -2687,7 +2687,7 @@ tre_ast_to_tnfa(tre_ast_node_t *node, tre_tnfa_transition_t *transitions,
  while (/*CONSTCOND*/0)
 
 
-int
+MUSL_EXPORT int
 regcomp(regex_t *restrict preg, const char *restrict regex, int cflags)
 {
   tre_stack_t *stack;
@@ -2903,7 +2903,7 @@ regcomp(regex_t *restrict preg, const char *restrict regex, int cflags)
 
 
 
-void
+MUSL_EXPORT void
 regfree(regex_t *preg)
 {
   tre_tnfa_t *tnfa;

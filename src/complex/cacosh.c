@@ -2,7 +2,7 @@
 
 /* acosh(z) = i acos(z) */
 
-double complex cacosh(double complex z)
+MUSL_EXPORT double complex cacosh(double complex z)
 {
 	int zineg = signbit(cimag(z));
 

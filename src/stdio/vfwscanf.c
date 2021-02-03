@@ -83,7 +83,7 @@ static int in_set(const wchar_t *set, int c)
 	((f)->rend && (c)<128U ? *--(f)->rpos : ungetwc((c),(f)))
 #endif
 
-int vfwscanf(FILE *restrict f, const wchar_t *restrict fmt, va_list ap)
+MUSL_EXPORT int vfwscanf(FILE *restrict f, const wchar_t *restrict fmt, va_list ap)
 {
 	int width;
 	int size;

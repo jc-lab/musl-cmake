@@ -4,7 +4,7 @@
 #define NUM(n) ((n) == -1 ? 0 : -1), ((n) == -1 ? 0 : (n))
 #define STR(s) ((s) ? (s) : "")
 
-int putspent(const struct spwd *sp, FILE *f)
+MUSL_EXPORT int putspent(const struct spwd *sp, FILE *f)
 {
 	return fprintf(f, "%s:%s:%.*ld:%.*ld:%.*ld:%.*ld:%.*ld:%.*ld:%.*lu\n",
 		STR(sp->sp_namp), STR(sp->sp_pwdp), NUM(sp->sp_lstchg),

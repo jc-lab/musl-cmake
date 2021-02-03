@@ -64,13 +64,13 @@ static void __srandom(unsigned seed) {
 	x[0] |= 1;
 }
 
-void srandom(unsigned seed) {
+MUSL_EXPORT void srandom(unsigned seed) {
 	LOCK(lock);
 	__srandom(seed);
 	UNLOCK(lock);
 }
 
-char *initstate(unsigned seed, char *state, size_t size) {
+MUSL_EXPORT char *initstate(unsigned seed, char *state, size_t size) {
 	void *old;
 
 	if (size < 8)
@@ -94,7 +94,7 @@ char *initstate(unsigned seed, char *state, size_t size) {
 	return old;
 }
 
-char *setstate(char *state) {
+MUSL_EXPORT char *setstate(char *state) {
 	void *old;
 
 	LOCK(lock);
@@ -104,7 +104,7 @@ char *setstate(char *state) {
 	return old;
 }
 
-long random(void) {
+MUSL_EXPORT long random(void) {
 	long k;
 
 	LOCK(lock);

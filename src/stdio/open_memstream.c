@@ -63,7 +63,7 @@ static int ms_close(FILE *f)
 	return 0;
 }
 
-FILE *open_memstream(char **bufp, size_t *sizep)
+MUSL_EXPORT FILE *open_memstream(char **bufp, size_t *sizep)
 {
 	struct ms_FILE *f;
 	char *buf;

@@ -1,6 +1,6 @@
 #include <math.h>
 
-long lround(double x)
+MUSL_EXPORT long lround(double x)
 {
 	return round(x);
 }

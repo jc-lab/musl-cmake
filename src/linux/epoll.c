@@ -3,12 +3,12 @@
 #include <errno.h>
 #include "syscall.h"
 
-int epoll_create(int size)
+MUSL_EXPORT int epoll_create(int size)
 {
 	return epoll_create1(0);
 }
 
-int epoll_create1(int flags)
+MUSL_EXPORT int epoll_create1(int flags)
 {
 	int r = __syscall(SYS_epoll_create1, flags);
 #ifdef SYS_epoll_create
@@ -17,12 +17,12 @@ int epoll_create1(int flags)
 	return __syscall_ret(r);
 }
 
-int epoll_ctl(int fd, int op, int fd2, struct epoll_event *ev)
+MUSL_EXPORT int epoll_ctl(int fd, int op, int fd2, struct epoll_event *ev)
 {
 	return syscall(SYS_epoll_ctl, fd, op, fd2, ev);
 }
 
-int epoll_pwait(int fd, struct epoll_event *ev, int cnt, int to, const sigset_t *sigs)
+MUSL_EXPORT int epoll_pwait(int fd, struct epoll_event *ev, int cnt, int to, const sigset_t *sigs)
 {
 	int r = __syscall(SYS_epoll_pwait, fd, ev, cnt, to, sigs, _NSIG/8);
 #ifdef SYS_epoll_wait
@@ -31,7 +31,7 @@ int epoll_pwait(int fd, struct epoll_event *ev, int cnt, int to, const sigset_t 
 	return __syscall_ret(r);
 }
 
-int epoll_wait(int fd, struct epoll_event *ev, int cnt, int to)
+MUSL_EXPORT int epoll_wait(int fd, struct epoll_event *ev, int cnt, int to)
 {
 	return epoll_pwait(fd, ev, cnt, to, 0);
 }

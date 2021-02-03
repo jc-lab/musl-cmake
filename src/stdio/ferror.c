@@ -2,7 +2,7 @@
 
 #undef ferror
 
-int ferror(FILE *f)
+MUSL_EXPORT int ferror(FILE *f)
 {
 	FLOCK(f);
 	int ret = !!(f->flags & F_ERR);

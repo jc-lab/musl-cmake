@@ -22,7 +22,7 @@ void __funcs_on_quick_exit()
 	}
 }
 
-int at_quick_exit(void (*func)(void))
+MUSL_EXPORT int at_quick_exit(void (*func)(void))
 {
 	int r = 0;
 	LOCK(lock);

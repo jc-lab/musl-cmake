@@ -6,7 +6,7 @@ typedef __attribute__((__may_alias__)) size_t WT;
 #define WS (sizeof(WT))
 #endif
 
-void *memmove(void *dest, const void *src, size_t n)
+MUSL_EXPORT void *memmove(void *dest, const void *src, size_t n)
 {
 	char *d = dest;
 	const char *s = src;

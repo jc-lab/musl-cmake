@@ -2,7 +2,7 @@
 #include <sched.h>
 #include "syscall.h"
 
-int unshare(int flags)
+MUSL_EXPORT int unshare(int flags)
 {
 	return syscall(SYS_unshare, flags);
 }

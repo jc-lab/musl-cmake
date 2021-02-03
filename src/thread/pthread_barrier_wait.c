@@ -57,7 +57,7 @@ struct instance
 	volatile int finished;
 };
 
-int pthread_barrier_wait(pthread_barrier_t *b)
+MUSL_EXPORT int pthread_barrier_wait(pthread_barrier_t *b)
 {
 	int limit = b->_b_limit;
 	struct instance *inst;

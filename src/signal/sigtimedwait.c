@@ -23,7 +23,7 @@ static int do_sigtimedwait(const sigset_t *restrict mask, siginfo_t *restrict si
 #endif
 }
 
-int sigtimedwait(const sigset_t *restrict mask, siginfo_t *restrict si, const struct timespec *restrict timeout)
+MUSL_EXPORT int sigtimedwait(const sigset_t *restrict mask, siginfo_t *restrict si, const struct timespec *restrict timeout)
 {
 	int ret;
 	do ret = do_sigtimedwait(mask, si, timeout);

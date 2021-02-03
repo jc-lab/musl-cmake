@@ -50,7 +50,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double expm1l(long double x)
+MUSL_EXPORT long double expm1l(long double x)
 {
 	return expm1(x);
 }
@@ -79,7 +79,7 @@ minarg = -4.5054566736396445112120088E1L,
 /* ln 2^16384 */
 maxarg = 1.1356523406294143949492E4L;
 
-long double expm1l(long double x)
+MUSL_EXPORT long double expm1l(long double x)
 {
 	long double px, qx, xx;
 	int k;
@@ -116,7 +116,7 @@ long double expm1l(long double x)
 }
 #elif LDBL_MANT_DIG == 113 && LDBL_MAX_EXP == 16384
 // TODO: broken implementation to make things compile
-long double expm1l(long double x)
+MUSL_EXPORT long double expm1l(long double x)
 {
 	return expm1(x);
 }

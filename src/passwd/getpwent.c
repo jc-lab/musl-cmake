@@ -5,7 +5,7 @@ static char *line;
 static struct passwd pw;
 static size_t size;
 
-void setpwent()
+MUSL_EXPORT void setpwent()
 {
 	if (f) fclose(f);
 	f = 0;
@@ -13,7 +13,7 @@ void setpwent()
 
 weak_alias(setpwent, endpwent);
 
-struct passwd *getpwent()
+MUSL_EXPORT struct passwd *getpwent()
 {
 	struct passwd *res;
 	if (!f) f = fopen("/etc/passwd", "rbe");
@@ -22,14 +22,14 @@ struct passwd *getpwent()
 	return res;
 }
 
-struct passwd *getpwuid(uid_t uid)
+MUSL_EXPORT struct passwd *getpwuid(uid_t uid)
 {
 	struct passwd *res;
 	__getpw_a(0, uid, &pw, &line, &size, &res);
 	return res;
 }
 
-struct passwd *getpwnam(const char *name)
+MUSL_EXPORT struct passwd *getpwnam(const char *name)
 {
 	struct passwd *res;
 	__getpw_a(name, 0, &pw, &line, &size, &res);

@@ -1,6 +1,6 @@
 #include <math.h>
 
-long long llrintf(float x)
+MUSL_EXPORT long long llrintf(float x)
 {
 	long long n;
 	__asm__ (

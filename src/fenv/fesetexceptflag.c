@@ -1,6 +1,6 @@
 #include <fenv.h>
 
-int fesetexceptflag(const fexcept_t *fp, int mask)
+MUSL_EXPORT int fesetexceptflag(const fexcept_t *fp, int mask)
 {
 	feclearexcept(~*fp & mask);
 	feraiseexcept(*fp & mask);

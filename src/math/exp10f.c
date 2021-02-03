@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdint.h>
 
-float exp10f(float x)
+MUSL_EXPORT float exp10f(float x)
 {
 	static const float p10[] = {
 		1e-7f, 1e-6f, 1e-5f, 1e-4f, 1e-3f, 1e-2f, 1e-1f,

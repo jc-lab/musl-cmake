@@ -1,6 +1,6 @@
 #include <math.h>
 
-long long llrint(double x)
+MUSL_EXPORT long long llrint(double x)
 {
 	long long n;
 	__asm__ (

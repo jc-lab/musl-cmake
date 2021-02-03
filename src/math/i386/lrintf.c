@@ -1,6 +1,6 @@
 #include <math.h>
 
-long lrintf(float x)
+MUSL_EXPORT long lrintf(float x)
 {
 	long r;
 	__asm__ ("fistpl %0" : "=m"(r) : "t"(x) : "st");

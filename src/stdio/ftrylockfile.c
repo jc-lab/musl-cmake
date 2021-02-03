@@ -27,7 +27,7 @@ void __register_locked_file(FILE *f, pthread_t self)
 	self->stdio_locks = f;
 }
 
-int ftrylockfile(FILE *f)
+MUSL_EXPORT int ftrylockfile(FILE *f)
 {
 	pthread_t self = __pthread_self();
 	int tid = self->tid;

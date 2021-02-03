@@ -50,32 +50,32 @@ static unsigned long long wcstox(const wchar_t *s, wchar_t **p, int base, unsign
 	return y;
 }
 
-unsigned long long wcstoull(const wchar_t *restrict s, wchar_t **restrict p, int base)
+MUSL_EXPORT unsigned long long wcstoull(const wchar_t *restrict s, wchar_t **restrict p, int base)
 {
 	return wcstox(s, p, base, ULLONG_MAX);
 }
 
-long long wcstoll(const wchar_t *restrict s, wchar_t **restrict p, int base)
+MUSL_EXPORT long long wcstoll(const wchar_t *restrict s, wchar_t **restrict p, int base)
 {
 	return wcstox(s, p, base, LLONG_MIN);
 }
 
-unsigned long wcstoul(const wchar_t *restrict s, wchar_t **restrict p, int base)
+MUSL_EXPORT unsigned long wcstoul(const wchar_t *restrict s, wchar_t **restrict p, int base)
 {
 	return wcstox(s, p, base, ULONG_MAX);
 }
 
-long wcstol(const wchar_t *restrict s, wchar_t **restrict p, int base)
+MUSL_EXPORT long wcstol(const wchar_t *restrict s, wchar_t **restrict p, int base)
 {
 	return wcstox(s, p, base, 0UL+LONG_MIN);
 }
 
-intmax_t wcstoimax(const wchar_t *restrict s, wchar_t **restrict p, int base)
+MUSL_EXPORT intmax_t wcstoimax(const wchar_t *restrict s, wchar_t **restrict p, int base)
 {
 	return wcstoll(s, p, base);
 }
 
-uintmax_t wcstoumax(const wchar_t *restrict s, wchar_t **restrict p, int base)
+MUSL_EXPORT uintmax_t wcstoumax(const wchar_t *restrict s, wchar_t **restrict p, int base)
 {
 	return wcstoull(s, p, base);
 }

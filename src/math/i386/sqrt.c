@@ -1,6 +1,6 @@
 #include "libm.h"
 
-double sqrt(double x)
+MUSL_EXPORT double sqrt(double x)
 {
 	union ldshape ux;
 	unsigned fpsr;

@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include "syscall.h"
 
-mqd_t mq_open(const char *name, int flags, ...)
+MUSL_EXPORT mqd_t mq_open(const char *name, int flags, ...)
 {
 	mode_t mode = 0;
 	struct mq_attr *attr = 0;

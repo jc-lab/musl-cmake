@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <sys/time.h>
 
-unsigned ualarm(unsigned value, unsigned interval)
+MUSL_EXPORT unsigned ualarm(unsigned value, unsigned interval)
 {
 	struct itimerval it = {
 		.it_interval.tv_usec = interval,

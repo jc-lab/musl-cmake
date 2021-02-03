@@ -1,7 +1,7 @@
 #include <math.h>
 #include <stdint.h>
 
-float copysignf(float x, float y)
+MUSL_EXPORT float copysignf(float x, float y)
 {
 	union {float f; uint32_t i;} ux={x}, uy={y};
 	ux.i &= 0x7fffffff;

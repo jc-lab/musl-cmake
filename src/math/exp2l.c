@@ -28,7 +28,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double exp2l(long double x)
+MUSL_EXPORT long double exp2l(long double x)
 {
 	return exp2(x);
 }
@@ -197,7 +197,7 @@ static const double tbl[TBLSIZE * 2] = {
  *   The table entries each have 104 bits of accuracy, encoded as
  *   a pair of double precision values.
  */
-long double exp2l(long double x)
+MUSL_EXPORT long double exp2l(long double x)
 {
 	union ldshape u = {x};
 	int e = u.i.se & 0x7fff;
@@ -562,7 +562,7 @@ static const float eps[TBLSIZE] = {
  *	Gal, S. and Bachelis, B.  An Accurate Elementary Mathematical Library
  *	for the IEEE Floating Point Standard.  TOMS 17(1), 26-46 (1991).
  */
-long double
+MUSL_EXPORT long double
 exp2l(long double x)
 {
 	union ldshape u = {x};

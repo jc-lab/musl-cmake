@@ -8,7 +8,7 @@
 
 extern char **__environ;
 
-FILE *popen(const char *cmd, const char *mode)
+MUSL_EXPORT FILE *popen(const char *cmd, const char *mode)
 {
 	int p[2], op, e;
 	pid_t pid;

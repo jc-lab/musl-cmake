@@ -30,7 +30,7 @@
 
 #include "complex_impl.h"
 
-float complex ctanhf(float complex z)
+MUSL_EXPORT float complex ctanhf(float complex z)
 {
 	float x, y;
 	float t, beta, s, rho, denom;

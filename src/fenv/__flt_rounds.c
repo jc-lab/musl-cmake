@@ -1,7 +1,7 @@
 #include <float.h>
 #include <fenv.h>
 
-int __flt_rounds()
+MUSL_EXPORT int __flt_rounds()
 {
 	switch (fegetround()) {
 #ifdef FE_TOWARDZERO

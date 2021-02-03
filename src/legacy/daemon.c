@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-int daemon(int nochdir, int noclose)
+MUSL_EXPORT int daemon(int nochdir, int noclose)
 {
 	if (!nochdir && chdir("/"))
 		return -1;

@@ -3,7 +3,7 @@
 #include <signal.h>
 #include "syscall.h"
 
-int poll(struct pollfd *fds, nfds_t n, int timeout)
+MUSL_EXPORT int poll(struct pollfd *fds, nfds_t n, int timeout)
 {
 #ifdef SYS_poll
 	return syscall_cp(SYS_poll, fds, n, timeout);

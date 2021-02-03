@@ -24,7 +24,7 @@ char *__shm_mapname(const char *name, char *buf)
 	return buf;
 }
 
-int shm_open(const char *name, int flag, mode_t mode)
+MUSL_EXPORT int shm_open(const char *name, int flag, mode_t mode)
 {
 	int cs;
 	char buf[NAME_MAX+10];
@@ -35,7 +35,7 @@ int shm_open(const char *name, int flag, mode_t mode)
 	return fd;
 }
 
-int shm_unlink(const char *name)
+MUSL_EXPORT int shm_unlink(const char *name)
 {
 	char buf[NAME_MAX+10];
 	if (!(name = __shm_mapname(name, buf))) return -1;

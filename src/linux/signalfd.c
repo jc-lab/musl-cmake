@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int signalfd(int fd, const sigset_t *sigs, int flags)
+MUSL_EXPORT int signalfd(int fd, const sigset_t *sigs, int flags)
 {
 	int ret = __syscall(SYS_signalfd4, fd, sigs, _NSIG/8, flags);
 #ifdef SYS_signalfd

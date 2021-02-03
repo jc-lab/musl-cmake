@@ -2,7 +2,7 @@
 #include <grp.h>
 #include <stdio.h>
 
-int putgrent(const struct group *gr, FILE *f)
+MUSL_EXPORT int putgrent(const struct group *gr, FILE *f)
 {
 	int r;
 	size_t i;

@@ -51,7 +51,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double tgammal(long double x)
+MUSL_EXPORT long double tgammal(long double x)
 {
 	return tgamma(x);
 }
@@ -202,7 +202,7 @@ static long double stirf(long double x)
 	return y;
 }
 
-long double tgammal(long double x)
+MUSL_EXPORT long double tgammal(long double x)
 {
 	long double p, q, z;
 
@@ -274,7 +274,7 @@ small:
 }
 #elif LDBL_MANT_DIG == 113 && LDBL_MAX_EXP == 16384
 // TODO: broken implementation to make things compile
-long double tgammal(long double x)
+MUSL_EXPORT long double tgammal(long double x)
 {
 	return tgamma(x);
 }

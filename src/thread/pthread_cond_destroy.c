@@ -1,6 +1,6 @@
 #include "pthread_impl.h"
 
-int pthread_cond_destroy(pthread_cond_t *c)
+MUSL_EXPORT int pthread_cond_destroy(pthread_cond_t *c)
 {
 	if (c->_c_shared && c->_c_waiters) {
 		int cnt;

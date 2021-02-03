@@ -62,7 +62,7 @@
 #include "complex_impl.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double complex catanl(long double complex z)
+MUSL_EXPORT long double complex catanl(long double complex z)
 {
 	return catan(z);
 }
@@ -89,7 +89,7 @@ static long double redupil(long double x)
 	return t;
 }
 
-long double complex catanl(long double complex z)
+MUSL_EXPORT long double complex catanl(long double complex z)
 {
 	long double complex w;
 	long double a, t, x, x2, y;

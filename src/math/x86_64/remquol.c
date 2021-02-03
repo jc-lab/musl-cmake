@@ -1,6 +1,6 @@
 #include <math.h>
 
-long double remquol(long double x, long double y, int *quo)
+MUSL_EXPORT long double remquol(long double x, long double y, int *quo)
 {
 	signed char *cx = (void *)&x, *cy = (void *)&y;
 	/* By ensuring that addresses of x and y cannot be discarded,

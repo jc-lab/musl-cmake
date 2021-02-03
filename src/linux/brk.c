@@ -3,7 +3,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-int brk(void *end)
+MUSL_EXPORT int brk(void *end)
 {
 	return __syscall_ret(-ENOMEM);
 }

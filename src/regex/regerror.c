@@ -27,7 +27,7 @@ static const char messages[] = {
   "\0Unknown error"
 };
 
-size_t regerror(int e, const regex_t *restrict preg, char *restrict buf, size_t size)
+MUSL_EXPORT size_t regerror(int e, const regex_t *restrict preg, char *restrict buf, size_t size)
 {
 	const char *s;
 	for (s=messages; e && *s; e--, s+=strlen(s)+1);

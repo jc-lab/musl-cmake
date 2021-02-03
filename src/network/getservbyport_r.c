@@ -7,7 +7,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int getservbyport_r(int port, const char *prots,
+MUSL_EXPORT int getservbyport_r(int port, const char *prots,
 	struct servent *se, char *buf, size_t buflen, struct servent **res)
 {
 	int i;

@@ -135,7 +135,7 @@ static char *twoway_strstr(const unsigned char *h, const unsigned char *n)
 	}
 }
 
-char *strstr(const char *h, const char *n)
+MUSL_EXPORT char *strstr(const char *h, const char *n)
 {
 	/* Return immediately on empty needle */
 	if (!n[0]) return (char *)h;

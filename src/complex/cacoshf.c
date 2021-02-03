@@ -1,6 +1,6 @@
 #include "complex_impl.h"
 
-float complex cacoshf(float complex z)
+MUSL_EXPORT float complex cacoshf(float complex z)
 {
 	int zineg = signbit(cimagf(z));
 

@@ -11,7 +11,7 @@
 #define realloc __libc_realloc
 #define free __libc_free
 
-char *dlerror()
+MUSL_EXPORT char *dlerror()
 {
 	pthread_t self = __pthread_self();
 	if (!self->dlerror_flag) return 0;

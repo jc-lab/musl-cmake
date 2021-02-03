@@ -345,7 +345,7 @@ long double __lgammal_r(long double x, int *sg)
 }
 #endif
 
-long double lgammal(long double x)
+MUSL_EXPORT long double lgammal(long double x)
 {
 	return __lgammal_r(x, &__signgam);
 }

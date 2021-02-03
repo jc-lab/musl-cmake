@@ -2,7 +2,7 @@
 
 #define LINE_LIM 256
 
-struct spwd *getspnam(const char *name)
+MUSL_EXPORT struct spwd *getspnam(const char *name)
 {
 	static struct spwd sp;
 	static char *line;

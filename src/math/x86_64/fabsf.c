@@ -1,6 +1,6 @@
 #include <math.h>
 
-float fabsf(float x)
+MUSL_EXPORT float fabsf(float x)
 {
 	float t;
 	__asm__ ("pcmpeqd %0, %0" : "=x"(t));          // t = ~0

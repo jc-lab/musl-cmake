@@ -9,7 +9,7 @@ static unsigned temper(unsigned x)
 	return x;
 }
 
-int rand_r(unsigned *seed)
+MUSL_EXPORT int rand_r(unsigned *seed)
 {
 	return temper(*seed = *seed * 1103515245 + 12345)/2;
 }

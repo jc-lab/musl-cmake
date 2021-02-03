@@ -5,7 +5,7 @@
 #include <errno.h>
 #include <stdlib.h>
 
-struct hostent *gethostbyname2(const char *name, int af)
+MUSL_EXPORT struct hostent *gethostbyname2(const char *name, int af)
 {
 	static struct hostent *h;
 	size_t size = 63;

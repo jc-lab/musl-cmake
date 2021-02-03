@@ -1,6 +1,6 @@
 #include <math.h>
 
-float tgammaf(float x)
+MUSL_EXPORT float tgammaf(float x)
 {
 	return tgamma(x);
 }

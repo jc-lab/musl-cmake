@@ -2,7 +2,7 @@
 
 #include <math.h>
 
-float fabsf(float x)
+MUSL_EXPORT float fabsf(float x)
 {
 	float r;
 	__asm__("abs.s %0,%1" : "=f"(r) : "f"(x));

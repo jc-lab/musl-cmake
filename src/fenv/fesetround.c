@@ -5,7 +5,7 @@
 
 hidden int __fesetround(int);
 
-int fesetround(int r)
+MUSL_EXPORT int fesetround(int r)
 {
 	if (r != FE_TONEAREST
 #ifdef FE_DOWNWARD

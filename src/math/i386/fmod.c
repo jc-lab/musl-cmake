@@ -1,6 +1,6 @@
 #include <math.h>
 
-double fmod(double x, double y)
+MUSL_EXPORT double fmod(double x, double y)
 {
 	unsigned short fpsr;
 	// fprem does not introduce excess precision into x

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-int fprintf(FILE *restrict f, const char *restrict fmt, ...)
+MUSL_EXPORT int fprintf(FILE *restrict f, const char *restrict fmt, ...)
 {
 	int ret;
 	va_list ap;

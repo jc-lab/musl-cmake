@@ -8,7 +8,7 @@ static const unsigned char wtable[] = {
 #include "wide.h"
 };
 
-int wcwidth(wchar_t wc)
+MUSL_EXPORT int wcwidth(wchar_t wc)
 {
 	if (wc < 0xffU)
 		return (wc+1 & 0x7f) >= 0x21 ? 1 : wc ? -1 : 0;

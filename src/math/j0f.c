@@ -61,7 +61,7 @@ S02 =  1.1692678527e-04, /* 0x38f53697 */
 S03 =  5.1354652442e-07, /* 0x3509daa6 */
 S04 =  1.1661400734e-09; /* 0x30a045e8 */
 
-float j0f(float x)
+MUSL_EXPORT float j0f(float x)
 {
 	float z,r,s;
 	uint32_t ix;
@@ -101,7 +101,7 @@ v02  =  7.6006865129e-05, /* 0x389f65e0 */
 v03  =  2.5915085189e-07, /* 0x348b216c */
 v04  =  4.4111031494e-10; /* 0x2ff280c2 */
 
-float y0f(float x)
+MUSL_EXPORT float y0f(float x)
 {
 	float z,u,v;
 	uint32_t ix;

@@ -38,7 +38,7 @@ static const float aT[] = {
   6.1687607318e-02,
 };
 
-float atanf(float x)
+MUSL_EXPORT float atanf(float x)
 {
 	float_t w,s1,s2,z;
 	uint32_t ix,sign;

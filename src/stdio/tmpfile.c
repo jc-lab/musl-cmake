@@ -5,7 +5,7 @@
 
 #define MAXTRIES 100
 
-FILE *tmpfile(void)
+MUSL_EXPORT FILE *tmpfile(void)
 {
 	char s[] = "/tmp/tmpfile_XXXXXX";
 	int fd;

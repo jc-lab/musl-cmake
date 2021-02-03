@@ -3,7 +3,7 @@
 #include <sys/ioctl.h>
 #include "syscall.h"
 
-int isatty(int fd)
+MUSL_EXPORT int isatty(int fd)
 {
 	struct winsize wsz;
 	unsigned long r = syscall(SYS_ioctl, fd, TIOCGWINSZ, &wsz);

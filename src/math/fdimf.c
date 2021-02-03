@@ -1,6 +1,6 @@
 #include <math.h>
 
-float fdimf(float x, float y)
+MUSL_EXPORT float fdimf(float x, float y)
 {
 	if (isnan(x))
 		return x;

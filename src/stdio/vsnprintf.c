@@ -32,7 +32,7 @@ static size_t sn_write(FILE *f, const unsigned char *s, size_t l)
 	return l;
 }
 
-int vsnprintf(char *restrict s, size_t n, const char *restrict fmt, va_list ap)
+MUSL_EXPORT int vsnprintf(char *restrict s, size_t n, const char *restrict fmt, va_list ap)
 {
 	unsigned char buf[1];
 	char dummy[1];

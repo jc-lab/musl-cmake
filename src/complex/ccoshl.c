@@ -1,7 +1,7 @@
 #include "complex_impl.h"
 
 //FIXME
-long double complex ccoshl(long double complex z)
+MUSL_EXPORT long double complex ccoshl(long double complex z)
 {
 	return ccosh(z);
 }

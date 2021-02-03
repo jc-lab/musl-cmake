@@ -9,7 +9,7 @@
 #endif
 
 /* acosh(x) = log(x + sqrt(x*x-1)) */
-float acoshf(float x)
+MUSL_EXPORT float acoshf(float x)
 {
 	union {float f; uint32_t i;} u = {x};
 	uint32_t a = u.i & 0x7fffffff;

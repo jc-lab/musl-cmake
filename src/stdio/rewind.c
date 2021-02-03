@@ -1,6 +1,6 @@
 #include "stdio_impl.h"
 
-void rewind(FILE *f)
+MUSL_EXPORT void rewind(FILE *f)
 {
 	FLOCK(f);
 	__fseeko_unlocked(f, 0, SEEK_SET);

@@ -1,6 +1,6 @@
 #include "libm.h"
 
-float sinhf(float x)
+MUSL_EXPORT float sinhf(float x)
 {
 	union {float f; uint32_t i;} u = {.f = x};
 	uint32_t w;

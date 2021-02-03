@@ -1,7 +1,7 @@
 #include <ctype.h>
 #undef islower
 
-int islower(int c)
+MUSL_EXPORT int islower(int c)
 {
 	return (unsigned)c-'a' < 26;
 }

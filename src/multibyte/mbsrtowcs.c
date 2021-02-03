@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include "internal.h"
 
-size_t mbsrtowcs(wchar_t *restrict ws, const char **restrict src, size_t wn, mbstate_t *restrict st)
+MUSL_EXPORT size_t mbsrtowcs(wchar_t *restrict ws, const char **restrict src, size_t wn, mbstate_t *restrict st)
 {
 	const unsigned char *s = (const void *)*src;
 	size_t wn0 = wn;

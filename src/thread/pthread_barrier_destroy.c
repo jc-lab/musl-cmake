@@ -1,6 +1,6 @@
 #include "pthread_impl.h"
 
-int pthread_barrier_destroy(pthread_barrier_t *b)
+MUSL_EXPORT int pthread_barrier_destroy(pthread_barrier_t *b)
 {
 	if (b->_b_limit < 0) {
 		if (b->_b_lock) {

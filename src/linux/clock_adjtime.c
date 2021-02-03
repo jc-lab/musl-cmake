@@ -34,7 +34,7 @@ struct ktimex {
 	int __padding[11];
 };
 
-int clock_adjtime (clockid_t clock_id, struct timex *utx)
+MUSL_EXPORT int clock_adjtime (clockid_t clock_id, struct timex *utx)
 {
 	int r = -ENOSYS;
 #ifdef SYS_clock_adjtime64

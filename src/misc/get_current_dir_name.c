@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 
-char *get_current_dir_name(void) {
+MUSL_EXPORT char *get_current_dir_name(void) {
 	struct stat a, b;
 	char *res = getenv("PWD");
 	if (res && *res && !stat(res, &a) && !stat(".", &b)

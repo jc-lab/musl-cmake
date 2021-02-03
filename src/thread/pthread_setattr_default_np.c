@@ -5,7 +5,7 @@
 #define MIN(a,b) ((a)<(b) ? (a) : (b))
 #define MAX(a,b) ((a)>(b) ? (a) : (b))
 
-int pthread_setattr_default_np(const pthread_attr_t *attrp)
+MUSL_EXPORT int pthread_setattr_default_np(const pthread_attr_t *attrp)
 {
 	/* Reject anything in the attr object other than stack/guard size. */
 	pthread_attr_t tmp = *attrp, zero = { 0 };
@@ -25,7 +25,7 @@ int pthread_setattr_default_np(const pthread_attr_t *attrp)
 	return 0;
 }
 
-int pthread_getattr_default_np(pthread_attr_t *attrp)
+MUSL_EXPORT int pthread_getattr_default_np(pthread_attr_t *attrp)
 {
 	__acquire_ptc();
 	*attrp = (pthread_attr_t) {

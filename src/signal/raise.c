@@ -3,7 +3,7 @@
 #include "syscall.h"
 #include "pthread_impl.h"
 
-int raise(int sig)
+MUSL_EXPORT int raise(int sig)
 {
 	sigset_t set;
 	__block_app_sigs(&set);

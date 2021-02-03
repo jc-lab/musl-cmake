@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "syscall.h"
 
-int clock_getcpuclockid(pid_t pid, clockid_t *clk)
+MUSL_EXPORT int clock_getcpuclockid(pid_t pid, clockid_t *clk)
 {
 	struct timespec ts;
 	clockid_t id = (-pid-1)*8U + 2;

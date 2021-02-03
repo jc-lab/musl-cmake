@@ -3,7 +3,7 @@
 #include "atomic.h"
 
 #ifdef SYS_cacheflush
-int _flush_cache(void *addr, int len, int op)
+MUSL_EXPORT int _flush_cache(void *addr, int len, int op)
 {
 	return syscall(SYS_cacheflush, addr, len, op);
 }

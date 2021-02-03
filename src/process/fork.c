@@ -44,7 +44,7 @@ static void dummy_0(void) { }
 weak_alias(dummy_0, __tl_lock);
 weak_alias(dummy_0, __tl_unlock);
 
-pid_t fork(void)
+MUSL_EXPORT pid_t fork(void)
 {
 	sigset_t set;
 	__fork_handler(-1);

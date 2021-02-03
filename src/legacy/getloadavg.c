@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <sys/sysinfo.h>
 
-int getloadavg(double *a, int n)
+MUSL_EXPORT int getloadavg(double *a, int n)
 {
 	struct sysinfo si;
 	if (n <= 0) return n ? -1 : 0;

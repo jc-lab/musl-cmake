@@ -2,7 +2,7 @@
 #include <errno.h>
 #include <unistd.h>
 
-int pclose(FILE *f)
+MUSL_EXPORT int pclose(FILE *f)
 {
 	int status, r;
 	pid_t pid = f->pipe_pid;

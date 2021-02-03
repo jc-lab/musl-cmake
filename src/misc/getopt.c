@@ -25,7 +25,7 @@ void __getopt_msg(const char *a, const char *b, const char *c, size_t l)
 	FUNLOCK(f);
 }
 
-int getopt(int argc, char * const argv[], const char *optstring)
+MUSL_EXPORT int getopt(int argc, char * const argv[], const char *optstring)
 {
 	int i;
 	wchar_t c, d;

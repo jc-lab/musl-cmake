@@ -1,7 +1,7 @@
 #include <sched.h>
 #include "syscall.h"
 
-int sched_rr_get_interval(pid_t pid, struct timespec *ts)
+MUSL_EXPORT int sched_rr_get_interval(pid_t pid, struct timespec *ts)
 {
 #ifdef SYS_sched_rr_get_interval_time64
 	/* On a 32-bit arch, use the old syscall if it exists. */

@@ -1,7 +1,7 @@
 #include "stdio_impl.h"
 #include <errno.h>
 
-int fileno(FILE *f)
+MUSL_EXPORT int fileno(FILE *f)
 {
 	FLOCK(f);
 	int fd = f->fd;

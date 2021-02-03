@@ -2,7 +2,7 @@
 
 #ifdef __VSX__
 
-long lround(double x)
+MUSL_EXPORT long lround(double x)
 {
 	long n;
 	__asm__ (

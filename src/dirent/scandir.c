@@ -5,7 +5,7 @@
 #include <errno.h>
 #include <stddef.h>
 
-int scandir(const char *path, struct dirent ***res,
+MUSL_EXPORT int scandir(const char *path, struct dirent ***res,
 	int (*sel)(const struct dirent *),
 	int (*cmp)(const struct dirent **, const struct dirent **))
 {

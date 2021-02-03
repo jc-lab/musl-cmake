@@ -7,7 +7,7 @@
 #define IS32BIT(x) !((x)+0x80000000ULL>>32)
 #define NS_SPECIAL(ns) ((ns)==UTIME_NOW || (ns)==UTIME_OMIT)
 
-int utimensat(int fd, const char *path, const struct timespec times[2], int flags)
+MUSL_EXPORT int utimensat(int fd, const char *path, const struct timespec times[2], int flags)
 {
 	int r;
 	if (times && times[0].tv_nsec==UTIME_NOW && times[1].tv_nsec==UTIME_NOW)

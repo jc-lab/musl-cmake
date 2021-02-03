@@ -2,7 +2,7 @@
 
 // FIXME
 
-float complex clogf(float complex z)
+MUSL_EXPORT float complex clogf(float complex z)
 {
 	float r, phi;
 

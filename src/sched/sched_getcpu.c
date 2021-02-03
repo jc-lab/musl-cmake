@@ -22,7 +22,7 @@ static void *volatile vdso_func = (void *)getcpu_init;
 
 #endif
 
-int sched_getcpu(void)
+MUSL_EXPORT int sched_getcpu(void)
 {
 	int r;
 	unsigned cpu;

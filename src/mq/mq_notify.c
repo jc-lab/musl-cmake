@@ -29,7 +29,7 @@ static void *start(void *p)
 	return 0;
 }
 
-int mq_notify(mqd_t mqd, const struct sigevent *sev)
+MUSL_EXPORT int mq_notify(mqd_t mqd, const struct sigevent *sev)
 {
 	struct args args = { .sev = sev };
 	pthread_attr_t attr;

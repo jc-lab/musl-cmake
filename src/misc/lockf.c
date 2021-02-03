@@ -2,7 +2,7 @@
 #include <fcntl.h>
 #include <errno.h>
 
-int lockf(int fd, int op, off_t size)
+MUSL_EXPORT int lockf(int fd, int op, off_t size)
 {
 	struct flock l = {
 		.l_type = F_WRLCK,

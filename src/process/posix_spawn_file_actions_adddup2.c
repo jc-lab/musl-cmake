@@ -3,7 +3,7 @@
 #include <errno.h>
 #include "fdop.h"
 
-int posix_spawn_file_actions_adddup2(posix_spawn_file_actions_t *fa, int srcfd, int fd)
+MUSL_EXPORT int posix_spawn_file_actions_adddup2(posix_spawn_file_actions_t *fa, int srcfd, int fd)
 {
 	struct fdop *op = malloc(sizeof *op);
 	if (!op) return ENOMEM;

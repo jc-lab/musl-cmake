@@ -5,7 +5,7 @@
 static const char digits[] =
 	"./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-long a64l(const char *s)
+MUSL_EXPORT long a64l(const char *s)
 {
 	int e;
 	uint32_t x = 0;
@@ -17,7 +17,7 @@ long a64l(const char *s)
 	return (int32_t)x;
 }
 
-char *l64a(long x0)
+MUSL_EXPORT char *l64a(long x0)
 {
 	static char s[7];
 	char *p;

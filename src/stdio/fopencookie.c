@@ -95,7 +95,7 @@ static int cookieclose(FILE *f)
 	return 0;
 }
 
-FILE *fopencookie(void *cookie, const char *mode, cookie_io_functions_t iofuncs)
+MUSL_EXPORT FILE *fopencookie(void *cookie, const char *mode, cookie_io_functions_t iofuncs)
 {
 	struct cookie_FILE *f;
 

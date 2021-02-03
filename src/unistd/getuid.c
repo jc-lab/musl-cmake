@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include "syscall.h"
 
-uid_t getuid(void)
+MUSL_EXPORT uid_t getuid(void)
 {
 	return __syscall(SYS_getuid);
 }

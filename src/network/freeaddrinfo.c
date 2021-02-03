@@ -4,7 +4,7 @@
 #include "lookup.h"
 #include "lock.h"
 
-void freeaddrinfo(struct addrinfo *p)
+MUSL_EXPORT void freeaddrinfo(struct addrinfo *p)
 {
 	size_t cnt;
 	for (cnt=1; p->ai_next; cnt++, p=p->ai_next);

@@ -1,7 +1,7 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double roundl(long double x)
+MUSL_EXPORT long double roundl(long double x)
 {
 	return round(x);
 }
@@ -9,7 +9,7 @@ long double roundl(long double x)
 
 static const long double toint = 1/LDBL_EPSILON;
 
-long double roundl(long double x)
+MUSL_EXPORT long double roundl(long double x)
 {
 	union ldshape u = {x};
 	int e = u.i.se & 0x7fff;

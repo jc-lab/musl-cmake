@@ -2,7 +2,7 @@
 #include <dlfcn.h>
 #include "dynlink.h"
 
-int dlinfo(void *dso, int req, void *res)
+MUSL_EXPORT int dlinfo(void *dso, int req, void *res)
 {
 	if (__dl_invalid_handle(dso)) return -1;
 	if (req != RTLD_DI_LINKMAP) {

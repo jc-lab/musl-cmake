@@ -29,7 +29,7 @@ volatile int *const __sem_open_lockptr = lock;
 
 #define FLAGS (O_RDWR|O_NOFOLLOW|O_CLOEXEC|O_NONBLOCK)
 
-sem_t *sem_open(const char *name, int flags, ...)
+MUSL_EXPORT sem_t *sem_open(const char *name, int flags, ...)
 {
 	va_list ap;
 	mode_t mode;
@@ -165,7 +165,7 @@ fail:
 	return SEM_FAILED;
 }
 
-int sem_close(sem_t *sem)
+MUSL_EXPORT int sem_close(sem_t *sem)
 {
 	int i;
 	LOCK(lock);

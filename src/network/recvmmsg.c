@@ -10,7 +10,7 @@
 
 hidden void __convert_scm_timestamps(struct msghdr *, socklen_t);
 
-int recvmmsg(int fd, struct mmsghdr *msgvec, unsigned int vlen, unsigned int flags, struct timespec *timeout)
+MUSL_EXPORT int recvmmsg(int fd, struct mmsghdr *msgvec, unsigned int vlen, unsigned int flags, struct timespec *timeout)
 {
 #if LONG_MAX > INT_MAX
 	struct mmsghdr *mh = msgvec;

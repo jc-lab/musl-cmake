@@ -61,7 +61,7 @@ s03 =  1.1771846857e-06, /* 0x359dffc2 */
 s04 =  5.0463624390e-09, /* 0x31ad6446 */
 s05 =  1.2354227016e-11; /* 0x2d59567e */
 
-float j1f(float x)
+MUSL_EXPORT float j1f(float x)
 {
 	float z,r,s;
 	uint32_t ix;
@@ -99,7 +99,7 @@ static const float V0[5] = {
   1.6655924903e-11, /* 0x2d9281cf */
 };
 
-float y1f(float x)
+MUSL_EXPORT float y1f(float x)
 {
 	float z,u,v;
 	uint32_t ix;

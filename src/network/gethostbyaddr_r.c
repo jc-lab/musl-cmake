@@ -7,7 +7,7 @@
 #include <errno.h>
 #include <inttypes.h>
 
-int gethostbyaddr_r(const void *a, socklen_t l, int af,
+MUSL_EXPORT int gethostbyaddr_r(const void *a, socklen_t l, int af,
 	struct hostent *h, char *buf, size_t buflen,
 	struct hostent **res, int *err)
 {

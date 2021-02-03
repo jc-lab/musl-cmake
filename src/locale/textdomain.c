@@ -11,7 +11,7 @@ char *__gettextdomain()
 	return current_domain ? current_domain : "messages";
 }
 
-char *textdomain(const char *domainname)
+MUSL_EXPORT char *textdomain(const char *domainname)
 {
 	if (!domainname) return __gettextdomain();
 
@@ -31,12 +31,12 @@ char *textdomain(const char *domainname)
 	return current_domain;
 }
 
-char *gettext(const char *msgid)
+MUSL_EXPORT char *gettext(const char *msgid)
 {
 	return dgettext(0, msgid);
 }
 
-char *ngettext(const char *msgid1, const char *msgid2, unsigned long int n)
+MUSL_EXPORT char *ngettext(const char *msgid1, const char *msgid2, unsigned long int n)
 {
 	return dngettext(0, msgid1, msgid2, n);
 }

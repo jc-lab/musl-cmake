@@ -113,7 +113,7 @@ static const char strings[] =
 #endif
 	"";
 
-char *strsignal(int signum)
+MUSL_EXPORT char *strsignal(int signum)
 {
 	const char *s = strings;
 

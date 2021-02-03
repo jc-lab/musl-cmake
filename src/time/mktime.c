@@ -1,7 +1,7 @@
 #include "time_impl.h"
 #include <errno.h>
 
-time_t mktime(struct tm *tm)
+MUSL_EXPORT time_t mktime(struct tm *tm)
 {
 	struct tm new;
 	long opp;

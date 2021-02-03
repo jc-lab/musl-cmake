@@ -52,7 +52,7 @@ int __execvpe(const char *file, char *const argv[], char *const envp[])
 	return -1;
 }
 
-int execvp(const char *file, char *const argv[])
+MUSL_EXPORT int execvp(const char *file, char *const argv[])
 {
 	return __execvpe(file, argv, __environ);
 }

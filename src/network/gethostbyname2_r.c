@@ -8,7 +8,7 @@
 #include <stdint.h>
 #include "lookup.h"
 
-int gethostbyname2_r(const char *name, int af,
+MUSL_EXPORT int gethostbyname2_r(const char *name, int af,
 	struct hostent *h, char *buf, size_t buflen,
 	struct hostent **res, int *err)
 {

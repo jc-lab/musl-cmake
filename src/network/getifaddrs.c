@@ -44,7 +44,7 @@ struct ifaddrs_ctx {
 	struct ifaddrs_storage *hash[IFADDRS_HASH_SIZE];
 };
 
-void freeifaddrs(struct ifaddrs *ifp)
+MUSL_EXPORT void freeifaddrs(struct ifaddrs *ifp)
 {
 	struct ifaddrs *n;
 	while (ifp) {
@@ -204,7 +204,7 @@ static int netlink_msg_to_ifaddr(void *pctx, struct nlmsghdr *h)
 	return 0;
 }
 
-int getifaddrs(struct ifaddrs **ifap)
+MUSL_EXPORT int getifaddrs(struct ifaddrs **ifap)
 {
 	struct ifaddrs_ctx _ctx, *ctx = &_ctx;
 	int r;

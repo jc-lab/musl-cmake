@@ -4,7 +4,7 @@ static FILE *f;
 static char *line, **mem;
 static struct group gr;
 
-void setgrent()
+MUSL_EXPORT void setgrent()
 {
 	if (f) fclose(f);
 	f = 0;
@@ -12,7 +12,7 @@ void setgrent()
 
 weak_alias(setgrent, endgrent);
 
-struct group *getgrent()
+MUSL_EXPORT struct group *getgrent()
 {
 	struct group *res;
 	size_t size=0, nmem=0;
@@ -22,7 +22,7 @@ struct group *getgrent()
 	return res;
 }
 
-struct group *getgrgid(gid_t gid)
+MUSL_EXPORT struct group *getgrgid(gid_t gid)
 {
 	struct group *res;
 	size_t size=0, nmem=0;
@@ -30,7 +30,7 @@ struct group *getgrgid(gid_t gid)
 	return res;
 }
 
-struct group *getgrnam(const char *name)
+MUSL_EXPORT struct group *getgrnam(const char *name)
 {
 	struct group *res;
 	size_t size=0, nmem=0;

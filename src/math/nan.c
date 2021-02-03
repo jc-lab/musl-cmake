@@ -1,6 +1,6 @@
 #include <math.h>
 
-double nan(const char *s)
+MUSL_EXPORT double nan(const char *s)
 {
 	return NAN;
 }

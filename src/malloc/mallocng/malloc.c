@@ -296,7 +296,7 @@ static int alloc_slot(int sc, size_t req)
 	return 0;
 }
 
-void *malloc(size_t n)
+MUSL_EXPORT void *malloc(size_t n)
 {
 	if (size_overflows(n)) return 0;
 	struct meta *g;

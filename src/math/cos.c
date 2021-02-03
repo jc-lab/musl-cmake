@@ -42,7 +42,7 @@
 
 #include "libm.h"
 
-double cos(double x)
+MUSL_EXPORT double cos(double x)
 {
 	double y[2];
 	uint32_t ix;

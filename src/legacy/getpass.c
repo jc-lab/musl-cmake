@@ -5,7 +5,7 @@
 #include <fcntl.h>
 #include <string.h>
 
-char *getpass(const char *prompt)
+MUSL_EXPORT char *getpass(const char *prompt)
 {
 	int fd;
 	struct termios s, t;

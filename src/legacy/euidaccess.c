@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-int euidaccess(const char *filename, int amode)
+MUSL_EXPORT int euidaccess(const char *filename, int amode)
 {
 	return faccessat(AT_FDCWD, filename, amode, AT_EACCESS);
 }

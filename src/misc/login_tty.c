@@ -2,7 +2,7 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 
-int login_tty(int fd)
+MUSL_EXPORT int login_tty(int fd)
 {
 	setsid();
 	if (ioctl(fd, TIOCSCTTY, (char *)0)) return -1;

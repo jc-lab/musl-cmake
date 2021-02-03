@@ -1,6 +1,6 @@
 #include "pthread_impl.h"
 
-int pthread_cond_broadcast(pthread_cond_t *c)
+MUSL_EXPORT int pthread_cond_broadcast(pthread_cond_t *c)
 {
 	if (!c->_c_shared) return __private_cond_signal(c, -1);
 	if (!c->_c_waiters) return 0;

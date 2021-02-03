@@ -1,6 +1,6 @@
 #include <math.h>
 
-float fminf(float x, float y)
+MUSL_EXPORT float fminf(float x, float y)
 {
 	if (isnan(x))
 		return y;

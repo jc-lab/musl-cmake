@@ -4,12 +4,12 @@
 #include "libm.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double exp10l(long double x)
+MUSL_EXPORT long double exp10l(long double x)
 {
 	return exp10(x);
 }
 #elif (LDBL_MANT_DIG == 64 || LDBL_MANT_DIG == 113) && LDBL_MAX_EXP == 16384
-long double exp10l(long double x)
+MUSL_EXPORT long double exp10l(long double x)
 {
 	static const long double p10[] = {
 		1e-15L, 1e-14L, 1e-13L, 1e-12L, 1e-11L, 1e-10L,

@@ -1,7 +1,7 @@
 #include <sys/mman.h>
 #include "syscall.h"
 
-int munlockall(void)
+MUSL_EXPORT int munlockall(void)
 {
 	return syscall(SYS_munlockall);
 }

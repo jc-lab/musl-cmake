@@ -7,7 +7,7 @@
  * The following code is optimized heavily to make hot paths for the
  * expected printable characters. */
 
-int iswprint(wint_t wc)
+MUSL_EXPORT int iswprint(wint_t wc)
 {
 	if (wc < 0xffU)
 		return (wc+1 & 0x7f) >= 0x21;

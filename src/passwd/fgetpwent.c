@@ -1,7 +1,7 @@
 #define _GNU_SOURCE
 #include "pwf.h"
 
-struct passwd *fgetpwent(FILE *f)
+MUSL_EXPORT struct passwd *fgetpwent(FILE *f)
 {
 	static char *line;
 	static struct passwd pw;

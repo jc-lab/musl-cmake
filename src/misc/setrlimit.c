@@ -19,7 +19,7 @@ static void do_setrlimit(void *p)
 	c->err = -__syscall(SYS_setrlimit, c->res, c->lim);
 }
 
-int setrlimit(int resource, const struct rlimit *rlim)
+MUSL_EXPORT int setrlimit(int resource, const struct rlimit *rlim)
 {
 	struct rlimit tmp;
 	if (SYSCALL_RLIM_INFINITY != RLIM_INFINITY) {

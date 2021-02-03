@@ -137,7 +137,7 @@ static size_t extract_to(iconv_t cd)
 	return (size_t)cd >> 1 & 0x7fff;
 }
 
-iconv_t iconv_open(const char *to, const char *from)
+MUSL_EXPORT iconv_t iconv_open(const char *to, const char *from)
 {
 	size_t f, t;
 	struct stateful_cd *scd;
@@ -224,7 +224,7 @@ static unsigned uni_to_jis(unsigned c)
 	}
 }
 
-size_t iconv(iconv_t cd, char **restrict in, size_t *restrict inb, char **restrict out, size_t *restrict outb)
+MUSL_EXPORT size_t iconv(iconv_t cd, char **restrict in, size_t *restrict inb, char **restrict out, size_t *restrict outb)
 {
 	size_t x=0;
 	struct stateful_cd *scd=0;

@@ -14,7 +14,7 @@
 #define WCTYPE_UPPER  11
 #define WCTYPE_XDIGIT 12
 
-int iswctype(wint_t wc, wctype_t type)
+MUSL_EXPORT int iswctype(wint_t wc, wctype_t type)
 {
 	switch (type) {
 	case WCTYPE_ALNUM:
@@ -45,7 +45,7 @@ int iswctype(wint_t wc, wctype_t type)
 	return 0;
 }
 
-wctype_t wctype(const char *s)
+MUSL_EXPORT wctype_t wctype(const char *s)
 {
 	int i;
 	const char *p;

@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "syscall.h"
 
-long ptrace(int req, ...)
+MUSL_EXPORT long ptrace(int req, ...)
 {
 	va_list ap;
 	pid_t pid;

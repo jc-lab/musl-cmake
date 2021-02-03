@@ -6,7 +6,7 @@
 
 #include "pthread_impl.h"
 
-int pthread_setname_np(pthread_t thread, const char *name)
+MUSL_EXPORT int pthread_setname_np(pthread_t thread, const char *name)
 {
 	int fd, cs, status = 0;
 	char f[sizeof "/proc/self/task//comm" + 3*sizeof(int)];

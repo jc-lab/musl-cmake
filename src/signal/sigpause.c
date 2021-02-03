@@ -1,6 +1,6 @@
 #include <signal.h>
 
-int sigpause(int sig)
+MUSL_EXPORT int sigpause(int sig)
 {
 	sigset_t mask;
 	sigprocmask(0, 0, &mask);

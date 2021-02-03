@@ -1,13 +1,13 @@
 #include "complex_impl.h"
 
 #if LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024
-long double complex casinl(long double complex z)
+MUSL_EXPORT long double complex casinl(long double complex z)
 {
 	return casin(z);
 }
 #else
 // FIXME
-long double complex casinl(long double complex z)
+MUSL_EXPORT long double complex casinl(long double complex z)
 {
 	long double complex w;
 	long double x, y;

@@ -1,7 +1,7 @@
 #include <semaphore.h>
 #include "pthread_impl.h"
 
-int sem_trywait(sem_t *sem)
+MUSL_EXPORT int sem_trywait(sem_t *sem)
 {
 	int val;
 	while ((val=sem->__val[0]) > 0) {

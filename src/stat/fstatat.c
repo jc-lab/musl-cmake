@@ -131,7 +131,7 @@ static int fstatat_kstat(int fd, const char *restrict path, struct stat *restric
 	return 0;
 }
 
-int fstatat(int fd, const char *restrict path, struct stat *restrict st, int flag)
+MUSL_EXPORT int fstatat(int fd, const char *restrict path, struct stat *restrict st, int flag)
 {
 	int ret;
 	if (sizeof((struct kstat){0}.st_atime_sec) < sizeof(time_t)) {

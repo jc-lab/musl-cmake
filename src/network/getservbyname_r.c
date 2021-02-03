@@ -10,7 +10,7 @@
 
 #define ALIGN (sizeof(struct { char a; char *b; }) - sizeof(char *))
 
-int getservbyname_r(const char *name, const char *prots,
+MUSL_EXPORT int getservbyname_r(const char *name, const char *prots,
 	struct servent *se, char *buf, size_t buflen, struct servent **res)
 {
 	struct service servs[MAXSERVS];

@@ -2,7 +2,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-int pthread_sigmask(int how, const sigset_t *restrict set, sigset_t *restrict old)
+MUSL_EXPORT int pthread_sigmask(int how, const sigset_t *restrict set, sigset_t *restrict old)
 {
 	int ret;
 	if (set && (unsigned)how - SIG_BLOCK > 2U) return EINVAL;

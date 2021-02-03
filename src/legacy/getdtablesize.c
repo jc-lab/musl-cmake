@@ -3,7 +3,7 @@
 #include <limits.h>
 #include <sys/resource.h>
 
-int getdtablesize(void)
+MUSL_EXPORT int getdtablesize(void)
 {
 	struct rlimit rl;
 	getrlimit(RLIMIT_NOFILE, &rl);

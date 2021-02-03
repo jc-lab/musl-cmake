@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char *ecvt(double x, int n, int *dp, int *sign)
+MUSL_EXPORT char *ecvt(double x, int n, int *dp, int *sign)
 {
 	static char buf[16];
 	char tmp[32];

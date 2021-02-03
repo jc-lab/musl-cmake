@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "fdop.h"
 
-int posix_spawn_file_actions_destroy(posix_spawn_file_actions_t *fa)
+MUSL_EXPORT int posix_spawn_file_actions_destroy(posix_spawn_file_actions_t *fa)
 {
 	struct fdop *op = fa->__actions, *next;
 	while (op) {

@@ -1,7 +1,7 @@
 #include <string.h>
 #include <errno.h>
 
-int strerror_r(int err, char *buf, size_t buflen)
+MUSL_EXPORT int strerror_r(int err, char *buf, size_t buflen)
 {
 	char *msg = strerror(err);
 	size_t l = strlen(msg);

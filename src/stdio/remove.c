@@ -3,7 +3,7 @@
 #include <fcntl.h>
 #include "syscall.h"
 
-int remove(const char *path)
+MUSL_EXPORT int remove(const char *path)
 {
 #ifdef SYS_unlink
 	int r = __syscall(SYS_unlink, path);

@@ -7,7 +7,7 @@
 #undef SYSCALL_IPC_BROKEN_MODE
 #endif
 
-int shmctl(int id, int cmd, struct shmid_ds *buf)
+MUSL_EXPORT int shmctl(int id, int cmd, struct shmid_ds *buf)
 {
 #if IPC_TIME64
 	struct shmid_ds out, *orig;

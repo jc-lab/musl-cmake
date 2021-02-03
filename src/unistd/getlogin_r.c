@@ -2,7 +2,7 @@
 #include <string.h>
 #include <errno.h>
 
-int getlogin_r(char *name, size_t size)
+MUSL_EXPORT int getlogin_r(char *name, size_t size)
 {
 	char *logname = getlogin();
 	if (!logname) return ENXIO; /* or...? */

@@ -1,6 +1,6 @@
 #include <signal.h>
 
-int sigrelse(int sig)
+MUSL_EXPORT int sigrelse(int sig)
 {
 	sigset_t mask;
 

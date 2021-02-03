@@ -6,7 +6,7 @@
 #include <errno.h>
 #include "syscall.h"
 
-char *if_indextoname(unsigned index, char *name)
+MUSL_EXPORT char *if_indextoname(unsigned index, char *name)
 {
 	struct ifreq ifr;
 	int fd, r;

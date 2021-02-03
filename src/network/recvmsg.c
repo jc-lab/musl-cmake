@@ -47,7 +47,7 @@ void __convert_scm_timestamps(struct msghdr *msg, socklen_t csize)
 	memcpy(CMSG_DATA(cmsg), &tvts, sizeof tvts);
 }
 
-ssize_t recvmsg(int fd, struct msghdr *msg, int flags)
+MUSL_EXPORT ssize_t recvmsg(int fd, struct msghdr *msg, int flags)
 {
 	ssize_t r;
 	socklen_t orig_controllen = msg->msg_controllen;

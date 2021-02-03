@@ -1,6 +1,6 @@
 #include <signal.h>
 
-int siginterrupt(int sig, int flag)
+MUSL_EXPORT int siginterrupt(int sig, int flag)
 {
 	struct sigaction sa;
 

@@ -65,7 +65,7 @@
 
 #include "complex_impl.h"
 
-double complex ctanh(double complex z)
+MUSL_EXPORT double complex ctanh(double complex z)
 {
 	double x, y;
 	double t, beta, s, rho, denom;

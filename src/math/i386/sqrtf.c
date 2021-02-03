@@ -1,6 +1,6 @@
 #include <math.h>
 
-float sqrtf(float x)
+MUSL_EXPORT float sqrtf(float x)
 {
 	long double t;
 	/* The long double result has sufficient precision so that

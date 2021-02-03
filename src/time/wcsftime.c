@@ -63,7 +63,7 @@ size_t __wcsftime_l(wchar_t *restrict s, size_t n, const wchar_t *restrict f, co
 	return 0;
 }
 
-size_t wcsftime(wchar_t *restrict wcs, size_t n, const wchar_t *restrict f, const struct tm *restrict tm)
+MUSL_EXPORT size_t wcsftime(wchar_t *restrict wcs, size_t n, const wchar_t *restrict f, const struct tm *restrict tm)
 {
 	return __wcsftime_l(wcs, n, f, tm, CURRENT_LOCALE);
 }

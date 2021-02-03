@@ -4,7 +4,7 @@
 #include <errno.h>
 #include <stdlib.h>
 
-struct hostent *gethostbyaddr(const void *a, socklen_t l, int af)
+MUSL_EXPORT struct hostent *gethostbyaddr(const void *a, socklen_t l, int af)
 {
 	static struct hostent *h;
 	size_t size = 63;

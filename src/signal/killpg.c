@@ -1,7 +1,7 @@
 #include <signal.h>
 #include <errno.h>
 
-int killpg(pid_t pgid, int sig)
+MUSL_EXPORT int killpg(pid_t pgid, int sig)
 {
 	if (pgid < 0) {
 		errno = EINVAL;

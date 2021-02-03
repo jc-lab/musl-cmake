@@ -2,7 +2,7 @@
 #include "syscall.h"
 #include "ipc.h"
 
-int msgget(key_t k, int flag)
+MUSL_EXPORT int msgget(key_t k, int flag)
 {
 #ifndef SYS_ipc
 	return syscall(SYS_msgget, k, flag);

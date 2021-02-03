@@ -79,7 +79,7 @@ static float _redupif(float xx)
 	return t;
 }
 
-float complex catanf(float complex z)
+MUSL_EXPORT float complex catanf(float complex z)
 {
 	float complex w;
 	float a, t, x, x2, y;

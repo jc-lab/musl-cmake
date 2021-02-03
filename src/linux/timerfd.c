@@ -4,12 +4,12 @@
 
 #define IS32BIT(x) !((x)+0x80000000ULL>>32)
 
-int timerfd_create(int clockid, int flags)
+MUSL_EXPORT int timerfd_create(int clockid, int flags)
 {
 	return syscall(SYS_timerfd_create, clockid, flags);
 }
 
-int timerfd_settime(int fd, int flags, const struct itimerspec *new, struct itimerspec *old)
+MUSL_EXPORT int timerfd_settime(int fd, int flags, const struct itimerspec *new, struct itimerspec *old)
 {
 #ifdef SYS_timerfd_settime64
 	time_t is = new->it_interval.tv_sec, vs = new->it_value.tv_sec;
@@ -37,7 +37,7 @@ int timerfd_settime(int fd, int flags, const struct itimerspec *new, struct itim
 	return syscall(SYS_timerfd_settime, fd, flags, new, old);
 }
 
-int timerfd_gettime(int fd, struct itimerspec *cur)
+MUSL_EXPORT int timerfd_gettime(int fd, struct itimerspec *cur)
 {
 #ifdef SYS_timerfd_gettime64
 	int r = -ENOSYS;

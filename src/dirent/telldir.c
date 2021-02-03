@@ -1,7 +1,7 @@
 #include <dirent.h>
 #include "__dirent.h"
 
-long telldir(DIR *dir)
+MUSL_EXPORT long telldir(DIR *dir)
 {
 	return dir->tell;
 }
