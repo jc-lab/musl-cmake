@@ -90,7 +90,7 @@ MUSL_EXPORT int execl(const char *, const char *, ...);
 MUSL_EXPORT int execvp(const char *, char *const []);
 MUSL_EXPORT int execlp(const char *, const char *, ...);
 MUSL_EXPORT int fexecve(int, char *const [], char *const []);
-_Noreturn void _exit(int);
+MUSL_EXPORT _Noreturn void _exit(int);
 
 MUSL_EXPORT pid_t getpid(void);
 MUSL_EXPORT pid_t getppid(void);

@@ -4,12 +4,15 @@
 #include "../../include/features.h"
 
 #define weak __attribute__((__weak__))
-#define hidden weak
-//#define hidden __attribute__((__visibility__("hidden")))
+//#define hidden weak
+#define hidden __attribute__((__visibility__("hidden")))
 #define weak_alias(old, new) \
 	extern __typeof(old) new __attribute__((__weak__, __alias__(#old)))
 
 #undef MUSL_EXPORT
 #define MUSL_EXPORT weak
+
+#undef MUSL_WEAK
+#define MUSL_WEAK weak
 
 #endif

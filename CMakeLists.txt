@@ -8,9 +8,11 @@ set(MUSL_NON_LINUX ON CACHE STRING "musl non-linux architecture")
 
 set(MUSL_ENABLE_AIO OFF CACHE BOOL "musl aio features")
 set(MUSL_ENABLE_CONF OFF CACHE BOOL "musl conf features")
+set(MUSL_ENABLE_COMPLEX OFF CACHE BOOL "musl complex features")
 set(MUSL_ENABLE_DIRENT OFF CACHE BOOL "musl dirent features")
-set(MUSL_ENABLE_EXIT OFF CACHE BOOL "musl exit features")
+set(MUSL_ENABLE_EXIT ON CACHE BOOL "musl exit features")
 set(MUSL_ENABLE_FCNTL OFF CACHE BOOL "musl fcntl features")
+set(MUSL_ENABLE_ENV OFF CACHE BOOL "musl env features")
 set(MUSL_ENABLE_FENV OFF CACHE BOOL "musl fenv features")
 set(MUSL_ENABLE_LDSO OFF CACHE BOOL "musl ldso features")
 set(MUSL_ENABLE_IPC OFF CACHE BOOL "musl ipc features")
@@ -78,6 +80,11 @@ add_custom_command(
         -P ${CMAKE_CURRENT_SOURCE_DIR}/tools/update_version.cmake
 )
 list(APPEND SRC_FILES ${CMAKE_CURRENT_BINARY_DIR}/priv-include/version.h)
+
+if (MUSL_NON_LINUX)
+    list(APPEND SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/noarch/weak_functions.c)
+endif()
+
 
 add_library(musl STATIC ${SRC_FILES})
 target_compile_options(musl

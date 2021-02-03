@@ -1,7 +1,7 @@
 #include "stdio_impl.h"
 #include <sys/uio.h>
 
-size_t __stdio_write(FILE *f, const unsigned char *buf, size_t len)
+MUSL_WEAK size_t __stdio_write(FILE *f, const unsigned char *buf, size_t len)
 {
 	struct iovec iovs[2] = {
 		{ .iov_base = f->wbase, .iov_len = f->wpos-f->wbase },

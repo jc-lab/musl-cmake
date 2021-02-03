@@ -105,7 +105,7 @@ static void *__simple_malloc(size_t n)
 
 weak_alias(__simple_malloc, __libc_malloc_impl);
 
-void *__libc_malloc(size_t n)
+MUSL_WEAK void *__libc_malloc(size_t n)
 {
 	return __libc_malloc_impl(n);
 }

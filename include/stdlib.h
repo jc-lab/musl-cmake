@@ -41,10 +41,10 @@ MUSL_EXPORT void *realloc (void *, size_t);
 MUSL_EXPORT void free (void *);
 MUSL_EXPORT void *aligned_alloc(size_t, size_t);
 
-_Noreturn void abort (void);
+MUSL_EXPORT _Noreturn void abort (void);
 MUSL_EXPORT int atexit (void (*) (void));
-_Noreturn void exit (int);
-_Noreturn void _Exit (int);
+MUSL_EXPORT _Noreturn void exit (int);
+MUSL_WEAK _Noreturn void _Exit (int);
 MUSL_EXPORT int at_quick_exit (void (*) (void));
 _Noreturn void quick_exit (int);
 

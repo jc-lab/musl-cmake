@@ -6,7 +6,7 @@
 #include "lock.h"
 #include "ksigaction.h"
 
-_Noreturn void abort(void)
+MUSL_EXPORT _Noreturn void abort(void)
 {
 	raise(SIGABRT);
 

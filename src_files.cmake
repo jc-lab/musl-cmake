@@ -2062,13 +2062,15 @@ set(FEATURE_time_SRC_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/src/time/time_impl.h
         ${CMAKE_CURRENT_SOURCE_DIR}/src/time/utime.c
         ${CMAKE_CURRENT_SOURCE_DIR}/src/time/wcsftime.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/time/__map_file.c
         ${CMAKE_CURRENT_SOURCE_DIR}/src/time/__month_to_secs.c
         ${CMAKE_CURRENT_SOURCE_DIR}/src/time/__secs_to_tm.c
         ${CMAKE_CURRENT_SOURCE_DIR}/src/time/__tm_to_secs.c
         ${CMAKE_CURRENT_SOURCE_DIR}/src/time/__tz.c
         ${CMAKE_CURRENT_SOURCE_DIR}/src/time/__year_to_secs.c
         )
+if (NOT MUSL_NON_LINUX)
+    list(APPEND FEATURE_time_SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/time/__map_file.c)
+endif()
 set(FEATURE_unistd_SRC_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/src/unistd/access.c
         ${CMAKE_CURRENT_SOURCE_DIR}/src/unistd/acct.c
